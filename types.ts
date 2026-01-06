@@ -14,7 +14,7 @@ export enum LoadingState {
   ERROR = 'ERROR'
 }
 
-export type PageView = 'home' | 'all-services' | 'about' | 'contact';
+
 
 export interface GuideResponse {
   analysis: string;

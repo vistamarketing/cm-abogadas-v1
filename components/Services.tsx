@@ -1,12 +1,10 @@
+
 import React from 'react';
-import { Briefcase, GraduationCap, Globe2, Users, Home, HeartHandshake, ArrowRight, FileCheck } from 'lucide-react';
-import { ServiceItem, PageView } from '../types';
+import { Users, Globe2, Home, GraduationCap, HeartHandshake, FileCheck, ArrowRight } from 'lucide-react';
+import { ServiceItem } from '../types';
+import { Link } from 'react-router-dom';
 
-interface ServicesProps {
-  onNavigate?: (page: PageView) => void;
-}
-
-export const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
+export const Services: React.FC = () => {
   // We group the extensive list into 6 main categories for the homepage
   const services: ServiceItem[] = [
     {
@@ -74,17 +72,15 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
           ))}
         </div>
 
-        {onNavigate && (
-          <div className="text-center">
-            <button
-              onClick={() => onNavigate('all-services')}
-              className="inline-flex items-center gap-3 bg-transparent border-2 border-brand-primary text-brand-primary px-10 py-4 rounded-full font-bold hover:bg-brand-primary hover:text-white transition-colors uppercase text-base tracking-wide font-sans"
-            >
-              Ver desglose completo de servicios
-              <ArrowRight size={22} />
-            </button>
-          </div>
-        )}
+        <div className="text-center">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-3 bg-transparent border-2 border-brand-primary text-brand-primary px-10 py-4 rounded-full font-bold hover:bg-brand-primary hover:text-white transition-colors uppercase text-base tracking-wide font-sans"
+          >
+            Ver desglose completo de servicios
+            <ArrowRight size={22} />
+          </Link>
+        </div>
       </div>
     </section>
   );

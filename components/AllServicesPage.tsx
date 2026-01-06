@@ -1,13 +1,11 @@
+
 import React from 'react';
-import { ArrowLeft, CheckCircle2, FileText, Stamp, Landmark, ShieldCheck } from 'lucide-react';
-import { PageView } from '../types';
+import { ArrowLeft, ShieldCheck, FileCheck, ArrowRight, CheckCircle2, FileText, Stamp, Landmark } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Contact } from './Contact';
 
-interface AllServicesPageProps {
-  onNavigate: (page: PageView) => void;
-}
 
-export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onNavigate }) => {
+export const AllServicesPage: React.FC = () => {
   const immigrationServices = [
     { title: "Tramitación CUE (NIE Unión Europea)", desc: "Certificado de registro para ciudadanos de la UE que van a residir en España por más de 3 meses." },
     { title: "TIE (Cita de Huellas)", desc: "Gestión y acompañamiento para la obtención física de la Tarjeta de Identidad de Extranjero." },
@@ -42,13 +40,13 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onNavigate }) 
       <div className="bg-brand-darker text-white py-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary rounded-full blur-[100px] opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <button 
-            onClick={() => onNavigate('home')} 
+          <Link
+            to="/"
             className="flex items-center text-stone-300 hover:text-white mb-6 transition-colors group font-sans"
           >
             <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
             Volver a Inicio
-          </button>
+          </Link>
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Catálogo de Servicios</h1>
           <p className="text-xl text-stone-300 max-w-2xl font-sans">
             Descubre en detalle cómo podemos ayudarte. Desde trámites complejos de extranjería hasta la gestión del día a día.
@@ -57,7 +55,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onNavigate }) 
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        
+
         {/* Section 1: Extranjería */}
         <div className="mb-20">
           <div className="flex items-center gap-4 mb-10 border-b border-stone-100 pb-4">
@@ -101,7 +99,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onNavigate }) 
             {administrativeServices.map((item, idx) => (
               <div key={idx} className="bg-stone-50 rounded-xl p-6 hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-stone-200">
                 <div className="mb-4 text-brand-secondary/40">
-                    {idx % 2 === 0 ? <Stamp size={24} /> : <Landmark size={24} />}
+                  {idx % 2 === 0 ? <Stamp size={24} /> : <Landmark size={24} />}
                 </div>
                 <h3 className="font-bold text-brand-secondary mb-2 font-serif">{item.title}</h3>
                 <p className="text-brand-secondary/70 text-sm font-sans">
@@ -115,7 +113,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onNavigate }) 
 
       {/* Reuse Contact Section */}
       <div className="bg-stone-50 border-t border-stone-200">
-         <Contact />
+        <Contact />
       </div>
     </div>
   );
