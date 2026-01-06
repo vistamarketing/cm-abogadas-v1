@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Users, MonitorSmartphone, Heart, Scale, MapPin, Clock, ShieldCheck } from 'lucide-react';
+import { Users, MonitorSmartphone, Heart, Scale, MapPin, Clock, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Contact } from './Contact';
 
@@ -7,19 +7,13 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="pt-24 min-h-screen bg-white animate-fade-in">
       {/* Hero Section */}
-      <section className="relative bg-stone-50 py-20 overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative bg-stone-50 py-16 overflow-hidden">
         {/* Background Blobs */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-light rounded-full blur-3xl opacity-60 z-0"></div>
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-stone-200 rounded-full blur-3xl opacity-40 z-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link
-            to="/"
-            className="flex items-center text-brand-secondary/70 hover:text-brand-primary mb-8 transition-colors group font-medium font-sans"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Volver a Inicio
-          </Link>
 
           <div className="max-w-3xl">
             <span className="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2 block font-sans">Sobre Nosotros</span>

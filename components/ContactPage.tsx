@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, MapPin, Phone, Instagram, Clock, Mail } from 'lucide-react';
+import { MapPin, Phone, Instagram, Clock, Mail } from 'lucide-react';
 import { Contact } from './Contact';
 import { Link } from 'react-router-dom';
 
@@ -10,13 +10,7 @@ export const ContactPage: React.FC = () => {
       <div className="bg-brand-darker text-white py-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary rounded-full blur-[100px] opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link
-            to="/"
-            className="flex items-center text-stone-300 hover:text-white mb-6 transition-colors group font-sans"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Volver a Inicio
-          </Link>
+
           <span className="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2 block font-sans">Estamos aquí para ti</span>
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Contacto</h1>
           <p className="text-xl text-stone-300 max-w-2xl font-sans">
