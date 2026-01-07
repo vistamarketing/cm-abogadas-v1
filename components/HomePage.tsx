@@ -3,6 +3,7 @@ import { Hero } from './Hero';
 import { Services } from './Services';
 import { Reviews } from './Reviews';
 import { FAQ } from './FAQ';
+import { HowWeWork } from './HowWeWork';
 import { Contact } from './Contact';
 
 export const HomePage: React.FC = () => {
@@ -10,6 +11,7 @@ export const HomePage: React.FC = () => {
     <>
       <Hero />
       <Services />
+      <HowWeWork />
       <Reviews />
       <FAQ />
       <Contact />

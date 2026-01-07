@@ -6,7 +6,7 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-20">
-          
+
           {/* Contact Info */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-brand-darker mb-8 font-serif">
@@ -54,18 +54,19 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="mt-16">
-                <p className="font-medium text-brand-darker mb-4 font-serif text-lg">Síguenos para tips rápidos:</p>
-                <a href="#" className="inline-flex items-center gap-2 text-brand-primary text-lg font-bold hover:text-brand-accent font-sans">
-                    <Instagram size={24} /> @cm.abogadas
-                </a>
+              <p className="font-medium text-brand-darker mb-4 font-serif text-lg">Síguenos para tips rápidos:</p>
+              <a href="https://www.instagram.com/cmabogadas.esp/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-brand-primary text-lg font-bold hover:text-brand-accent font-sans">
+                <Instagram size={24} /> @cmabogadas.esp
+              </a>
             </div>
           </div>
 
           {/* Form */}
           <div className="bg-stone-50 rounded-2xl p-8 lg:p-12 shadow-xl border border-stone-100">
-            <h3 className="text-3xl font-bold text-brand-darker mb-8 font-serif">Solicita Presupuesto o Cita</h3>
-            <form className="space-y-8">
-              <div className="grid grid-cols-2 gap-8">
+            <h3 className="text-3xl font-bold text-brand-darker mb-4 font-serif">Déjanos tus Datos</h3>
+            <p className="text-brand-secondary mb-8 font-sans">Te contactaremos vía WhatsApp o correo electrónico para agendar tu primera consulta.</p>
+            <form className="space-y-6">
+              <div className="grid grid-cols-2 gap-6">
                 <div>
                   <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Nombre</label>
                   <input type="text" className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg" placeholder="Tu nombre" />
@@ -82,26 +83,19 @@ export const Contact: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Motivo de contacto</label>
-                <select className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all bg-white text-brand-secondary font-sans text-lg">
-                    <option>Solicitar Presupuesto</option>
-                    <option>Agendar Primera Consulta</option>
-                    <option>Dudas sobre Visa de Estudiante</option>
-                    <option>Nómada Digital</option>
-                    <option>Nacionalidad</option>
-                    <option>Otro</option>
-                </select>
+                <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Teléfono</label>
+                <input type="tel" className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg" placeholder="+34 600 000 000" />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Mensaje</label>
-                <textarea rows={4} className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all resize-none font-sans text-lg" placeholder="Descríbenos brevemente tu caso para que podamos darte la mejor orientación..."></textarea>
+                <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Mensaje (Opcional)</label>
+                <textarea rows={4} className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all resize-none font-sans text-lg" placeholder="Cuéntanos brevemente sobre tu caso..."></textarea>
               </div>
 
               <button type="button" className="w-full bg-brand-primary text-white font-bold py-5 rounded-xl hover:bg-brand-secondary transition-colors shadow-lg hover:shadow-xl tracking-wide uppercase text-base font-sans">
-                Enviar Solicitud
+                Enviar Datos
               </button>
-              
+
               <p className="text-sm text-center text-brand-secondary/50 mt-6 font-sans">
                 Tus datos serán tratados con total confidencialidad.
               </p>

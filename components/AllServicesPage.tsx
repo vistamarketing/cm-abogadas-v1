@@ -40,7 +40,7 @@ export const AllServicesPage: React.FC = () => {
       <div className="bg-brand-darker text-white py-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary rounded-full blur-[100px] opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
+          <span className="text-white font-bold tracking-wider uppercase text-base mb-4 block font-sans">NUESTROS SERVICIOS</span>
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Catálogo de Servicios</h1>
           <p className="text-xl text-stone-300 max-w-2xl font-sans">
             Descubre en detalle cómo podemos ayudarte. Desde trámites complejos de extranjería hasta la gestión del día a día.

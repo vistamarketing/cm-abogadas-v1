@@ -8,19 +8,17 @@ export const AboutPage: React.FC = () => {
     <div className="pt-24 min-h-screen bg-white animate-fade-in">
       {/* Hero Section */}
       {/* Hero Section */}
-      <section className="relative bg-stone-50 py-16 overflow-hidden">
+      <section className="bg-brand-darker text-white py-16 relative overflow-hidden">
         {/* Background Blobs */}
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-light rounded-full blur-3xl opacity-60 z-0"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-stone-200 rounded-full blur-3xl opacity-40 z-0"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary rounded-full blur-[100px] opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
           <div className="max-w-3xl">
-            <span className="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2 block font-sans">Sobre Nosotros</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-darker mb-6 leading-tight">
-              Rigor jurídico y <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">trato humano</span>.
+            <span className="text-white font-bold tracking-wider uppercase text-base mb-4 block font-sans">SOBRE NOSOTROS</span>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+              Rigor jurídico y trato humano.
             </h1>
-            <p className="text-xl text-brand-secondary leading-relaxed font-sans">
+            <p className="text-xl text-stone-300 max-w-2xl font-sans">
               En CM Abogadas somos un despacho joven, cercano y comprometido, fundado en abril de 2024. Hemos experimentado un crecimiento constante gracias a la confianza de quienes nos eligen.
             </p>
           </div>
