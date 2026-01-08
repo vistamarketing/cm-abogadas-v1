@@ -4,7 +4,7 @@ import { Services } from './Services';
 import { Reviews } from './Reviews';
 import { FAQ } from './FAQ';
 import { HowWeWork } from './HowWeWork';
-import { Contact } from './Contact';
+import { ContactForm } from './ContactForm';
 
 export const HomePage: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ export const HomePage: React.FC = () => {
       <HowWeWork />
       <Reviews />
       <FAQ />
-      <Contact />
+      <ContactForm />
     </>
   );
 };
