@@ -28,7 +28,7 @@ export const HowWeWork: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-light border border-brand-primary/10 text-brand-primary text-base font-medium mb-6 font-sans">
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-transparent border border-brand-primary/20 text-brand-primary text-base font-medium mb-6 font-sans tracking-widest uppercase text-xs">
                         Nuestro Proceso
                     </div>
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-darker mb-6">
@@ -46,18 +46,16 @@ export const HowWeWork: React.FC = () => {
                         return (
                             <div
                                 key={index}
-                                className="relative bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-all group"
+                                className="relative bg-white p-10 border border-stone-100 hover:shadow-2xl transition-all duration-500 group"
                             >
-                                {/* Number Badge */}
-                                <div className="absolute -top-4 -left-4 w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg font-serif shadow-lg">
+                                {/* Step Number */}
+                                <div className="text-4xl font-serif font-light text-brand-primary/20 group-hover:text-brand-primary/40 transition-colors mb-6">
                                     {step.number}
                                 </div>
 
                                 {/* Icon */}
-                                <div className="mb-6 mt-4">
-                                    <div className="w-16 h-16 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform">
-                                        <Icon size={32} />
-                                    </div>
+                                <div className="mb-6">
+                                    <Icon size={32} className="text-brand-primary" />
                                 </div>
 
                                 {/* Content */}
@@ -68,10 +66,6 @@ export const HowWeWork: React.FC = () => {
                                     {step.description}
                                 </p>
 
-                                {/* Connector Line (except for last item) */}
-                                {index < steps.length - 1 && (
-                                    <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-brand-primary/20" />
-                                )}
                             </div>
                         );
                     })}

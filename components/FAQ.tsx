@@ -58,12 +58,10 @@ export const FAQ: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-red-50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-2 bg-brand-light rounded-full mb-4 text-brand-primary">
+          <div className="inline-flex items-center justify-center p-2 bg-transparent rounded-full mb-4 text-brand-primary">
             <HelpCircle size={24} />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 font-serif">
@@ -76,8 +74,8 @@ export const FAQ: React.FC = () => {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`border rounded-lg transition-all duration-300 ${openIndex === index ? 'border-brand-primary bg-brand-light/30 shadow-sm' : 'border-gray-200 hover:border-brand-primary/50'}`}
             >
               <button
@@ -91,8 +89,8 @@ export const FAQ: React.FC = () => {
                   {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
                 </div>
               </button>
-              
-              <div 
+
+              <div
                 className={`grid transition-all duration-300 ease-in-out ${openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
               >
                 <div className="overflow-hidden">
@@ -104,12 +102,12 @@ export const FAQ: React.FC = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="mt-12 text-center">
-            <p className="text-slate-500 mb-4 font-sans">¿Tienes una duda más específica?</p>
-            <a href="#contact" className="text-brand-primary font-bold hover:underline inline-flex items-center gap-1 font-sans">
-                Escríbenos directamente
-            </a>
+          <p className="text-slate-500 mb-4 font-sans">¿Tienes una duda más específica?</p>
+          <a href="#contact" className="text-brand-primary font-bold hover:underline inline-flex items-center gap-1 font-sans">
+            Escríbenos directamente
+          </a>
         </div>
       </div>
     </section>

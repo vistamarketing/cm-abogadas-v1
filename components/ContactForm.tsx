@@ -24,7 +24,7 @@ const countryCodes = [
     { code: '+351', country: 'Portugal', flag: '🇵🇹' },
 ];
 
-export const ContactForm: React.FC = () => {
+export const ContactForm: React.FC<{ isCompact?: boolean }> = ({ isCompact = false }) => {
     const [formData, setFormData] = useState<FormData>({
         nombre: '',
         apellido: '',
@@ -102,6 +102,134 @@ export const ContactForm: React.FC = () => {
         }
     };
 
+    const formContent = (
+        <div className="bg-stone-50 rounded-2xl p-8 lg:p-12 shadow-xl border border-stone-100">
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
+                    <p className="text-green-800 font-sans text-sm">{statusMessage}</p>
+                </div>
+            )}
+
+            {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
+                    <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
+                    <p className="text-red-800 font-sans text-sm">{statusMessage}</p>
+                </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Nombre</label>
+                        <input
+                            type="text"
+                            name="nombre"
+                            value={formData.nombre}
+                            onChange={handleInputChange}
+                            disabled={isSubmitting}
+                            className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                            placeholder="Tu nombre"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Apellido</label>
+                        <input
+                            type="text"
+                            name="apellido"
+                            value={formData.apellido}
+                            onChange={handleInputChange}
+                            disabled={isSubmitting}
+                            className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                            placeholder="Tu apellido"
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        disabled={isSubmitting}
+                        className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                        placeholder="tucorreo@ejemplo.com"
+                    />
+                </div>
+
+                <div>
+                    <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Teléfono</label>
+                    <div className="flex gap-3">
+                        {/* Country Code Selector */}
+                        <select
+                            value={countryCode}
+                            onChange={handleCountryCodeChange}
+                            disabled={isSubmitting}
+                            className="px-4 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed bg-white"
+                            style={{ minWidth: '140px' }}
+                        >
+                            {countryCodes.map((country) => (
+                                <option key={country.code} value={country.code}>
+                                    {country.flag} {country.code}
+                                </option>
+                            ))}
+                        </select>
+
+                        {/* Phone Number Input */}
+                        <input
+                            type="tel"
+                            name="telefono"
+                            value={formData.telefono}
+                            onChange={handleInputChange}
+                            disabled={isSubmitting}
+                            className="flex-1 px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                            placeholder="600 000 000"
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Mensaje (Opcional)</label>
+                    <textarea
+                        rows={4}
+                        name="mensaje"
+                        value={formData.mensaje}
+                        onChange={handleInputChange}
+                        disabled={isSubmitting}
+                        className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all resize-none font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                        placeholder="Cuéntanos brevemente sobre tu caso..."
+                    ></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-brand-primary text-white font-bold py-5 rounded-xl hover:bg-brand-secondary transition-colors shadow-lg hover:shadow-xl tracking-wide uppercase text-base font-sans disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                    {isSubmitting ? (
+                        <>
+                            <Loader2 className="animate-spin" size={20} />
+                            Enviando...
+                        </>
+                    ) : (
+                        'Enviar Datos'
+                    )}
+                </button>
+
+                <p className="text-sm text-center text-brand-secondary/50 mt-6 font-sans">
+                    Tus datos serán tratados con total confidencialidad.
+                </p>
+            </form>
+        </div>
+    );
+
+    if (isCompact) {
+        return formContent;
+    }
+
     return (
         <section className="py-20 bg-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,127 +244,7 @@ export const ContactForm: React.FC = () => {
                 </div>
 
                 {/* Formulario */}
-                <div className="bg-stone-50 rounded-2xl p-8 lg:p-12 shadow-xl border border-stone-100">
-                    {/* Status Messages */}
-                    {submitStatus === 'success' && (
-                        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start gap-3">
-                            <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
-                            <p className="text-green-800 font-sans text-sm">{statusMessage}</p>
-                        </div>
-                    )}
-
-                    {submitStatus === 'error' && (
-                        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
-                            <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
-                            <p className="text-red-800 font-sans text-sm">{statusMessage}</p>
-                        </div>
-                    )}
-
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Nombre</label>
-                                <input
-                                    type="text"
-                                    name="nombre"
-                                    value={formData.nombre}
-                                    onChange={handleInputChange}
-                                    disabled={isSubmitting}
-                                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
-                                    placeholder="Tu nombre"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Apellido</label>
-                                <input
-                                    type="text"
-                                    name="apellido"
-                                    value={formData.apellido}
-                                    onChange={handleInputChange}
-                                    disabled={isSubmitting}
-                                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
-                                    placeholder="Tu apellido"
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Email</label>
-                            <input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleInputChange}
-                                disabled={isSubmitting}
-                                className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
-                                placeholder="tucorreo@ejemplo.com"
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Teléfono</label>
-                            <div className="flex gap-3">
-                                {/* Country Code Selector */}
-                                <select
-                                    value={countryCode}
-                                    onChange={handleCountryCodeChange}
-                                    disabled={isSubmitting}
-                                    className="px-4 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed bg-white"
-                                    style={{ minWidth: '140px' }}
-                                >
-                                    {countryCodes.map((country) => (
-                                        <option key={country.code} value={country.code}>
-                                            {country.flag} {country.code}
-                                        </option>
-                                    ))}
-                                </select>
-
-                                {/* Phone Number Input */}
-                                <input
-                                    type="tel"
-                                    name="telefono"
-                                    value={formData.telefono}
-                                    onChange={handleInputChange}
-                                    disabled={isSubmitting}
-                                    className="flex-1 px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
-                                    placeholder="600 000 000"
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Mensaje (Opcional)</label>
-                            <textarea
-                                rows={4}
-                                name="mensaje"
-                                value={formData.mensaje}
-                                onChange={handleInputChange}
-                                disabled={isSubmitting}
-                                className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all resize-none font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
-                                placeholder="Cuéntanos brevemente sobre tu caso..."
-                            ></textarea>
-                        </div>
-
-                        <button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className="w-full bg-brand-primary text-white font-bold py-5 rounded-xl hover:bg-brand-secondary transition-colors shadow-lg hover:shadow-xl tracking-wide uppercase text-base font-sans disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                        >
-                            {isSubmitting ? (
-                                <>
-                                    <Loader2 className="animate-spin" size={20} />
-                                    Enviando...
-                                </>
-                            ) : (
-                                'Enviar Datos'
-                            )}
-                        </button>
-
-                        <p className="text-sm text-center text-brand-secondary/50 mt-6 font-sans">
-                            Tus datos serán tratados con total confidencialidad.
-                        </p>
-                    </form>
-                </div>
+                {formContent}
             </div>
         </section>
     );

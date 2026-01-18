@@ -1,17 +1,12 @@
 import React from 'react';
 import { Users, MonitorSmartphone, Heart, Scale, MapPin, Clock, ShieldCheck } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Contact } from './Contact';
+import { CTA } from './CTA';
 
 export const AboutPage: React.FC = () => {
   return (
     <div className="pt-24 min-h-screen bg-white animate-fade-in">
       {/* Hero Section */}
-      {/* Hero Section */}
       <section className="bg-brand-darker text-white py-16 relative overflow-hidden">
-        {/* Background Blobs */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary rounded-full blur-[100px] opacity-20"></div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <span className="text-white font-bold tracking-wider uppercase text-base mb-4 block font-sans">SOBRE NOSOTROS</span>
@@ -38,14 +33,14 @@ export const AboutPage: React.FC = () => {
                   alt="Abogadas trabajando"
                   className="w-full h-auto object-cover"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-darker/90 to-transparent p-6 text-white">
+                <div className="absolute bottom-0 left-0 right-0 bg-brand-darker/70 p-6 text-white text-center">
                   <p className="font-bold text-lg font-serif">Colegiadas en ICAB</p>
                   <p className="text-sm opacity-90 font-sans">Ilustre Colegio de la Abogacía de Barcelona</p>
                 </div>
               </div>
             </div>
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light text-brand-secondary text-sm font-medium border border-red-100 font-sans">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-transparent text-brand-secondary text-sm font-medium border border-red-100 font-sans">
                 <Users size={16} />
                 <span>Equipo Profesional</span>
               </div>
@@ -59,11 +54,11 @@ export const AboutPage: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="flex items-center gap-3">
-                  <div className="bg-brand-light p-2 rounded-full text-brand-primary"><Scale size={20} /></div>
+                  <div className="bg-transparent p-2 rounded-full text-brand-primary"><Scale size={20} /></div>
                   <span className="font-medium text-brand-secondary font-serif">Rigor Jurídico</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="bg-brand-light p-2 rounded-full text-brand-primary"><Heart size={20} /></div>
+                  <div className="bg-transparent p-2 rounded-full text-brand-primary"><Heart size={20} /></div>
                   <span className="font-medium text-brand-secondary font-serif">Trato Humano</span>
                 </div>
               </div>
@@ -72,21 +67,9 @@ export const AboutPage: React.FC = () => {
 
           {/* The "Model" - Highlighting Flexibility */}
           <div className="bg-brand-darker rounded-3xl p-8 md:p-16 text-white relative overflow-hidden mb-24">
-            {/* Abstract techy background */}
-            <div className="absolute top-0 right-0 w-full h-full opacity-10">
-              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#grid)" />
-              </svg>
-            </div>
-
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary text-white text-sm font-medium font-sans">
+                <div className="inline-flex items-center justify-center p-2 bg-transparent rounded-full mb-4 text-brand-primary text-white text-sm font-medium font-sans">
                   <MonitorSmartphone size={16} />
                   <span>Modelo Flexible</span>
                 </div>
@@ -135,21 +118,21 @@ export const AboutPage: React.FC = () => {
             <h2 className="text-3xl font-serif font-bold text-brand-darker mb-12">Nuestros Valores</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-stone-50 p-8 rounded-xl border border-stone-100 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-primary mx-auto mb-4 shadow-sm border border-stone-100">
+                <div className="w-12 h-12 bg-transparent rounded-full flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
                   <ShieldCheck size={24} />
                 </div>
                 <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Transparencia</h3>
                 <p className="text-brand-secondary font-sans">Comunicación clara desde el primer momento. Sin sorpresas, con honestidad sobre la viabilidad de tu caso.</p>
               </div>
               <div className="bg-stone-50 p-8 rounded-xl border border-stone-100 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-primary mx-auto mb-4 shadow-sm border border-stone-100">
+                <div className="w-12 h-12 bg-transparent rounded-full flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
                   <Clock size={24} />
                 </div>
                 <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Dedicación</h3>
                 <p className="text-brand-secondary font-sans">Cada cliente es único. Trabajamos para que te sientas valorado, comprendido y acompañado en cada paso.</p>
               </div>
               <div className="bg-stone-50 p-8 rounded-xl border border-stone-100 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-primary mx-auto mb-4 shadow-sm border border-stone-100">
+                <div className="w-12 h-12 bg-transparent rounded-full flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
                   <Heart size={24} />
                 </div>
                 <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Cercanía</h3>
@@ -161,10 +144,7 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Section Reuse */}
-      <div className="bg-stone-50 border-t border-stone-200">
-        <Contact />
-      </div>
+      <CTA />
     </div>
   );
 };

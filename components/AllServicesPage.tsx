@@ -2,8 +2,7 @@
 import React from 'react';
 import { ShieldCheck, FileCheck, ArrowRight, CheckCircle2, FileText, Stamp, Landmark } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Contact } from './Contact';
-
+import { CTA } from './CTA';
 
 export const AllServicesPage: React.FC = () => {
   const immigrationServices = [
@@ -36,24 +35,46 @@ export const AllServicesPage: React.FC = () => {
 
   return (
     <div className="pt-24 min-h-screen bg-white animate-fade-in">
-      {/* Header */}
-      <div className="bg-brand-darker text-white py-16 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary rounded-full blur-[100px] opacity-20"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <span className="text-white font-bold tracking-wider uppercase text-base mb-4 block font-sans">NUESTROS SERVICIOS</span>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Catálogo de Servicios</h1>
-          <p className="text-xl text-stone-300 max-w-2xl font-sans">
-            Descubre en detalle cómo podemos ayudarte. Desde trámites complejos de extranjería hasta la gestión del día a día.
-          </p>
+      {/* Mantenemos el nuevo Header Split */}
+      <section className="relative flex flex-col lg:flex-row bg-white border-b border-stone-100">
+        <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-[#f9f7f2]">
+          <div className="max-w-xl">
+            <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
+              — Catálogo Oficial —
+            </span>
+            <h1 className="text-5xl lg:text-7xl font-serif font-bold text-brand-darker mb-8 leading-[1.1]">
+              Excelencia en <br />
+              Derecho <br />
+              Migratorio.
+            </h1>
+            <p className="text-xl text-stone-600 mb-10 font-sans leading-relaxed">
+              Descubre cómo CM Abogadas eleva la gestión de tu residencia en España a través de un servicio de élite, transparente y comprometido con tu éxito.
+            </p>
+            <div className="flex items-center gap-6">
+              <a href="#catalogue" className="group flex items-center gap-2 text-brand-primary font-bold tracking-widest text-xs uppercase border-b-2 border-brand-primary pb-1 transition-all hover:gap-4">
+                Ver Servicios <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+            alt="Oficina moderna y minimalista"
+            className="absolute inset-0 w-full h-full object-cover transform scale-105"
+          />
+          <div className="absolute inset-0 bg-brand-darker/5"></div>
+        </div>
+      </section>
 
-        {/* Section 1: Extranjería */}
+      {/* Restauramos el resto de la página a la estructura anterior */}
+      <div id="catalogue" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        {/* Section 1: Extranjería (Versión Anterior) */}
         <div className="mb-20">
           <div className="flex items-center gap-4 mb-10 border-b border-stone-100 pb-4">
-            <div className="bg-brand-light p-3 rounded-full text-brand-primary">
+            <div className="bg-transparent p-3 rounded-full text-brand-primary">
               <ShieldCheck size={32} />
             </div>
             <div>
@@ -77,10 +98,10 @@ export const AllServicesPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Section 2: Otros Servicios */}
+        {/* Section 2: Otros Servicios (Versión Anterior) */}
         <div>
           <div className="flex items-center gap-4 mb-10 border-b border-stone-100 pb-4">
-            <div className="bg-brand-secondary/10 p-3 rounded-full text-brand-secondary">
+            <div className="bg-transparent p-3 rounded-full text-brand-secondary">
               <FileText size={32} />
             </div>
             <div>
@@ -105,10 +126,7 @@ export const AllServicesPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Reuse Contact Section */}
-      <div className="bg-stone-50 border-t border-stone-200">
-        <Contact />
-      </div>
+      <CTA />
     </div>
   );
 };

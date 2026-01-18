@@ -2,24 +2,22 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useModal } from '../context/ModalContext';
 
 export const Hero: React.FC = () => {
+  const { openModal } = useModal();
   return (
     <section id="hero" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-red-100 rounded-full blur-3xl opacity-40 z-0"></div>
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-stone-200 rounded-full blur-3xl opacity-40 z-0"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-light border border-red-100 text-brand-primary text-base font-medium">
-
+            <div className="flex items-center gap-4 text-brand-primary font-bold tracking-[0.2em] uppercase text-sm border-l-4 border-brand-primary pl-4 mb-2">
               Especialistas en Derecho Migratorio
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-extrabold text-brand-darker leading-tight font-serif">
-              Tu residencia en España, con <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">rigor y cercanía</span>.
+              Tu residencia en España, con <span className="text-brand-primary">rigor y cercanía</span>.
             </h1>
 
             <p className="text-xl text-brand-secondary max-w-xl leading-relaxed">
@@ -27,10 +25,13 @@ export const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5">
-              <Link to="/contact" className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-lg hover:shadow-brand-primary/20">
+              <button
+                onClick={openModal}
+                className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-lg hover:shadow-brand-primary/20"
+              >
                 Agendar Cita
                 <ArrowRight className="ml-2 w-6 h-6" />
-              </Link>
+              </button>
               <Link
                 to="/services"
                 className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-xl text-brand-primary bg-white border border-red-100 hover:bg-brand-light transition-all"
@@ -52,7 +53,7 @@ export const Hero: React.FC = () => {
           </div>
 
           <div className="relative lg:h-[700px] rounded-sm overflow-hidden shadow-2xl group border-8 border-white">
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-secondary/40 to-transparent z-10"></div>
+            <div className="absolute inset-0 bg-brand-darker/20 z-10"></div>
             {/* 
                 Imagen actualizada para reflejar "CM Abogadas":
                 Dos mujeres profesionales en un entorno moderno y colaborativo.

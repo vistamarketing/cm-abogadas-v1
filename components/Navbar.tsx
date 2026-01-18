@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useModal } from '../context/ModalContext';
 
 export const Navbar: React.FC = () => {
+  const { openModal } = useModal();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -78,12 +80,12 @@ export const Navbar: React.FC = () => {
                 </Link>
               )
             ))}
-            <Link
-              to="/contact"
-              className="bg-brand-primary text-white px-8 py-3 rounded-sm font-medium hover:bg-brand-secondary transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 tracking-wide text-base"
+            <button
+              onClick={openModal}
+              className="bg-brand-primary text-white px-8 py-3 rounded-sm font-bold hover:bg-brand-secondary transition-all shadow-md hover:shadow-lg tracking-[0.2em] text-xs uppercase"
             >
               AGENDAR CITA
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -122,13 +124,15 @@ export const Navbar: React.FC = () => {
                 </Link>
               )
             ))}
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className="block w-full text-center mt-6 bg-brand-primary text-white px-5 py-4 rounded-sm font-bold uppercase tracking-wide text-lg"
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                openModal();
+              }}
+              className="block w-full text-center mt-6 bg-brand-primary text-white px-5 py-4 rounded-sm font-bold uppercase tracking-[0.2em] text-sm"
             >
               Agendar Cita
-            </Link>
+            </button>
           </div>
         </div>
       )}
