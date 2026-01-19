@@ -74,7 +74,8 @@ export const ContactPage: React.FC = () => {
         </div>
       </div>
 
-
+      {/* Contact Form Section */}
+      <ContactForm />
     </div>
   );
 };

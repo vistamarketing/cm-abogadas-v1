@@ -66,7 +66,7 @@ export const AllServicesPage: React.FC = () => {
 
         {/* Section 1: Extranjería (Versión Anterior) */}
         <div className="mb-20">
-          <div className="flex items-center gap-4 mb-10 border-b border-stone-100 pb-4">
+          <div className="flex flex-col md:flex-row items-center gap-4 mb-10 border-b border-stone-100 pb-4 text-center md:text-left">
             <div className="bg-transparent p-3 rounded-sm text-brand-primary">
               <ShieldCheck size={32} />
             </div>
@@ -93,7 +93,7 @@ export const AllServicesPage: React.FC = () => {
 
         {/* Section 2: Otros Servicios (Versión Anterior) */}
         <div>
-          <div className="flex items-center gap-4 mb-10 border-b border-stone-100 pb-4">
+          <div className="flex flex-col md:flex-row items-center gap-4 mb-10 border-b border-stone-100 pb-4 text-center md:text-left">
             <div className="bg-transparent p-3 rounded-sm text-brand-secondary">
               <FileText size={32} />
             </div>

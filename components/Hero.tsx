@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-extrabold text-brand-darker leading-tight font-serif">
-              Abogados especialistas en derecho migratorio
+              Abogadas especialistas en derecho migratorio
             </h1>
 
             <p className="text-xl text-brand-secondary max-w-xl leading-relaxed mx-auto lg:mx-0">
