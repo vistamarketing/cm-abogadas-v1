@@ -40,15 +40,15 @@ export const AllServicesPage: React.FC = () => {
         <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-[#f9f7f2]">
           <div className="max-w-xl">
             <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
-              — Catálogo Oficial —
+              — Áreas de Práctica —
             </span>
-            <h1 className="text-5xl lg:text-7xl font-serif font-bold text-brand-darker mb-8 leading-[1.1]">
-              Excelencia en <br />
-              Derecho <br />
-              Migratorio.
+            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-brand-darker mb-8 leading-[1.1]">
+              Seguridad jurídica <br />
+              para tu vida <br />
+              en España.
             </h1>
             <p className="text-xl text-stone-600 mb-10 font-sans leading-relaxed">
-              Descubre cómo CM Abogadas eleva la gestión de tu residencia en España a través de un servicio de élite, transparente y comprometido con tu éxito.
+              Dominamos la normativa de extranjería para ofrecerte soluciones ágiles y eficaces. Eliminamos la incertidumbre de tus trámites legales.
             </p>
             <div className="flex items-center gap-6">
               <a href="#catalogue" className="group flex items-center gap-2 text-brand-primary font-bold tracking-widest text-xs uppercase border-b-2 border-brand-primary pb-1 transition-all hover:gap-4">
@@ -60,8 +60,8 @@ export const AllServicesPage: React.FC = () => {
 
         <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-            alt="Oficina moderna y minimalista"
+            src="/images/services-hero.jpg"
+            alt="Abogada trabajando en despacho"
             className="absolute inset-0 w-full h-full object-cover transform scale-105"
           />
           <div className="absolute inset-0 bg-brand-darker/5"></div>

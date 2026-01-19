@@ -6,15 +6,31 @@ export const ContactPage: React.FC = () => {
   return (
     <div className="pt-24 min-h-screen bg-stone-50 animate-fade-in">
       {/* Header Section */}
-      <div className="bg-brand-darker text-white py-16 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <span className="text-white font-bold tracking-wider uppercase text-base mb-4 block font-sans">ESTAMOS AQUÍ PARA TI</span>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Contacto</h1>
-          <p className="text-xl text-stone-300 max-w-2xl font-sans">
-            ¿Tienes dudas sobre tu proceso migratorio? Escríbenos y gestionaremos tu caso estés donde estés.
-          </p>
+      {/* Header Section Split Layout */}
+      <section className="relative flex flex-col lg:flex-row bg-white border-b border-stone-100">
+        <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-[#f9f7f2]">
+          <div className="max-w-xl">
+            <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
+              — ESTAMOS AQUÍ PARA TI —
+            </span>
+            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-brand-darker mb-8 leading-[1.1]">
+              Contacto
+            </h1>
+            <p className="text-xl text-stone-600 mb-10 font-sans leading-relaxed">
+              ¿Tienes dudas sobre tu proceso migratorio? Escríbenos y gestionaremos tu caso estés donde estés.
+            </p>
+          </div>
         </div>
-      </div>
+
+        <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1596524430615-b46476dd9f56?q=80&w=2070&auto=format&fit=crop"
+            alt="Oficina de contacto"
+            className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-brand-darker/5"></div>
+        </div>
+      </section>
 
       {/* Detailed Contact Info Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-12">
