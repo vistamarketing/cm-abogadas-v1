@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Instagram, Clock } from 'lucide-react';
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="bg-brand-darker text-white">
+        <footer className="bg-[#1B0A09] text-white">
             {/* Main Footer Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
                                 href="https://www.instagram.com/cmabogadas.esp/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-brand-primary hover:bg-brand-accent p-3 rounded-lg transition-colors"
+                                className="bg-transparent border border-white hover:bg-white/10 p-3 rounded-sm transition-colors"
                                 aria-label="Instagram"
                             >
                                 <Instagram size={24} />
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
                                 href="https://wa.me/34930000000"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-[#25D366] hover:bg-[#20BA5A] p-3 rounded-lg transition-colors flex items-center justify-center"
+                                className="bg-transparent border border-white hover:bg-white/10 p-3 rounded-sm transition-colors flex items-center justify-center"
                                 aria-label="WhatsApp"
                             >
                                 <img

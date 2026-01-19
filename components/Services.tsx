@@ -49,7 +49,7 @@ export const Services: React.FC = () => {
     <section id="services" className="py-28 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <span className="text-brand-primary font-bold tracking-wider uppercase text-base font-sans">Nuestros Servicios</span>
+          <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">— NUESTROS SERVICIOS —</span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-brand-darker font-serif">
             Soluciones legales integrales
           </h2>
@@ -75,7 +75,7 @@ export const Services: React.FC = () => {
         <div className="text-center">
           <Link
             to="/services"
-            className="inline-flex items-center gap-3 bg-transparent border-2 border-brand-primary text-brand-primary px-10 py-4 rounded-full font-bold hover:bg-brand-primary hover:text-white transition-colors uppercase text-base tracking-wide font-sans"
+            className="inline-flex items-center gap-3 bg-transparent border-2 border-brand-primary text-brand-primary px-10 py-4 rounded-sm font-bold hover:bg-brand-primary hover:text-white transition-colors uppercase text-base tracking-wide font-sans"
           >
             Ver desglose completo de servicios
             <ArrowRight size={22} />

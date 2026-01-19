@@ -28,8 +28,8 @@ export const HowWeWork: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-transparent border border-brand-primary/20 text-brand-primary text-base font-medium mb-6 font-sans tracking-widest uppercase text-xs">
-                        Nuestro Proceso
+                    <div className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
+                        — NUESTRO PROCESO —
                     </div>
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-darker mb-6">
                         ¿Cómo Trabajamos?

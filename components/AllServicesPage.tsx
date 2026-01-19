@@ -43,18 +43,11 @@ export const AllServicesPage: React.FC = () => {
               — Áreas de Práctica —
             </span>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-brand-darker mb-8 leading-[1.1]">
-              Seguridad jurídica <br />
-              para tu vida <br />
-              en España.
+              Nuestros Servicios
             </h1>
             <p className="text-xl text-stone-600 mb-10 font-sans leading-relaxed">
-              Dominamos la normativa de extranjería para ofrecerte soluciones ágiles y eficaces. Eliminamos la incertidumbre de tus trámites legales.
+              Te acompañamos en tus trámites de extranjería y gestiones administrativas con soluciones ágiles y eficaces.
             </p>
-            <div className="flex items-center gap-6">
-              <a href="#catalogue" className="group flex items-center gap-2 text-brand-primary font-bold tracking-widest text-xs uppercase border-b-2 border-brand-primary pb-1 transition-all hover:gap-4">
-                Ver Servicios <ArrowRight size={16} />
-              </a>
-            </div>
           </div>
         </div>
 
@@ -74,7 +67,7 @@ export const AllServicesPage: React.FC = () => {
         {/* Section 1: Extranjería (Versión Anterior) */}
         <div className="mb-20">
           <div className="flex items-center gap-4 mb-10 border-b border-stone-100 pb-4">
-            <div className="bg-transparent p-3 rounded-full text-brand-primary">
+            <div className="bg-transparent p-3 rounded-sm text-brand-primary">
               <ShieldCheck size={32} />
             </div>
             <div>
@@ -85,7 +78,7 @@ export const AllServicesPage: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {immigrationServices.map((item, idx) => (
-              <div key={idx} className="bg-white border border-stone-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-all border-l-4 border-l-brand-primary/20 hover:border-l-brand-primary">
+              <div key={idx} className="bg-white border border-stone-100 rounded-sm p-6 shadow-sm hover:shadow-md transition-all border-l-4 border-l-brand-primary/20 hover:border-l-brand-primary">
                 <h3 className="font-bold text-lg text-brand-secondary mb-3 flex items-start justify-between font-serif">
                   {item.title}
                   <CheckCircle2 className="w-5 h-5 text-brand-primary flex-shrink-0 mt-1" />
@@ -101,7 +94,7 @@ export const AllServicesPage: React.FC = () => {
         {/* Section 2: Otros Servicios (Versión Anterior) */}
         <div>
           <div className="flex items-center gap-4 mb-10 border-b border-stone-100 pb-4">
-            <div className="bg-transparent p-3 rounded-full text-brand-secondary">
+            <div className="bg-transparent p-3 rounded-sm text-brand-secondary">
               <FileText size={32} />
             </div>
             <div>
@@ -112,7 +105,7 @@ export const AllServicesPage: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {administrativeServices.map((item, idx) => (
-              <div key={idx} className="bg-stone-50 rounded-xl p-6 hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-stone-200">
+              <div key={idx} className="bg-stone-50 rounded-sm p-6 hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-stone-200">
                 <div className="mb-4 text-brand-secondary/40">
                   {idx % 2 === 0 ? <Stamp size={24} /> : <Landmark size={24} />}
                 </div>

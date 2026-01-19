@@ -17,17 +17,26 @@ export const ContactModal: React.FC = () => {
             ></div>
 
             {/* Modal Content */}
-            <div className="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl animate-in zoom-in-95 duration-200">
+            <div className="relative bg-white w-full max-w-2xl max-h-[95vh] overflow-y-auto rounded-sm shadow-2xl animate-in zoom-in-95 duration-200 overflow-hidden">
                 <button
                     onClick={closeModal}
-                    className="absolute top-4 right-4 p-2 text-brand-secondary hover:text-brand-primary transition-colors z-10 bg-white/80 backdrop-blur-sm rounded-full"
+                    className="absolute top-4 right-4 p-2 text-brand-secondary hover:text-brand-primary transition-colors z-20 bg-white/80 backdrop-blur-sm rounded-full"
                     aria-label="Cerrar modal"
                 >
-                    <X size={28} />
+                    <X size={24} />
                 </button>
 
-                <div className="p-1">
-                    <ContactForm />
+                <div className="p-8 sm:p-10">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-darker mb-3">
+                            Comienza tu proceso hoy
+                        </h2>
+                        <p className="text-brand-secondary font-sans text-sm md:text-base">
+                            Déjanos tus datos y nos pondremos en contacto contigo.
+                        </p>
+                    </div>
+
+                    <ContactForm variant="modal" />
                 </div>
             </div>
         </div>

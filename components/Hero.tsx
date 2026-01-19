@@ -1,23 +1,37 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
 
+const heroImages = [
+  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
+  "/images/hero-slide-2.jpg"
+];
+
 export const Hero: React.FC = () => {
   const { openModal } = useModal();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="hero" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-10">
-            <div className="flex items-center gap-4 text-brand-primary font-bold tracking-[0.2em] uppercase text-sm border-l-4 border-brand-primary pl-4 mb-2">
-              Especialistas en Derecho Migratorio
+            <div className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
+              — MIGRAR CON PLAN, MIGRAR MEJOR —
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-extrabold text-brand-darker leading-tight font-serif">
-              Tu residencia en España, con <span className="text-brand-primary">rigor y cercanía</span>.
+              Abogados especialistas en derecho migratorio
             </h1>
 
             <p className="text-xl text-brand-secondary max-w-xl leading-relaxed">
@@ -27,14 +41,14 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-5">
               <button
                 onClick={openModal}
-                className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-lg hover:shadow-brand-primary/20"
+                className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-sm text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-lg hover:shadow-brand-primary/20"
               >
                 Agendar Cita
                 <ArrowRight className="ml-2 w-6 h-6" />
               </button>
               <Link
                 to="/services"
-                className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-xl text-brand-primary bg-white border border-red-100 hover:bg-brand-light transition-all"
+                className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-sm text-brand-primary bg-white border border-red-100 hover:bg-brand-light transition-all"
               >
                 Ver Servicios
               </Link>
@@ -54,17 +68,19 @@ export const Hero: React.FC = () => {
 
           <div className="relative lg:h-[700px] rounded-sm overflow-hidden shadow-2xl group border-8 border-white">
             <div className="absolute inset-0 bg-brand-darker/20 z-10"></div>
-            {/* 
-                Imagen actualizada para reflejar "CM Abogadas":
-                Dos mujeres profesionales en un entorno moderno y colaborativo.
-             */}
-            <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
-              alt="Equipo de CM Abogadas - Asesoramiento profesional y cercano"
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
-            />
+
+            {heroImages.map((src, index) => (
+              <img
+                key={src}
+                src={src}
+                alt={`CM Abogadas - Imagen ${index + 1}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out transform group-hover:scale-105 transition-transform duration-[2000ms] ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
+              />
+            ))}
+
             <div className="absolute bottom-10 left-10 z-20 text-white max-w-xs">
-              <div className="bg-brand-primary/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+              <div className="bg-brand-primary/90 backdrop-blur-sm p-4 rounded-sm shadow-lg">
                 <p className="text-red-50 font-serif text-lg italic">"Defendemos tus derechos, construimos tu futuro."</p>
               </div>
             </div>

@@ -61,7 +61,7 @@ export const FAQ: React.FC = () => {
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-2 bg-transparent rounded-full mb-4 text-brand-primary">
+          <div className="inline-flex items-center justify-center p-2 bg-transparent rounded-sm mb-4 text-brand-primary">
             <HelpCircle size={24} />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 font-serif">
@@ -76,7 +76,7 @@ export const FAQ: React.FC = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`border rounded-lg transition-all duration-300 ${openIndex === index ? 'border-brand-primary bg-brand-light/30 shadow-sm' : 'border-gray-200 hover:border-brand-primary/50'}`}
+              className={`border rounded-sm transition-all duration-300 ${openIndex === index ? 'border-brand-primary bg-brand-light/30 shadow-sm' : 'border-gray-200 hover:border-brand-primary/50'}`}
             >
               <button
                 onClick={() => toggleAccordion(index)}
@@ -85,7 +85,7 @@ export const FAQ: React.FC = () => {
                 <span className={`font-bold text-lg font-serif ${openIndex === index ? 'text-brand-primary' : 'text-slate-800'}`}>
                   {faq.question}
                 </span>
-                <div className={`flex-shrink-0 ml-4 p-1 rounded-full ${openIndex === index ? 'bg-brand-primary text-white' : 'bg-gray-100 text-slate-500'}`}>
+                <div className={`flex-shrink-0 ml-4 p-1 rounded-sm ${openIndex === index ? 'bg-brand-primary text-white' : 'bg-gray-100 text-slate-500'}`}>
                   {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
                 </div>
               </button>

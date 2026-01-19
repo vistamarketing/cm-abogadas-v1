@@ -14,8 +14,7 @@ export const AboutPage: React.FC = () => {
               — SOBRE NOSOTROS —
             </span>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-brand-darker mb-8 leading-[1.1]">
-              Rigor jurídico <br />
-              y trato humano.
+              ¿Quienes somos?
             </h1>
             <p className="text-xl text-stone-600 mb-10 font-sans leading-relaxed">
               En CM Abogadas somos un despacho joven, cercano y comprometido, fundado en abril de 2024. Hemos experimentado un crecimiento constante gracias a la confianza de quienes nos eligen.
@@ -25,7 +24,7 @@ export const AboutPage: React.FC = () => {
 
         <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"
+            src="/images/about-hero.jpg"
             alt="Abogadas trabajando"
             className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
           />
@@ -40,7 +39,7 @@ export const AboutPage: React.FC = () => {
           {/* Team & Expertise */}
           <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
             <div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform md:rotate-2 hover:rotate-0 transition-all duration-500">
+              <div className="relative rounded-sm overflow-hidden shadow-2xl border-4 border-white transform md:rotate-2 hover:rotate-0 transition-all duration-500">
                 <img
                   src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"
                   alt="Abogadas trabajando"
@@ -53,9 +52,8 @@ export const AboutPage: React.FC = () => {
               </div>
             </div>
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-transparent text-brand-secondary text-sm font-medium border border-red-100 font-sans">
-                <Users size={16} />
-                <span>Equipo Profesional</span>
+              <div className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block leading-none">
+                — EQUIPO PROFESIONAL —
               </div>
               <h2 className="text-3xl font-bold font-serif text-brand-darker">Expertas en defender tus derechos</h2>
               <p className="text-brand-secondary text-lg leading-relaxed font-sans">
@@ -67,11 +65,11 @@ export const AboutPage: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="flex items-center gap-3">
-                  <div className="bg-transparent p-2 rounded-full text-brand-primary"><Scale size={20} /></div>
+                  <div className="bg-transparent p-2 rounded-sm text-brand-primary"><Scale size={20} /></div>
                   <span className="font-medium text-brand-secondary font-serif">Rigor Jurídico</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="bg-transparent p-2 rounded-full text-brand-primary"><Heart size={20} /></div>
+                  <div className="bg-transparent p-2 rounded-sm text-brand-primary"><Heart size={20} /></div>
                   <span className="font-medium text-brand-secondary font-serif">Trato Humano</span>
                 </div>
               </div>
@@ -79,32 +77,31 @@ export const AboutPage: React.FC = () => {
           </div>
 
           {/* The "Model" - Highlighting Flexibility */}
-          <div className="bg-brand-darker rounded-3xl p-8 md:p-16 text-white relative overflow-hidden mb-24">
+          <div className="bg-[#1B0A09] rounded-sm p-8 md:p-16 text-white relative overflow-hidden mb-24">
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <div className="inline-flex items-center justify-center p-2 bg-transparent rounded-full mb-4 text-brand-primary text-white text-sm font-medium font-sans">
-                  <MonitorSmartphone size={16} />
-                  <span>Modelo Flexible</span>
+                <div className="text-white font-bold tracking-[0.3em] uppercase text-xs mb-6 block leading-none">
+                  — MODELO FLEXIBLE —
                 </div>
                 <h2 className="text-3xl md:text-4xl font-serif font-bold">
                   Un despacho moderno, sin barreras físicas.
                 </h2>
-                <p className="text-gray-300 text-lg leading-relaxed font-sans">
+                <p className="text-white/90 text-lg leading-relaxed font-sans">
                   CM ABOGADAS tiene su sede en Barcelona, pero hemos elegido un modelo de trabajo flexible que nos permite ofrecer servicios en toda España y el extranjero.
                 </p>
-                <p className="text-gray-300 text-lg leading-relaxed font-sans">
+                <p className="text-white/90 text-lg leading-relaxed font-sans">
                   Al no depender de un despacho físico permanente, nos adaptamos a tus horarios y necesidades de manera ágil. Ofrecemos <strong>atención personalizada directa</strong> sin limitaciones de ubicación.
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+              <div className="bg-white/5 backdrop-blur-sm rounded-sm p-8 border border-white/10">
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-white font-serif">
                   <MapPin className="text-white" />
                   ¿Cómo nos reunimos?
                 </h3>
                 <ul className="space-y-6">
                   <li className="flex gap-4">
-                    <div className="bg-white/10 p-3 rounded-lg h-fit text-white border border-white/20">
+                    <div className="bg-white/10 p-3 rounded-sm h-fit text-white border border-white/20">
                       <MonitorSmartphone size={24} />
                     </div>
                     <div>
@@ -113,7 +110,7 @@ export const AboutPage: React.FC = () => {
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <div className="bg-white/10 p-3 rounded-lg h-fit text-white border border-white/20">
+                    <div className="bg-white/10 p-3 rounded-sm h-fit text-white border border-white/20">
                       <Users size={24} />
                     </div>
                     <div>
@@ -130,22 +127,22 @@ export const AboutPage: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-serif font-bold text-brand-darker mb-12">Nuestros Valores</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-stone-50 p-8 rounded-xl border border-stone-100 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-transparent rounded-full flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
+              <div className="bg-stone-50 p-8 rounded-sm border border-stone-100 hover:shadow-lg transition-all">
+                <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
                   <ShieldCheck size={24} />
                 </div>
                 <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Transparencia</h3>
                 <p className="text-brand-secondary font-sans">Comunicación clara desde el primer momento. Sin sorpresas, con honestidad sobre la viabilidad de tu caso.</p>
               </div>
-              <div className="bg-stone-50 p-8 rounded-xl border border-stone-100 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-transparent rounded-full flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
+              <div className="bg-stone-50 p-8 rounded-sm border border-stone-100 hover:shadow-lg transition-all">
+                <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
                   <Clock size={24} />
                 </div>
                 <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Dedicación</h3>
                 <p className="text-brand-secondary font-sans">Cada cliente es único. Trabajamos para que te sientas valorado, comprendido y acompañado en cada paso.</p>
               </div>
-              <div className="bg-stone-50 p-8 rounded-xl border border-stone-100 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-transparent rounded-full flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
+              <div className="bg-stone-50 p-8 rounded-sm border border-stone-100 hover:shadow-lg transition-all">
+                <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
                   <Heart size={24} />
                 </div>
                 <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Cercanía</h3>

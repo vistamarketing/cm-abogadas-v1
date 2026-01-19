@@ -24,7 +24,38 @@ const countryCodes = [
     { code: '+351', country: 'Portugal', flag: '🇵🇹' },
 ];
 
-export const ContactForm: React.FC<{ isCompact?: boolean }> = ({ isCompact = false }) => {
+export type ContactFormVariant = 'default' | 'compact' | 'modal';
+
+interface ContactFormProps {
+    isCompact?: boolean; // Deprecated, keep for backward compat for a moment or remove if we update all calls
+    variant?: ContactFormVariant;
+}
+
+export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = 'default' }) => {
+    // Determine effective variant
+    const effectiveVariant = variant !== 'default' ? variant : (isCompact ? 'compact' : 'default');
+
+    // Styles based on variant
+    const containerClasses = {
+        default: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8",
+        compact: "bg-stone-50 rounded-sm p-8 lg:p-12 shadow-xl border border-stone-100",
+        modal: "px-1 py-2", // Minimal padding for modal, let the modal container handle edges
+    };
+
+    const inputClasses = effectiveVariant === 'modal'
+        ? "w-full px-4 py-3 rounded-sm border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-base disabled:bg-gray-100 disabled:cursor-not-allowed" // Smaller for modal
+        : "w-full px-5 py-4 rounded-sm border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed";
+
+    const labelClasses = effectiveVariant === 'modal'
+        ? "block text-sm font-bold text-brand-darker mb-1.5 font-sans" // Compact label
+        : "block text-base font-medium text-brand-secondary mb-3 font-sans";
+
+    const spaceClasses = effectiveVariant === 'modal' ? "space-y-4" : "space-y-6";
+
+    const buttonClasses = effectiveVariant === 'modal'
+        ? "w-full bg-brand-primary text-white font-bold py-4 rounded-sm hover:bg-brand-secondary transition-colors shadow-lg hover:shadow-xl tracking-wide uppercase text-sm font-sans disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        : "w-full bg-brand-primary text-white font-bold py-5 rounded-sm hover:bg-brand-secondary transition-colors shadow-lg hover:shadow-xl tracking-wide uppercase text-base font-sans disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2";
+
     const [formData, setFormData] = useState<FormData>({
         nombre: '',
         apellido: '',
@@ -103,73 +134,73 @@ export const ContactForm: React.FC<{ isCompact?: boolean }> = ({ isCompact = fal
     };
 
     const formContent = (
-        <div className="bg-stone-50 rounded-2xl p-8 lg:p-12 shadow-xl border border-stone-100">
+        <div className={effectiveVariant === 'compact' ? containerClasses.compact : containerClasses.modal}>
             {/* Status Messages */}
             {submitStatus === 'success' && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start gap-3">
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-sm flex items-start gap-3">
                     <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
                     <p className="text-green-800 font-sans text-sm">{statusMessage}</p>
                 </div>
             )}
 
             {submitStatus === 'error' && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-sm flex items-start gap-3">
                     <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
                     <p className="text-red-800 font-sans text-sm">{statusMessage}</p>
                 </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className={spaceClasses}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Nombre</label>
+                        <label className={labelClasses}>Nombre</label>
                         <input
                             type="text"
                             name="nombre"
                             value={formData.nombre}
                             onChange={handleInputChange}
                             disabled={isSubmitting}
-                            className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                            className={inputClasses}
                             placeholder="Tu nombre"
                         />
                     </div>
                     <div>
-                        <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Apellido</label>
+                        <label className={labelClasses}>Apellido</label>
                         <input
                             type="text"
                             name="apellido"
                             value={formData.apellido}
                             onChange={handleInputChange}
                             disabled={isSubmitting}
-                            className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                            className={inputClasses}
                             placeholder="Tu apellido"
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Email</label>
+                    <label className={labelClasses}>Email</label>
                     <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
                         disabled={isSubmitting}
-                        className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                        className={inputClasses}
                         placeholder="tucorreo@ejemplo.com"
                     />
                 </div>
 
                 <div>
-                    <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Teléfono</label>
+                    <label className={labelClasses}>Teléfono</label>
                     <div className="flex gap-3">
                         {/* Country Code Selector */}
                         <select
                             value={countryCode}
                             onChange={handleCountryCodeChange}
                             disabled={isSubmitting}
-                            className="px-4 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed bg-white"
-                            style={{ minWidth: '140px' }}
+                            className={`${inputClasses} bg-white`}
+                            style={{ minWidth: '100px', width: 'auto' }}
                         >
                             {countryCodes.map((country) => (
                                 <option key={country.code} value={country.code}>
@@ -185,21 +216,22 @@ export const ContactForm: React.FC<{ isCompact?: boolean }> = ({ isCompact = fal
                             value={formData.telefono}
                             onChange={handleInputChange}
                             disabled={isSubmitting}
-                            className="flex-1 px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                            className={`flex-1 ${inputClasses}`}
+                            style={{ width: '100%' }}
                             placeholder="600 000 000"
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label className="block text-base font-medium text-brand-secondary mb-3 font-sans">Mensaje (Opcional)</label>
+                    <label className={labelClasses}>Mensaje (Opcional)</label>
                     <textarea
-                        rows={4}
+                        rows={effectiveVariant === 'modal' ? 2 : 4}
                         name="mensaje"
                         value={formData.mensaje}
                         onChange={handleInputChange}
                         disabled={isSubmitting}
-                        className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all resize-none font-sans text-lg disabled:bg-gray-100 disabled:cursor-not-allowed"
+                        className={`${inputClasses} resize-none`}
                         placeholder="Cuéntanos brevemente sobre tu caso..."
                     ></textarea>
                 </div>
@@ -207,7 +239,7 @@ export const ContactForm: React.FC<{ isCompact?: boolean }> = ({ isCompact = fal
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-brand-primary text-white font-bold py-5 rounded-xl hover:bg-brand-secondary transition-colors shadow-lg hover:shadow-xl tracking-wide uppercase text-base font-sans disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className={buttonClasses}
                 >
                     {isSubmitting ? (
                         <>
@@ -226,7 +258,7 @@ export const ContactForm: React.FC<{ isCompact?: boolean }> = ({ isCompact = fal
         </div>
     );
 
-    if (isCompact) {
+    if (effectiveVariant === 'compact' || effectiveVariant === 'modal') {
         return formContent;
     }
 
