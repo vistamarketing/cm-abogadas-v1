@@ -8,6 +8,7 @@ import { ContactPage } from './components/ContactPage';
 import { Footer } from './components/Footer';
 import { ModalProvider } from './context/ModalContext';
 import { ContactModal } from './components/ContactModal';
+import { MobileStickyCTA } from './components/MobileStickyCTA';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -41,7 +42,7 @@ function App() {
             href="https://wa.me/34930000000"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-6 right-6 z-[100] bg-[#25D366] p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group flex items-center justify-center border-2 border-white/20"
+            className="fixed bottom-24 right-6 md:bottom-6 md:right-6 z-[100] bg-[#25D366] p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group flex items-center justify-center border-2 border-white/20"
             aria-label="Contactar por WhatsApp"
           >
             {/* WhatsApp Icon SVG */}
@@ -59,6 +60,7 @@ function App() {
           </a>
 
           <Footer />
+          <MobileStickyCTA />
           <ContactModal />
         </div>
       </Router>

@@ -25,8 +25,8 @@ export const Hero: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-10">
-            <div className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
+          <div className="space-y-10 text-center lg:text-left">
+            <div className="text-brand-primary font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-xs mb-8 block leading-relaxed">
               — MIGRAR CON PLAN, MIGRAR MEJOR —
             </div>
 
@@ -34,12 +34,13 @@ export const Hero: React.FC = () => {
               Abogados especialistas en derecho migratorio
             </h1>
 
-            <p className="text-xl text-brand-secondary max-w-xl leading-relaxed">
+            <p className="text-xl text-brand-secondary max-w-xl leading-relaxed mx-auto lg:mx-0">
               En <strong>CM Abogadas</strong> somos un despacho joven y comprometido. Combinamos la excelencia jurídica con un trato humano para que tu proceso migratorio sea seguro y sin estrés.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-5">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
               <button
+                id="hero-cta-button"
                 onClick={openModal}
                 className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-sm text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-lg hover:shadow-brand-primary/20"
               >
@@ -54,7 +55,7 @@ export const Hero: React.FC = () => {
               </Link>
             </div>
 
-            <div className="pt-8 border-t border-gray-100 flex gap-8 text-base text-brand-secondary/80 font-medium">
+            <div className="pt-8 border-t border-gray-100 flex gap-8 text-base text-brand-secondary/80 font-medium justify-center lg:justify-start">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="text-brand-primary w-6 h-6" />
                 <span>Honestidad y Transparencia</span>

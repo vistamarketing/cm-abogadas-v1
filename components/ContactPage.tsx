@@ -8,7 +8,7 @@ export const ContactPage: React.FC = () => {
       {/* Header Section */}
       {/* Header Section Split Layout */}
       <section className="relative flex flex-col lg:flex-row bg-white border-b border-stone-100">
-        <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-[#f9f7f2]">
+        <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center items-center lg:items-start text-center lg:text-left bg-[#f9f7f2]">
           <div className="max-w-xl">
             <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
               — ESTAMOS AQUÍ PARA TI —

@@ -8,7 +8,7 @@ export const AboutPage: React.FC = () => {
       {/* Hero Section */}
       {/* Hero Section Split Layout */}
       <section className="relative flex flex-col lg:flex-row bg-white border-b border-stone-100">
-        <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-[#f9f7f2]">
+        <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center items-center lg:items-start text-center lg:text-left bg-[#f9f7f2]">
           <div className="max-w-xl">
             <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
               — SOBRE NOSOTROS —
@@ -51,7 +51,7 @@ export const AboutPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-6 text-center lg:text-left">
               <div className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block leading-none">
                 — EQUIPO PROFESIONAL —
               </div>
@@ -64,11 +64,11 @@ export const AboutPage: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-6">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 justify-center lg:justify-start">
                   <div className="bg-transparent p-2 rounded-sm text-brand-primary"><Scale size={20} /></div>
                   <span className="font-medium text-brand-secondary font-serif">Rigor Jurídico</span>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 justify-center lg:justify-start">
                   <div className="bg-transparent p-2 rounded-sm text-brand-primary"><Heart size={20} /></div>
                   <span className="font-medium text-brand-secondary font-serif">Trato Humano</span>
                 </div>
@@ -79,7 +79,7 @@ export const AboutPage: React.FC = () => {
           {/* The "Model" - Highlighting Flexibility */}
           <div className="bg-[#1B0A09] rounded-sm p-8 md:p-16 text-white relative overflow-hidden mb-24">
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
+              <div className="space-y-6 text-center lg:text-left">
                 <div className="text-white font-bold tracking-[0.3em] uppercase text-xs mb-6 block leading-none">
                   — MODELO FLEXIBLE —
                 </div>
