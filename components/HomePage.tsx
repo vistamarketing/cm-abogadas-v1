@@ -25,6 +25,40 @@ export const HomePage: React.FC = () => {
             }
             images
           }
+          services {
+            badge
+            title
+            subtitle
+            ctaText
+            items {
+              id
+              title
+              description
+              icon
+            }
+          }
+          reviews {
+            badge
+            title
+            subtitle
+            ctaText
+            items {
+              author
+              date
+              rating
+              text
+              initial
+            }
+          }
+          faq {
+            title
+            subtitle
+            ctaText
+            items {
+              question
+              answer
+            }
+          }
         }
       }
     `,
@@ -35,10 +69,10 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <Hero data={data?.page} />
-      <Services />
+      <Services data={data?.page} />
       <HowWeWork />
-      <Reviews />
-      <FAQ />
+      <Reviews data={data?.page} />
+      <FAQ data={data?.page} />
       <CTA />
     </>
   );

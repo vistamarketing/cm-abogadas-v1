@@ -6,10 +6,16 @@ interface FAQItem {
   answer: string;
 }
 
-export const FAQ: React.FC = () => {
+export const FAQ: React.FC<{ data?: any }> = ({ data }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const faqs: FAQItem[] = [
+  const faqData = data?.faq || {};
+
+  const title = faqData.title || "Preguntas Frecuentes";
+  const subtitle = faqData.subtitle || "Transparencia y claridad desde el primer momento.";
+  const ctaText = faqData.ctaText || "¿Tienes una duda más específica?";
+
+  const faqs: FAQItem[] = faqData.items || [
     {
       question: "¿Cuál es el proceso para contratar vuestros servicios?",
       answer: "Es muy sencillo. Ponte en contacto con nosotros. Si con la información disponible es suficiente, te remitiremos un presupuesto directo. En caso de que sea necesario analizar el caso en profundidad, propondremos una primera consulta para estudiar la viabilidad jurídica."
@@ -65,10 +71,10 @@ export const FAQ: React.FC = () => {
             <HelpCircle size={24} />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 font-serif">
-            Preguntas Frecuentes
+            {title}
           </h2>
           <p className="mt-4 text-lg text-slate-600 font-sans">
-            Transparencia y claridad desde el primer momento.
+            {subtitle}
           </p>
         </div>
 
@@ -104,7 +110,7 @@ export const FAQ: React.FC = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-slate-500 mb-4 font-sans">¿Tienes una duda más específica?</p>
+          <p className="text-slate-500 mb-4 font-sans">{ctaText}</p>
           <a href="#contact" className="text-brand-primary font-bold hover:underline inline-flex items-center gap-1 font-sans">
             Escríbenos directamente
           </a>

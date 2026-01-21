@@ -102,9 +102,55 @@ type PageHero {
   quote: String
 }
 
+type PageServicesItems {
+  id: String
+  title: String
+  description: String
+  icon: String
+}
+
+type PageServices {
+  badge: String
+  title: String
+  subtitle: String
+  items: [PageServicesItems]
+  ctaText: String
+}
+
+type PageReviewsItems {
+  author: String
+  date: String
+  rating: Float
+  text: String
+  initial: String
+}
+
+type PageReviews {
+  badge: String
+  title: String
+  subtitle: String
+  items: [PageReviewsItems]
+  ctaText: String
+}
+
+type PageFaqItems {
+  question: String
+  answer: String
+}
+
+type PageFaq {
+  title: String
+  subtitle: String
+  items: [PageFaqItems]
+  ctaText: String
+}
+
 type Page implements Node & Document {
   title: String!
   hero: PageHero
+  services: PageServices
+  reviews: PageReviews
+  faq: PageFaq
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -139,9 +185,65 @@ input PageHeroFilter {
   quote: StringFilter
 }
 
+input PageServicesItemsFilter {
+  id: StringFilter
+  title: StringFilter
+  description: StringFilter
+  icon: StringFilter
+}
+
+input PageServicesFilter {
+  badge: StringFilter
+  title: StringFilter
+  subtitle: StringFilter
+  items: PageServicesItemsFilter
+  ctaText: StringFilter
+}
+
+input NumberFilter {
+  lt: Float
+  lte: Float
+  gte: Float
+  gt: Float
+  eq: Float
+  exists: Boolean
+  in: [Float]
+}
+
+input PageReviewsItemsFilter {
+  author: StringFilter
+  date: StringFilter
+  rating: NumberFilter
+  text: StringFilter
+  initial: StringFilter
+}
+
+input PageReviewsFilter {
+  badge: StringFilter
+  title: StringFilter
+  subtitle: StringFilter
+  items: PageReviewsItemsFilter
+  ctaText: StringFilter
+}
+
+input PageFaqItemsFilter {
+  question: StringFilter
+  answer: StringFilter
+}
+
+input PageFaqFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  items: PageFaqItemsFilter
+  ctaText: StringFilter
+}
+
 input PageFilter {
   title: StringFilter
   hero: PageHeroFilter
+  services: PageServicesFilter
+  reviews: PageReviewsFilter
+  faq: PageFaqFilter
 }
 
 type PageConnectionEdges {
@@ -189,9 +291,55 @@ input PageHeroMutation {
   quote: String
 }
 
+input PageServicesItemsMutation {
+  id: String
+  title: String
+  description: String
+  icon: String
+}
+
+input PageServicesMutation {
+  badge: String
+  title: String
+  subtitle: String
+  items: [PageServicesItemsMutation]
+  ctaText: String
+}
+
+input PageReviewsItemsMutation {
+  author: String
+  date: String
+  rating: Float
+  text: String
+  initial: String
+}
+
+input PageReviewsMutation {
+  badge: String
+  title: String
+  subtitle: String
+  items: [PageReviewsItemsMutation]
+  ctaText: String
+}
+
+input PageFaqItemsMutation {
+  question: String
+  answer: String
+}
+
+input PageFaqMutation {
+  title: String
+  subtitle: String
+  items: [PageFaqItemsMutation]
+  ctaText: String
+}
+
 input PageMutation {
   title: String
   hero: PageHeroMutation
+  services: PageServicesMutation
+  reviews: PageReviewsMutation
+  faq: PageFaqMutation
 }
 
 schema {

@@ -182,10 +182,62 @@ export type PageHero = {
   quote?: Maybe<Scalars['String']['output']>;
 };
 
+export type PageServicesItems = {
+  __typename?: 'PageServicesItems';
+  id?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  icon?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageServices = {
+  __typename?: 'PageServices';
+  badge?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  items?: Maybe<Array<Maybe<PageServicesItems>>>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageReviewsItems = {
+  __typename?: 'PageReviewsItems';
+  author?: Maybe<Scalars['String']['output']>;
+  date?: Maybe<Scalars['String']['output']>;
+  rating?: Maybe<Scalars['Float']['output']>;
+  text?: Maybe<Scalars['String']['output']>;
+  initial?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageReviews = {
+  __typename?: 'PageReviews';
+  badge?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  items?: Maybe<Array<Maybe<PageReviewsItems>>>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageFaqItems = {
+  __typename?: 'PageFaqItems';
+  question?: Maybe<Scalars['String']['output']>;
+  answer?: Maybe<Scalars['String']['output']>;
+};
+
+export type PageFaq = {
+  __typename?: 'PageFaq';
+  title?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  items?: Maybe<Array<Maybe<PageFaqItems>>>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+};
+
 export type Page = Node & Document & {
   __typename?: 'Page';
   title: Scalars['String']['output'];
   hero?: Maybe<PageHero>;
+  services?: Maybe<PageServices>;
+  reviews?: Maybe<PageReviews>;
+  faq?: Maybe<PageFaq>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -220,9 +272,65 @@ export type PageHeroFilter = {
   quote?: InputMaybe<StringFilter>;
 };
 
+export type PageServicesItemsFilter = {
+  id?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  icon?: InputMaybe<StringFilter>;
+};
+
+export type PageServicesFilter = {
+  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  items?: InputMaybe<PageServicesItemsFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+};
+
+export type NumberFilter = {
+  lt?: InputMaybe<Scalars['Float']['input']>;
+  lte?: InputMaybe<Scalars['Float']['input']>;
+  gte?: InputMaybe<Scalars['Float']['input']>;
+  gt?: InputMaybe<Scalars['Float']['input']>;
+  eq?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['Float']['input']>>>;
+};
+
+export type PageReviewsItemsFilter = {
+  author?: InputMaybe<StringFilter>;
+  date?: InputMaybe<StringFilter>;
+  rating?: InputMaybe<NumberFilter>;
+  text?: InputMaybe<StringFilter>;
+  initial?: InputMaybe<StringFilter>;
+};
+
+export type PageReviewsFilter = {
+  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  items?: InputMaybe<PageReviewsItemsFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+};
+
+export type PageFaqItemsFilter = {
+  question?: InputMaybe<StringFilter>;
+  answer?: InputMaybe<StringFilter>;
+};
+
+export type PageFaqFilter = {
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  items?: InputMaybe<PageFaqItemsFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+};
+
 export type PageFilter = {
   title?: InputMaybe<StringFilter>;
   hero?: InputMaybe<PageHeroFilter>;
+  services?: InputMaybe<PageServicesFilter>;
+  reviews?: InputMaybe<PageReviewsFilter>;
+  faq?: InputMaybe<PageFaqFilter>;
 };
 
 export type PageConnectionEdges = {
@@ -318,19 +426,65 @@ export type PageHeroMutation = {
   quote?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type PageServicesItemsMutation = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  icon?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageServicesMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<PageServicesItemsMutation>>>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageReviewsItemsMutation = {
+  author?: InputMaybe<Scalars['String']['input']>;
+  date?: InputMaybe<Scalars['String']['input']>;
+  rating?: InputMaybe<Scalars['Float']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
+  initial?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageReviewsMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<PageReviewsItemsMutation>>>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageFaqItemsMutation = {
+  question?: InputMaybe<Scalars['String']['input']>;
+  answer?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageFaqMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<PageFaqItemsMutation>>>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type PageMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   hero?: InputMaybe<PageHeroMutation>;
+  services?: InputMaybe<PageServicesMutation>;
+  reviews?: InputMaybe<PageReviewsMutation>;
+  faq?: InputMaybe<PageFaqMutation>;
 };
 
-export type PagePartsFragment = { __typename: 'Page', title: string, hero?: { __typename: 'PageHero', badge?: string | null, title?: string | null, subtitle?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, images?: Array<string | null> | null, quote?: string | null, features?: Array<{ __typename: 'PageHeroFeatures', text?: string | null } | null> | null } | null };
+export type PagePartsFragment = { __typename: 'Page', title: string, hero?: { __typename: 'PageHero', badge?: string | null, title?: string | null, subtitle?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, images?: Array<string | null> | null, quote?: string | null, features?: Array<{ __typename: 'PageHeroFeatures', text?: string | null } | null> | null } | null, services?: { __typename: 'PageServices', badge?: string | null, title?: string | null, subtitle?: string | null, ctaText?: string | null, items?: Array<{ __typename: 'PageServicesItems', id?: string | null, title?: string | null, description?: string | null, icon?: string | null } | null> | null } | null, reviews?: { __typename: 'PageReviews', badge?: string | null, title?: string | null, subtitle?: string | null, ctaText?: string | null, items?: Array<{ __typename: 'PageReviewsItems', author?: string | null, date?: string | null, rating?: number | null, text?: string | null, initial?: string | null } | null> | null } | null, faq?: { __typename: 'PageFaq', title?: string | null, subtitle?: string | null, ctaText?: string | null, items?: Array<{ __typename: 'PageFaqItems', question?: string | null, answer?: string | null } | null> | null } | null };
 
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', badge?: string | null, title?: string | null, subtitle?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, images?: Array<string | null> | null, quote?: string | null, features?: Array<{ __typename: 'PageHeroFeatures', text?: string | null } | null> | null } | null } };
+export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', badge?: string | null, title?: string | null, subtitle?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, images?: Array<string | null> | null, quote?: string | null, features?: Array<{ __typename: 'PageHeroFeatures', text?: string | null } | null> | null } | null, services?: { __typename: 'PageServices', badge?: string | null, title?: string | null, subtitle?: string | null, ctaText?: string | null, items?: Array<{ __typename: 'PageServicesItems', id?: string | null, title?: string | null, description?: string | null, icon?: string | null } | null> | null } | null, reviews?: { __typename: 'PageReviews', badge?: string | null, title?: string | null, subtitle?: string | null, ctaText?: string | null, items?: Array<{ __typename: 'PageReviewsItems', author?: string | null, date?: string | null, rating?: number | null, text?: string | null, initial?: string | null } | null> | null } | null, faq?: { __typename: 'PageFaq', title?: string | null, subtitle?: string | null, ctaText?: string | null, items?: Array<{ __typename: 'PageFaqItems', question?: string | null, answer?: string | null } | null> | null } | null } };
 
 export type PageConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -342,7 +496,7 @@ export type PageConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', badge?: string | null, title?: string | null, subtitle?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, images?: Array<string | null> | null, quote?: string | null, features?: Array<{ __typename: 'PageHeroFeatures', text?: string | null } | null> | null } | null } | null } | null> | null } };
+export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', badge?: string | null, title?: string | null, subtitle?: string | null, ctaPrimary?: string | null, ctaSecondary?: string | null, images?: Array<string | null> | null, quote?: string | null, features?: Array<{ __typename: 'PageHeroFeatures', text?: string | null } | null> | null } | null, services?: { __typename: 'PageServices', badge?: string | null, title?: string | null, subtitle?: string | null, ctaText?: string | null, items?: Array<{ __typename: 'PageServicesItems', id?: string | null, title?: string | null, description?: string | null, icon?: string | null } | null> | null } | null, reviews?: { __typename: 'PageReviews', badge?: string | null, title?: string | null, subtitle?: string | null, ctaText?: string | null, items?: Array<{ __typename: 'PageReviewsItems', author?: string | null, date?: string | null, rating?: number | null, text?: string | null, initial?: string | null } | null> | null } | null, faq?: { __typename: 'PageFaq', title?: string | null, subtitle?: string | null, ctaText?: string | null, items?: Array<{ __typename: 'PageFaqItems', question?: string | null, answer?: string | null } | null> | null } | null } | null } | null> | null } };
 
 export const PagePartsFragmentDoc = gql`
     fragment PageParts on Page {
@@ -361,6 +515,46 @@ export const PagePartsFragmentDoc = gql`
     }
     images
     quote
+  }
+  services {
+    __typename
+    badge
+    title
+    subtitle
+    items {
+      __typename
+      id
+      title
+      description
+      icon
+    }
+    ctaText
+  }
+  reviews {
+    __typename
+    badge
+    title
+    subtitle
+    items {
+      __typename
+      author
+      date
+      rating
+      text
+      initial
+    }
+    ctaText
+  }
+  faq {
+    __typename
+    title
+    subtitle
+    items {
+      __typename
+      question
+      answer
+    }
+    ctaText
   }
 }
     `;

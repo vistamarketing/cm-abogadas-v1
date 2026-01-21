@@ -15,4 +15,44 @@ fragment PageParts on Page {
     images
     quote
   }
+  services {
+    __typename
+    badge
+    title
+    subtitle
+    items {
+      __typename
+      id
+      title
+      description
+      icon
+    }
+    ctaText
+  }
+  reviews {
+    __typename
+    badge
+    title
+    subtitle
+    items {
+      __typename
+      author
+      date
+      rating
+      text
+      initial
+    }
+    ctaText
+  }
+  faq {
+    __typename
+    title
+    subtitle
+    items {
+      __typename
+      question
+      answer
+    }
+    ctaText
+  }
 }

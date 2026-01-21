@@ -1,8 +1,15 @@
 import React from 'react';
 import { Star, Quote, ExternalLink } from 'lucide-react';
 
-export const Reviews: React.FC = () => {
-  const reviews = [
+export const Reviews: React.FC<{ data?: any }> = ({ data }) => {
+  const reviewsData = data?.reviews || {};
+
+  const badge = reviewsData.badge || "4.9/5 en Google Reviews";
+  const title = reviewsData.title || "Confianza ganada caso a caso";
+  const subtitle = reviewsData.subtitle || "Más de 500 expedientes resueltos favorablemente nos avalan.";
+  const ctaText = reviewsData.ctaText || "Leer más reseñas en Google Maps";
+
+  const reviews = reviewsData.items || [
     {
       id: 1,
       author: "Valentina Rossi",
@@ -43,21 +50,21 @@ export const Reviews: React.FC = () => {
               <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
             </svg>
-            <span className="font-bold text-slate-700 text-sm">4.9/5 en Google Reviews</span>
+            <span className="font-bold text-slate-700 text-sm">{badge}</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 font-serif mb-4">
-            Confianza ganada caso a caso
+            {title}
           </h2>
           <p className="max-w-2xl mx-auto text-xl text-slate-500">
-            Más de 500 expedientes resueltos favorablemente nos avalan.
+            {subtitle}
           </p>
         </div>
 
         {/* Reviews Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {reviews.map((review) => (
-            <div key={review.id} className="bg-white p-8 rounded-sm shadow-sm hover:shadow-lg transition-all border border-gray-100 relative group">
+          {reviews.map((review: any, index: number) => (
+            <div key={index} className="bg-white p-8 rounded-sm shadow-sm hover:shadow-lg transition-all border border-gray-100 relative group">
               <Quote className="absolute top-6 right-6 text-brand-light w-10 h-10 group-hover:text-red-100 transition-colors" />
 
               <div className="flex items-center gap-4 mb-6">
@@ -68,7 +75,7 @@ export const Reviews: React.FC = () => {
                   <h4 className="font-bold text-slate-900 text-sm">{review.author}</h4>
                   <div className="flex items-center gap-2">
                     <div className="flex text-yellow-400">
-                      {[...Array(review.rating)].map((_, i) => (
+                      {[...Array(review.rating)].map((_: any, i: number) => (
                         <Star key={i} size={14} fill="currentColor" />
                       ))}
                     </div>
@@ -90,7 +97,7 @@ export const Reviews: React.FC = () => {
             href="#"
             className="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-accent transition-colors border-b-2 border-transparent hover:border-brand-primary pb-1"
           >
-            Leer más reseñas en Google Maps
+            {ctaText}
             <ExternalLink size={16} />
           </a>
         </div>
