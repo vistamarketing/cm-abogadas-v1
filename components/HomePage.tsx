@@ -9,62 +9,71 @@ import { CTA } from './CTA';
 import homeData from "../content/pages/home.json";
 
 export const HomePage: React.FC = () => {
-  const { data } = useTina({
-    query: `
-      query PageQuery {
-        page(relativePath: "home.json") {
-          hero {
-            badge
-            title
-            subtitle
-            ctaPrimary
-            ctaSecondary
-            quote
-            features {
-              text
-            }
-            images
-          }
-          services {
-            badge
-            title
-            subtitle
-            ctaText
-            items {
-              id
+  // Only use Tina in edit mode (when in /admin or when Tina is active)
+  const isEditMode = typeof window !== 'undefined' && window.location.pathname.includes('/admin');
+
+  let data = { page: homeData };
+
+  // Only use useTina hook if we're in edit mode
+  if (isEditMode) {
+    const tinaResult = useTina({
+      query: `
+        query PageQuery {
+          page(relativePath: "home.json") {
+            hero {
+              badge
               title
-              description
-              icon
+              subtitle
+              ctaPrimary
+              ctaSecondary
+              quote
+              features {
+                text
+              }
+              images
             }
-          }
-          reviews {
-            badge
-            title
-            subtitle
-            ctaText
-            items {
-              author
-              date
-              rating
-              text
-              initial
+            services {
+              badge
+              title
+              subtitle
+              ctaText
+              items {
+                id
+                title
+                description
+                icon
+              }
             }
-          }
-          faq {
-            title
-            subtitle
-            ctaText
-            items {
-              question
-              answer
+            reviews {
+              badge
+              title
+              subtitle
+              ctaText
+              items {
+                author
+                date
+                rating
+                text
+                initial
+              }
+            }
+            faq {
+              title
+              subtitle
+              ctaText
+              items {
+                question
+                answer
+              }
             }
           }
         }
-      }
-    `,
-    variables: {},
-    data: { page: homeData },
-  });
+      `,
+      variables: {},
+      data: { page: homeData },
+    });
+    data = tinaResult.data;
+  }
 
   return (
     <>
