@@ -18,7 +18,7 @@ Se ha configurado el formulario de contacto para enviar automáticamente los dat
 
 1. Ve a: **https://web3forms.com**
 2. Haz clic en "Get Started" o "Create Access Key"
-3. Ingresa el email donde quieres recibir los formularios: **hola@cmabogadas.es**
+3. Ingresa el email donde quieres recibir los formularios: **infocmabogadas@gmail.com**
 4. Recibirás un email de confirmación
 5. Confirma tu email haciendo clic en el enlace
 6. Te darán tu **Access Key** (algo como: `a1b2c3d4-e5f6-7890-abcd-ef1234567890`)
@@ -43,7 +43,7 @@ const WEB3FORMS_ACCESS_KEY = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890';
 2. Ve a la página de contacto
 3. Completa el formulario
 4. Haz clic en "Enviar Datos"
-5. Deberías recibir un email en **hola@cmabogadas.es**
+5. Deberías recibir un email en **infocmabogadas@gmail.com**
 
 ## 📨 ¿Qué recibirás en el email?
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Clock } from 'lucide-react';
+import { useModal } from '../context/ModalContext';
 
 export const Footer: React.FC = () => {
+    const { openModal } = useModal();
     return (
         <footer className="bg-[#1B0A09] text-white">
             {/* Main Footer Content */}
@@ -24,11 +26,9 @@ export const Footer: React.FC = () => {
                             >
                                 <Instagram size={24} />
                             </a>
-                            <a
-                                href="https://wa.me/34930000000"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-transparent border border-white hover:bg-white/10 p-3 rounded-sm transition-colors flex items-center justify-center"
+                            <button
+                                onClick={() => openModal('whatsapp')}
+                                className="bg-transparent border border-white hover:bg-white/10 p-3 rounded-sm transition-colors flex items-center justify-center cursor-pointer"
                                 aria-label="WhatsApp"
                             >
                                 <img
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                                     alt="WhatsApp"
                                     className="w-6 h-6"
                                 />
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -48,8 +48,8 @@ export const Footer: React.FC = () => {
                                 <Phone className="text-stone-300 flex-shrink-0 mt-1" size={20} />
                                 <div>
                                     <p className="font-sans text-stone-300">
-                                        <a href="tel:+34930000000" className="hover:text-white transition-colors">
-                                            +34 930 000 000
+                                        <a href="tel:+34686401557" className="hover:text-white transition-colors">
+                                            +34 686 401 557
                                         </a>
                                     </p>
                                 </div>
@@ -63,9 +63,9 @@ export const Footer: React.FC = () => {
                                 />
                                 <div>
                                     <p className="font-sans text-stone-300">
-                                        <a href="https://wa.me/34930000000" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                                            WhatsApp: +34 930 000 000
-                                        </a>
+                                        <button onClick={() => openModal('whatsapp')} className="hover:text-white transition-colors cursor-pointer text-left">
+                                            WhatsApp: +34 686 401 557
+                                        </button>
                                     </p>
                                 </div>
                             </div>
@@ -74,8 +74,8 @@ export const Footer: React.FC = () => {
                                 <Mail className="text-stone-300 flex-shrink-0 mt-1" size={20} />
                                 <div>
                                     <p className="font-sans text-stone-300">
-                                        <a href="mailto:hola@cmabogadas.es" className="hover:text-white transition-colors">
-                                            hola@cmabogadas.es
+                                        <a href="mailto:infocmabogadas@gmail.com" className="hover:text-white transition-colors">
+                                            infocmabogadas@gmail.com
                                         </a>
                                     </p>
                                 </div>
@@ -144,13 +144,13 @@ export const Footer: React.FC = () => {
                             © {new Date().getFullYear()} CM Abogadas. Todos los derechos reservados.
                         </p>
                         <div className="flex gap-6 text-sm font-sans">
-                            <a href="#" className="text-stone-400 hover:text-white transition-colors">
+                            <a href="/legal-notice" className="text-stone-400 hover:text-white transition-colors">
                                 Aviso Legal
                             </a>
-                            <a href="#" className="text-stone-400 hover:text-white transition-colors">
+                            <a href="/privacy-policy" className="text-stone-400 hover:text-white transition-colors">
                                 Privacidad
                             </a>
-                            <a href="#" className="text-stone-400 hover:text-white transition-colors">
+                            <a href="/cookies-policy" className="text-stone-400 hover:text-white transition-colors">
                                 Cookies
                             </a>
                         </div>

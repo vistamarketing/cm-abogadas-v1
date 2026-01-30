@@ -4,9 +4,9 @@ import { useModal } from '../context/ModalContext';
 import { ContactForm } from './ContactForm';
 
 export const ContactModal: React.FC = () => {
-    const { isModalOpen, closeModal } = useModal();
+    const { isModalOpen, modalType, closeModal } = useModal();
 
-    if (!isModalOpen) return null;
+    if (!isModalOpen || modalType !== 'contact') return null;
 
     return (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 lg:p-8 animate-in fade-in duration-200">

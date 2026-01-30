@@ -52,8 +52,8 @@ export const ContactPage: React.FC = () => {
               <Phone size={24} />
             </div>
             <h3 className="text-xl font-serif font-bold text-brand-darker mb-2">Llámanos</h3>
-            <p className="text-brand-secondary font-sans mb-1">+34 930 000 000</p>
-            <a href="mailto:hola@cmabogadas.es" className="text-brand-primary hover:underline font-sans">hola@cmabogadas.es</a>
+            <p className="text-brand-secondary font-sans mb-1">+34 686 401 557</p>
+            <a href="mailto:infocmabogadas@gmail.com" className="text-brand-primary hover:underline font-sans">infocmabogadas@gmail.com</a>
             <div className="mt-4 flex items-center gap-2 text-sm text-stone-500 font-sans">
               <Clock size={16} />
               <span>Lun - Vie: 09:00 - 18:00</span>
