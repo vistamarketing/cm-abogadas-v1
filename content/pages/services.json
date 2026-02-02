@@ -1,0 +1,110 @@
+{
+    "_template": "services",
+    "title": "Services",
+    "hero": {
+        "badge": "— Áreas de Práctica —",
+        "title": "Nuestros Servicios",
+        "description": "Te acompañamos en tus trámites de extranjería y gestiones administrativas con soluciones ágiles y eficaces.",
+        "image": "/images/services-hero.jpg"
+    },
+    "immigration": {
+        "title": "Trámites de Extranjería",
+        "subtitle": "Gestión integral de expedientes ante la Oficina de Extranjería",
+        "items": [
+            {
+                "title": "Tramitación CUE (NIE Unión Europea)",
+                "description": "Certificado de registro para ciudadanos de la UE que van a residir en España por más de 3 meses."
+            },
+            {
+                "title": "TIE (Cita de Huellas)",
+                "description": "Gestión y acompañamiento para la obtención física de la Tarjeta de Identidad de Extranjero."
+            },
+            {
+                "title": "Tarjeta Familiar Comunitario (TFC)",
+                "description": "Residencia de 5 años para familiares de ciudadanos de la Unión Europea que residan en España."
+            },
+            {
+                "title": "Pareja de Hecho / Arraigo Familiar",
+                "description": "Regularización por vínculo afectivo con ciudadano español o comunitario. Incluye registro y residencia."
+            },
+            {
+                "title": "PAC (Personal Altamente Cualificado)",
+                "description": "Visado especial para perfiles directivos o técnicos que vienen a ocupar puestos específicos con sueldos cualificados."
+            },
+            {
+                "title": "Visa de Estudios",
+                "description": "Gestión completa para estudiantes: matrícula, seguro, medios económicos y obtención de estancia por estudios."
+            },
+            {
+                "title": "Visa Nómada Digital",
+                "description": "La opción estrella para teletrabajadores internacionales. Permite residir en España trabajando para empresas extranjeras."
+            },
+            {
+                "title": "Arraigos (Social, Laboral, Formación)",
+                "description": "Vías excepcionales de regularización para personas que ya se encuentran en España, con o sin contrato laboral previo."
+            },
+            {
+                "title": "Residencia No Lucrativa",
+                "description": "Para quienes disponen de medios económicos suficientes y desean residir en España sin realizar actividad laboral."
+            },
+            {
+                "title": "Nacionalidad Española",
+                "description": "Presentación telemática del expediente de nacionalidad por residencia, opción o carta de naturaleza."
+            },
+            {
+                "title": "Renovaciones de Residencia",
+                "description": "Control de plazos y presentación de renovaciones para evitar la irregularidad sobrevenida."
+            },
+            {
+                "title": "Autorización de Regreso",
+                "description": "Permiso para viajar fuera de España y poder volver mientras tu tarjeta está en renovación."
+            },
+            {
+                "title": "Disolución de Pareja de Hecho",
+                "description": "Comunicación formal a la Oficina de Extranjería sobre el cese de la convivencia o relación."
+            },
+            {
+                "title": "Recursos y Alegaciones",
+                "description": "Presentación de escritos y documentos en procedimientos ya iniciados o denegados."
+            }
+        ]
+    },
+    "admin": {
+        "title": "Otros Servicios y Gestiones",
+        "subtitle": "Soporte administrativo complementario para tu vida en España",
+        "items": [
+            {
+                "title": "Tramitación de DNI Español",
+                "description": "Asistencia para obtener el primer DNI tras la concesión de nacionalidad."
+            },
+            {
+                "title": "Registro Civil",
+                "description": "Inscripciones de nacimiento, matrimonio y defunción."
+            },
+            {
+                "title": "Gestiones en Notaría",
+                "description": "Coordinación para poderes, actas de manifestaciones o compudidas."
+            },
+            {
+                "title": "Apostilla de La Haya",
+                "description": "Legalización de documentos para que surtan efectos en el extranjero o en España."
+            },
+            {
+                "title": "Certificado Digital en 24h",
+                "description": "Obtención rápida para que puedas interactuar con la administración telemáticamente."
+            },
+            {
+                "title": "Empadronamiento",
+                "description": "Gestión de citas y documentación para el registro en el ayuntamiento."
+            },
+            {
+                "title": "Cuentas Bancarias y Seguros",
+                "description": "Acompañamiento para la apertura de cuenta y contratación de seguro médico válido para extranjería."
+            },
+            {
+                "title": "Cancelación de Antecedentes",
+                "description": "Limpieza de antecedentes penales y policiales para trámites de nacionalidad o renovación."
+            }
+        ]
+    }
+}

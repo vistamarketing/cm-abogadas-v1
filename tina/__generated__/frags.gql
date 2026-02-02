@@ -1,58 +1,166 @@
 fragment PageParts on Page {
   __typename
-  title
-  hero {
-    __typename
-    badge
+  ... on PageHome {
     title
-    subtitle
-    ctaPrimary
-    ctaSecondary
-    features {
+    hero {
       __typename
-      text
+      badge
+      title
+      subtitle
+      ctaPrimary
+      ctaSecondary
+      quote
+      features {
+        __typename
+        text
+      }
+      images
     }
-    images
-    quote
-  }
-  services {
-    __typename
-    badge
-    title
-    subtitle
-    items {
+    services {
       __typename
-      id
+      badge
+      title
+      subtitle
+      ctaText
+      items {
+        __typename
+        id
+        title
+        description
+        icon
+      }
+    }
+    reviews {
+      __typename
+      badge
+      title
+      subtitle
+      ctaText
+      items {
+        __typename
+        author
+        date
+        rating
+        text
+        initial
+      }
+    }
+    faq {
+      __typename
+      title
+      subtitle
+      ctaText
+      items {
+        __typename
+        question
+        answer
+      }
+    }
+  }
+  ... on PageAbout {
+    title
+    hero {
+      __typename
+      badge
       title
       description
-      icon
+      image
     }
-    ctaText
-  }
-  reviews {
-    __typename
-    badge
-    title
-    subtitle
-    items {
+    team {
       __typename
-      author
-      date
-      rating
-      text
-      initial
+      badge
+      title
+      description1
+      description2
+      image
     }
-    ctaText
-  }
-  faq {
-    __typename
-    title
-    subtitle
-    items {
+    model {
       __typename
-      question
-      answer
+      badge
+      title
+      description1
+      description2
+      boxTitle
+      features {
+        __typename
+        title
+        description
+        icon
+      }
     }
-    ctaText
+    values {
+      __typename
+      title
+      items {
+        __typename
+        title
+        description
+        icon
+      }
+    }
+  }
+  ... on PageServices {
+    title
+    hero {
+      __typename
+      badge
+      title
+      description
+      image
+    }
+    immigration {
+      __typename
+      title
+      subtitle
+      items {
+        __typename
+        title
+        description
+      }
+    }
+    admin {
+      __typename
+      title
+      subtitle
+      items {
+        __typename
+        title
+        description
+      }
+    }
+  }
+  ... on PageContact {
+    title
+    hero {
+      __typename
+      badge
+      title
+      description
+      image
+    }
+    info {
+      __typename
+      location {
+        __typename
+        title
+        line1
+        line2
+        note
+      }
+      phone {
+        __typename
+        title
+        number
+        email
+        hours
+      }
+      social {
+        __typename
+        title
+        description
+        handle
+        link
+      }
+    }
   }
 }

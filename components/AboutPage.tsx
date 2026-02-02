@@ -1,30 +1,110 @@
 import React from 'react';
 import { Users, MonitorSmartphone, Heart, Scale, MapPin, Clock, ShieldCheck } from 'lucide-react';
 import { CTA } from './CTA';
+import { useTina } from "tinacms/dist/react";
+import aboutData from "../content/pages/about.json";
 
 export const AboutPage: React.FC = () => {
+  // Only use Tina in edit mode (when in /admin or when Tina is active)
+  const isEditMode = typeof window !== 'undefined' && window.location.pathname.includes('/admin');
+
+  // Cast initial data to simple object to avoid type errors with template structure
+  let data = { page: aboutData as any };
+
+  if (isEditMode) {
+    const tinaResult = useTina({
+      query: `
+        query PageQuery {
+          page(relativePath: "about.json") {
+            ... on PageAbout {
+              hero {
+                badge
+                title
+                description
+                image
+              }
+              team {
+                badge
+                title
+                description1
+                description2
+                image
+              }
+              model {
+                badge
+                title
+                description1
+                description2
+                boxTitle
+                features {
+                  title
+                  description
+                  icon
+                }
+              }
+              values {
+                title
+                items {
+                  title
+                  description
+                  icon
+                }
+              }
+            }
+          }
+        }
+      `,
+      variables: {},
+      data: { page: aboutData },
+    });
+    data = tinaResult.data;
+  }
+
+  const page = data?.page || {};
+  const hero = page.hero || {};
+  const team = page.team || {};
+  const model = page.model || {};
+  const values = page.values || {};
+
+  const iconMap: Record<string, React.ReactNode> = {
+    // Team Icons
+    Scale: <Scale size={20} />,
+    Heart: <Heart size={20} />,
+
+    // Model Icons
+    MonitorSmartphone: <MonitorSmartphone size={24} />,
+    Users: <Users size={24} />,
+
+    // Values Icons
+    ShieldCheck: <ShieldCheck size={24} />,
+    Clock: <Clock size={24} />,
+  };
+
+  const getIcon = (name: string, fallback: React.ReactNode) => {
+    return iconMap[name] || fallback;
+  };
+
   return (
     <div className="pt-24 min-h-screen bg-white animate-fade-in">
       {/* Hero Section */}
-      {/* Hero Section Split Layout */}
       <section className="relative flex flex-col lg:flex-row bg-white border-b border-stone-100">
         <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center items-center lg:items-start text-center lg:text-left bg-[#f9f7f2]">
           <div className="max-w-xl">
             <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
-              — SOBRE NOSOTROS —
+              {hero.badge || "— SOBRE NOSOTROS —"}
             </span>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-brand-darker mb-8 leading-[1.1]">
-              ¿Quienes somos?
+              {hero.title || "¿Quienes somos?"}
             </h1>
             <p className="text-xl text-stone-600 mb-10 font-sans leading-relaxed">
-              En CM Abogadas somos un despacho joven, cercano y comprometido, fundado en abril de 2024. Hemos experimentado un crecimiento constante gracias a la confianza de quienes nos eligen.
+              {hero.description || "En CM Abogadas somos un despacho joven..."}
             </p>
           </div>
         </div>
 
         <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
           <img
-            src="/images/about-hero.jpg"
+            src={hero.image || "/images/about-hero.jpg"}
             alt="Abogadas trabajando"
             className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
           />
@@ -41,7 +121,7 @@ export const AboutPage: React.FC = () => {
             <div>
               <div className="relative rounded-sm overflow-hidden shadow-2xl border-4 border-white transform md:rotate-2 hover:rotate-0 transition-all duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"
+                  src={team.image || "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"}
                   alt="Abogadas trabajando"
                   className="w-full h-auto object-cover"
                 />
@@ -53,14 +133,14 @@ export const AboutPage: React.FC = () => {
             </div>
             <div className="space-y-6 text-center lg:text-left">
               <div className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block leading-none">
-                — EQUIPO PROFESIONAL —
+                {team.badge || "— EQUIPO PROFESIONAL —"}
               </div>
-              <h2 className="text-3xl font-bold font-serif text-brand-darker">Expertas en defender tus derechos</h2>
+              <h2 className="text-3xl font-bold font-serif text-brand-darker">{team.title || "Expertas en defender tus derechos"}</h2>
               <p className="text-brand-secondary text-lg leading-relaxed font-sans">
-                Nuestro equipo está integrado por abogadas colegiadas en el Ilustre Colegio de la Abogacía de Barcelona, con amplia experiencia en derecho de extranjería y un firme compromiso con la defensa de los derechos de nuestros clientes.
+                {team.description1 || "Nuestro equipo está integrado..."}
               </p>
               <p className="text-brand-secondary text-lg leading-relaxed font-sans">
-                Trabajamos con un estilo propio que combina rigor jurídico, flexibilidad y disponibilidad. Nuestro objetivo es que encuentres no solo respuestas legales, sino la tranquilidad de sentirte respaldado.
+                {team.description2 || "Trabajamos con un estilo propio..."}
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-6">
@@ -81,43 +161,61 @@ export const AboutPage: React.FC = () => {
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 text-center lg:text-left">
                 <div className="text-white font-bold tracking-[0.3em] uppercase text-xs mb-6 block leading-none">
-                  — MODELO FLEXIBLE —
+                  {model.badge || "— MODELO FLEXIBLE —"}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-serif font-bold">
-                  Un despacho moderno, sin barreras físicas.
+                  {model.title || "Un despacho moderno, sin barreras físicas."}
                 </h2>
                 <p className="text-white/90 text-lg leading-relaxed font-sans">
-                  CM ABOGADAS tiene su sede en Barcelona, pero hemos elegido un modelo de trabajo flexible que nos permite ofrecer servicios en toda España y el extranjero.
+                  {model.description1 || "CM ABOGADAS tiene su sede en Barcelona..."}
                 </p>
                 <p className="text-white/90 text-lg leading-relaxed font-sans">
-                  Al no depender de un despacho físico permanente, nos adaptamos a tus horarios y necesidades de manera ágil. Ofrecemos <strong>atención personalizada directa</strong> sin limitaciones de ubicación.
+                  {model.description2 && (
+                    <>
+                      Al no depender de un despacho físico permanente, nos adaptamos a tus horarios y necesidades de manera ágil. Ofrecemos <strong>atención personalizada directa</strong> sin limitaciones de ubicación.
+                    </>
+                  ) ? model.description2 : "Al no depender de un despacho físico permanente..."}
                 </p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm rounded-sm p-8 border border-white/10">
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-white font-serif">
                   <MapPin className="text-white" />
-                  ¿Cómo nos reunimos?
+                  {model.boxTitle || "¿Cómo nos reunimos?"}
                 </h3>
                 <ul className="space-y-6">
-                  <li className="flex gap-4">
-                    <div className="bg-white/10 p-3 rounded-sm h-fit text-white border border-white/20">
-                      <MonitorSmartphone size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg text-white font-serif">100% Online y Disponible</h4>
-                      <p className="text-gray-400 text-sm mt-1 font-sans">Videollamadas y gestión digital para que avances desde tu casa, estés donde estés.</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-4">
-                    <div className="bg-white/10 p-3 rounded-sm h-fit text-white border border-white/20">
-                      <Users size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg text-white font-serif">Presencial cuando lo necesitas</h4>
-                      <p className="text-gray-400 text-sm mt-1 font-sans">Si es necesario, organizamos entrevistas presenciales en espacios adecuados en Barcelona, combinando cercanía y comodidad.</p>
-                    </div>
-                  </li>
+                  {model.features?.map((feature: any, index: number) => (
+                    <li key={index} className="flex gap-4">
+                      <div className="bg-white/10 p-3 rounded-sm h-fit text-white border border-white/20">
+                        {getIcon(feature.icon, <Users size={24} />)}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-lg text-white font-serif">{feature.title}</h4>
+                        <p className="text-gray-400 text-sm mt-1 font-sans">{feature.description}</p>
+                      </div>
+                    </li>
+                  )) || (
+                      <>
+                        <li className="flex gap-4">
+                          <div className="bg-white/10 p-3 rounded-sm h-fit text-white border border-white/20">
+                            <MonitorSmartphone size={24} />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-lg text-white font-serif">100% Online y Disponible</h4>
+                            <p className="text-gray-400 text-sm mt-1 font-sans">Videollamadas y gestión digital para que avances desde tu casa, estés donde estés.</p>
+                          </div>
+                        </li>
+                        <li className="flex gap-4">
+                          <div className="bg-white/10 p-3 rounded-sm h-fit text-white border border-white/20">
+                            <Users size={24} />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-lg text-white font-serif">Presencial cuando lo necesitas</h4>
+                            <p className="text-gray-400 text-sm mt-1 font-sans">Si es necesario, organizamos entrevistas presenciales en espacios adecuados en Barcelona, combinando cercanía y comodidad.</p>
+                          </div>
+                        </li>
+                      </>
+                    )}
                 </ul>
               </div>
             </div>
@@ -125,29 +223,28 @@ export const AboutPage: React.FC = () => {
 
           {/* Values */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif font-bold text-brand-darker mb-12">Nuestros Valores</h2>
+            <h2 className="text-3xl font-serif font-bold text-brand-darker mb-12">{values.title || "Nuestros Valores"}</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-stone-50 p-8 rounded-sm border border-stone-100 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
-                  <ShieldCheck size={24} />
+              {values.items?.map((item: any, index: number) => (
+                <div key={index} className="bg-stone-50 p-8 rounded-sm border border-stone-100 hover:shadow-lg transition-all">
+                  <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
+                    {getIcon(item.icon, <ShieldCheck size={24} />)}
+                  </div>
+                  <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">{item.title}</h3>
+                  <p className="text-brand-secondary font-sans">{item.description}</p>
                 </div>
-                <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Transparencia</h3>
-                <p className="text-brand-secondary font-sans">Comunicación clara desde el primer momento. Sin sorpresas, con honestidad sobre la viabilidad de tu caso.</p>
-              </div>
-              <div className="bg-stone-50 p-8 rounded-sm border border-stone-100 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
-                  <Clock size={24} />
-                </div>
-                <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Dedicación</h3>
-                <p className="text-brand-secondary font-sans">Cada cliente es único. Trabajamos para que te sientas valorado, comprendido y acompañado en cada paso.</p>
-              </div>
-              <div className="bg-stone-50 p-8 rounded-sm border border-stone-100 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
-                  <Heart size={24} />
-                </div>
-                <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Cercanía</h3>
-                <p className="text-brand-secondary font-sans">Rigor jurídico con humanidad. Queremos que encuentres en nosotras no solo abogadas, sino aliadas.</p>
-              </div>
+              )) || (
+                  <>
+                    <div className="bg-stone-50 p-8 rounded-sm border border-stone-100 hover:shadow-lg transition-all">
+                      <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
+                        <ShieldCheck size={24} />
+                      </div>
+                      <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Transparencia</h3>
+                      <p className="text-brand-secondary font-sans">Comunicación clara desde el primer momento. Sin sorpresas, con honestidad sobre la viabilidad de tu caso.</p>
+                    </div>
+                    {/* ... other default values ... */}
+                  </>
+                )}
             </div>
           </div>
 

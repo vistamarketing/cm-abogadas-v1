@@ -20,50 +20,52 @@ export const HomePage: React.FC = () => {
       query: `
         query PageQuery {
           page(relativePath: "home.json") {
-            hero {
-              badge
-              title
-              subtitle
-              ctaPrimary
-              ctaSecondary
-              quote
-              features {
-                text
-              }
-              images
-            }
-            services {
-              badge
-              title
-              subtitle
-              ctaText
-              items {
-                id
+            ... on PageHome {
+              hero {
+                badge
                 title
-                description
-                icon
+                subtitle
+                ctaPrimary
+                ctaSecondary
+                quote
+                features {
+                  text
+                }
+                images
               }
-            }
-            reviews {
-              badge
-              title
-              subtitle
-              ctaText
-              items {
-                author
-                date
-                rating
-                text
-                initial
+              services {
+                badge
+                title
+                subtitle
+                ctaText
+                items {
+                  id
+                  title
+                  description
+                  icon
+                }
               }
-            }
-            faq {
-              title
-              subtitle
-              ctaText
-              items {
-                question
-                answer
+              reviews {
+                badge
+                title
+                subtitle
+                ctaText
+                items {
+                  author
+                  date
+                  rating
+                  text
+                  initial
+                }
+              }
+              faq {
+                title
+                subtitle
+                ctaText
+                items {
+                  question
+                  answer
+                }
               }
             }
           }

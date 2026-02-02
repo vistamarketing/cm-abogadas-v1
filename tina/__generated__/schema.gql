@@ -85,39 +85,39 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Page | Folder
+union DocumentNode = PageHome | PageAbout | PageServices | PageContact | Folder
 
-type PageHeroFeatures {
+type PageHomeHeroFeatures {
   text: String
 }
 
-type PageHero {
+type PageHomeHero {
   badge: String
   title: String
   subtitle: String
   ctaPrimary: String
   ctaSecondary: String
-  features: [PageHeroFeatures]
-  images: [String]
   quote: String
+  features: [PageHomeHeroFeatures]
+  images: [String]
 }
 
-type PageServicesItems {
+type PageHomeServicesItems {
   id: String
   title: String
   description: String
   icon: String
 }
 
-type PageServices {
+type PageHomeServices {
   badge: String
   title: String
   subtitle: String
-  items: [PageServicesItems]
   ctaText: String
+  items: [PageHomeServicesItems]
 }
 
-type PageReviewsItems {
+type PageHomeReviewsItems {
   author: String
   date: String
   rating: Float
@@ -125,36 +125,172 @@ type PageReviewsItems {
   initial: String
 }
 
-type PageReviews {
+type PageHomeReviews {
   badge: String
   title: String
   subtitle: String
-  items: [PageReviewsItems]
   ctaText: String
+  items: [PageHomeReviewsItems]
 }
 
-type PageFaqItems {
+type PageHomeFaqItems {
   question: String
   answer: String
 }
 
-type PageFaq {
+type PageHomeFaq {
   title: String
   subtitle: String
-  items: [PageFaqItems]
   ctaText: String
+  items: [PageHomeFaqItems]
 }
 
-type Page implements Node & Document {
+type PageHome implements Node & Document {
   title: String!
-  hero: PageHero
-  services: PageServices
-  reviews: PageReviews
-  faq: PageFaq
+  hero: PageHomeHero
+  services: PageHomeServices
+  reviews: PageHomeReviews
+  faq: PageHomeFaq
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
 }
+
+type PageAboutHero {
+  badge: String
+  title: String
+  description: String
+  image: String
+}
+
+type PageAboutTeam {
+  badge: String
+  title: String
+  description1: String
+  description2: String
+  image: String
+}
+
+type PageAboutModelFeatures {
+  title: String
+  description: String
+  icon: String
+}
+
+type PageAboutModel {
+  badge: String
+  title: String
+  description1: String
+  description2: String
+  boxTitle: String
+  features: [PageAboutModelFeatures]
+}
+
+type PageAboutValuesItems {
+  title: String
+  description: String
+  icon: String
+}
+
+type PageAboutValues {
+  title: String
+  items: [PageAboutValuesItems]
+}
+
+type PageAbout implements Node & Document {
+  title: String!
+  hero: PageAboutHero
+  team: PageAboutTeam
+  model: PageAboutModel
+  values: PageAboutValues
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+type PageServicesHero {
+  badge: String
+  title: String
+  description: String
+  image: String
+}
+
+type PageServicesImmigrationItems {
+  title: String
+  description: String
+}
+
+type PageServicesImmigration {
+  title: String
+  subtitle: String
+  items: [PageServicesImmigrationItems]
+}
+
+type PageServicesAdminItems {
+  title: String
+  description: String
+}
+
+type PageServicesAdmin {
+  title: String
+  subtitle: String
+  items: [PageServicesAdminItems]
+}
+
+type PageServices implements Node & Document {
+  title: String!
+  hero: PageServicesHero
+  immigration: PageServicesImmigration
+  admin: PageServicesAdmin
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+type PageContactHero {
+  badge: String
+  title: String
+  description: String
+  image: String
+}
+
+type PageContactInfoLocation {
+  title: String
+  line1: String
+  line2: String
+  note: String
+}
+
+type PageContactInfoPhone {
+  title: String
+  number: String
+  email: String
+  hours: String
+}
+
+type PageContactInfoSocial {
+  title: String
+  description: String
+  handle: String
+  link: String
+}
+
+type PageContactInfo {
+  location: PageContactInfoLocation
+  phone: PageContactInfoPhone
+  social: PageContactInfoSocial
+}
+
+type PageContact implements Node & Document {
+  title: String!
+  hero: PageContactHero
+  info: PageContactInfo
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+union Page = PageHome | PageAbout | PageServices | PageContact
 
 input StringFilter {
   startsWith: String
@@ -163,7 +299,7 @@ input StringFilter {
   in: [String]
 }
 
-input PageHeroFeaturesFilter {
+input PageHomeHeroFeaturesFilter {
   text: StringFilter
 }
 
@@ -174,30 +310,30 @@ input ImageFilter {
   in: [String]
 }
 
-input PageHeroFilter {
+input PageHomeHeroFilter {
   badge: StringFilter
   title: StringFilter
   subtitle: StringFilter
   ctaPrimary: StringFilter
   ctaSecondary: StringFilter
-  features: PageHeroFeaturesFilter
-  images: ImageFilter
   quote: StringFilter
+  features: PageHomeHeroFeaturesFilter
+  images: ImageFilter
 }
 
-input PageServicesItemsFilter {
+input PageHomeServicesItemsFilter {
   id: StringFilter
   title: StringFilter
   description: StringFilter
   icon: StringFilter
 }
 
-input PageServicesFilter {
+input PageHomeServicesFilter {
   badge: StringFilter
   title: StringFilter
   subtitle: StringFilter
-  items: PageServicesItemsFilter
   ctaText: StringFilter
+  items: PageHomeServicesItemsFilter
 }
 
 input NumberFilter {
@@ -210,7 +346,7 @@ input NumberFilter {
   in: [Float]
 }
 
-input PageReviewsItemsFilter {
+input PageHomeReviewsItemsFilter {
   author: StringFilter
   date: StringFilter
   rating: NumberFilter
@@ -218,32 +354,164 @@ input PageReviewsItemsFilter {
   initial: StringFilter
 }
 
-input PageReviewsFilter {
+input PageHomeReviewsFilter {
   badge: StringFilter
   title: StringFilter
   subtitle: StringFilter
-  items: PageReviewsItemsFilter
   ctaText: StringFilter
+  items: PageHomeReviewsItemsFilter
 }
 
-input PageFaqItemsFilter {
+input PageHomeFaqItemsFilter {
   question: StringFilter
   answer: StringFilter
 }
 
-input PageFaqFilter {
+input PageHomeFaqFilter {
   title: StringFilter
   subtitle: StringFilter
-  items: PageFaqItemsFilter
   ctaText: StringFilter
+  items: PageHomeFaqItemsFilter
+}
+
+input PageHomeFilter {
+  title: StringFilter
+  hero: PageHomeHeroFilter
+  services: PageHomeServicesFilter
+  reviews: PageHomeReviewsFilter
+  faq: PageHomeFaqFilter
+}
+
+input PageAboutHeroFilter {
+  badge: StringFilter
+  title: StringFilter
+  description: StringFilter
+  image: ImageFilter
+}
+
+input PageAboutTeamFilter {
+  badge: StringFilter
+  title: StringFilter
+  description1: StringFilter
+  description2: StringFilter
+  image: ImageFilter
+}
+
+input PageAboutModelFeaturesFilter {
+  title: StringFilter
+  description: StringFilter
+  icon: StringFilter
+}
+
+input PageAboutModelFilter {
+  badge: StringFilter
+  title: StringFilter
+  description1: StringFilter
+  description2: StringFilter
+  boxTitle: StringFilter
+  features: PageAboutModelFeaturesFilter
+}
+
+input PageAboutValuesItemsFilter {
+  title: StringFilter
+  description: StringFilter
+  icon: StringFilter
+}
+
+input PageAboutValuesFilter {
+  title: StringFilter
+  items: PageAboutValuesItemsFilter
+}
+
+input PageAboutFilter {
+  title: StringFilter
+  hero: PageAboutHeroFilter
+  team: PageAboutTeamFilter
+  model: PageAboutModelFilter
+  values: PageAboutValuesFilter
+}
+
+input PageServicesHeroFilter {
+  badge: StringFilter
+  title: StringFilter
+  description: StringFilter
+  image: ImageFilter
+}
+
+input PageServicesImmigrationItemsFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input PageServicesImmigrationFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  items: PageServicesImmigrationItemsFilter
+}
+
+input PageServicesAdminItemsFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input PageServicesAdminFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  items: PageServicesAdminItemsFilter
+}
+
+input PageServicesFilter {
+  title: StringFilter
+  hero: PageServicesHeroFilter
+  immigration: PageServicesImmigrationFilter
+  admin: PageServicesAdminFilter
+}
+
+input PageContactHeroFilter {
+  badge: StringFilter
+  title: StringFilter
+  description: StringFilter
+  image: ImageFilter
+}
+
+input PageContactInfoLocationFilter {
+  title: StringFilter
+  line1: StringFilter
+  line2: StringFilter
+  note: StringFilter
+}
+
+input PageContactInfoPhoneFilter {
+  title: StringFilter
+  number: StringFilter
+  email: StringFilter
+  hours: StringFilter
+}
+
+input PageContactInfoSocialFilter {
+  title: StringFilter
+  description: StringFilter
+  handle: StringFilter
+  link: StringFilter
+}
+
+input PageContactInfoFilter {
+  location: PageContactInfoLocationFilter
+  phone: PageContactInfoPhoneFilter
+  social: PageContactInfoSocialFilter
+}
+
+input PageContactFilter {
+  title: StringFilter
+  hero: PageContactHeroFilter
+  info: PageContactInfoFilter
 }
 
 input PageFilter {
-  title: StringFilter
-  hero: PageHeroFilter
+  home: PageHomeFilter
+  about: PageAboutFilter
   services: PageServicesFilter
-  reviews: PageReviewsFilter
-  faq: PageFaqFilter
+  contact: PageContactFilter
 }
 
 type PageConnectionEdges {
@@ -276,37 +544,37 @@ input DocumentMutation {
   page: PageMutation
 }
 
-input PageHeroFeaturesMutation {
+input PageHomeHeroFeaturesMutation {
   text: String
 }
 
-input PageHeroMutation {
+input PageHomeHeroMutation {
   badge: String
   title: String
   subtitle: String
   ctaPrimary: String
   ctaSecondary: String
-  features: [PageHeroFeaturesMutation]
-  images: [String]
   quote: String
+  features: [PageHomeHeroFeaturesMutation]
+  images: [String]
 }
 
-input PageServicesItemsMutation {
+input PageHomeServicesItemsMutation {
   id: String
   title: String
   description: String
   icon: String
 }
 
-input PageServicesMutation {
+input PageHomeServicesMutation {
   badge: String
   title: String
   subtitle: String
-  items: [PageServicesItemsMutation]
   ctaText: String
+  items: [PageHomeServicesItemsMutation]
 }
 
-input PageReviewsItemsMutation {
+input PageHomeReviewsItemsMutation {
   author: String
   date: String
   rating: Float
@@ -314,32 +582,164 @@ input PageReviewsItemsMutation {
   initial: String
 }
 
-input PageReviewsMutation {
+input PageHomeReviewsMutation {
   badge: String
   title: String
   subtitle: String
-  items: [PageReviewsItemsMutation]
   ctaText: String
+  items: [PageHomeReviewsItemsMutation]
 }
 
-input PageFaqItemsMutation {
+input PageHomeFaqItemsMutation {
   question: String
   answer: String
 }
 
-input PageFaqMutation {
+input PageHomeFaqMutation {
   title: String
   subtitle: String
-  items: [PageFaqItemsMutation]
   ctaText: String
+  items: [PageHomeFaqItemsMutation]
+}
+
+input PageHomeMutation {
+  title: String
+  hero: PageHomeHeroMutation
+  services: PageHomeServicesMutation
+  reviews: PageHomeReviewsMutation
+  faq: PageHomeFaqMutation
+}
+
+input PageAboutHeroMutation {
+  badge: String
+  title: String
+  description: String
+  image: String
+}
+
+input PageAboutTeamMutation {
+  badge: String
+  title: String
+  description1: String
+  description2: String
+  image: String
+}
+
+input PageAboutModelFeaturesMutation {
+  title: String
+  description: String
+  icon: String
+}
+
+input PageAboutModelMutation {
+  badge: String
+  title: String
+  description1: String
+  description2: String
+  boxTitle: String
+  features: [PageAboutModelFeaturesMutation]
+}
+
+input PageAboutValuesItemsMutation {
+  title: String
+  description: String
+  icon: String
+}
+
+input PageAboutValuesMutation {
+  title: String
+  items: [PageAboutValuesItemsMutation]
+}
+
+input PageAboutMutation {
+  title: String
+  hero: PageAboutHeroMutation
+  team: PageAboutTeamMutation
+  model: PageAboutModelMutation
+  values: PageAboutValuesMutation
+}
+
+input PageServicesHeroMutation {
+  badge: String
+  title: String
+  description: String
+  image: String
+}
+
+input PageServicesImmigrationItemsMutation {
+  title: String
+  description: String
+}
+
+input PageServicesImmigrationMutation {
+  title: String
+  subtitle: String
+  items: [PageServicesImmigrationItemsMutation]
+}
+
+input PageServicesAdminItemsMutation {
+  title: String
+  description: String
+}
+
+input PageServicesAdminMutation {
+  title: String
+  subtitle: String
+  items: [PageServicesAdminItemsMutation]
+}
+
+input PageServicesMutation {
+  title: String
+  hero: PageServicesHeroMutation
+  immigration: PageServicesImmigrationMutation
+  admin: PageServicesAdminMutation
+}
+
+input PageContactHeroMutation {
+  badge: String
+  title: String
+  description: String
+  image: String
+}
+
+input PageContactInfoLocationMutation {
+  title: String
+  line1: String
+  line2: String
+  note: String
+}
+
+input PageContactInfoPhoneMutation {
+  title: String
+  number: String
+  email: String
+  hours: String
+}
+
+input PageContactInfoSocialMutation {
+  title: String
+  description: String
+  handle: String
+  link: String
+}
+
+input PageContactInfoMutation {
+  location: PageContactInfoLocationMutation
+  phone: PageContactInfoPhoneMutation
+  social: PageContactInfoSocialMutation
+}
+
+input PageContactMutation {
+  title: String
+  hero: PageContactHeroMutation
+  info: PageContactInfoMutation
 }
 
 input PageMutation {
-  title: String
-  hero: PageHeroMutation
+  home: PageHomeMutation
+  about: PageAboutMutation
   services: PageServicesMutation
-  reviews: PageReviewsMutation
-  faq: PageFaqMutation
+  contact: PageContactMutation
 }
 
 schema {
