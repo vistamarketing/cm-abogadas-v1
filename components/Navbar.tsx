@@ -81,7 +81,7 @@ export const Navbar: React.FC = () => {
               )
             ))}
             <button
-              onClick={openModal}
+              onClick={() => openModal()}
               className="bg-brand-primary text-white px-8 py-3 rounded-sm font-bold hover:bg-brand-secondary transition-all shadow-md hover:shadow-lg tracking-[0.2em] text-xs uppercase"
             >
               AGENDAR CITA
