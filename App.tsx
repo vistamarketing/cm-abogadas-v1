@@ -26,8 +26,6 @@ function ScrollToTop() {
   return null;
 }
 
-import { Analytics } from '@vercel/analytics/react';
-
 function App() {
   return (
     <ModalProvider>
@@ -54,7 +52,6 @@ function App() {
           <ContactModal />
           <WhatsAppModal />
           <CookieBanner />
-          <Analytics />
         </div>
       </Router>
     </ModalProvider>

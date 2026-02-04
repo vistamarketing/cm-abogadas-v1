@@ -15,7 +15,7 @@ export const CTA: React.FC = () => {
                     Reserva tu consulta hoy mismo y asegura tu proceso migratorio con expertos en Barcelona.
                 </p>
                 <button
-                    onClick={() => openModal()}
+                    onClick={openModal}
                     className="inline-flex items-center gap-3 bg-brand-primary text-white px-10 py-4 rounded-sm font-bold hover:bg-brand-secondary transition-all shadow-lg hover:shadow-brand-primary/20 text-lg uppercase tracking-wide font-sans"
                 >
                     Agendar Cita
