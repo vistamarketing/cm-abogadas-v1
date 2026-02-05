@@ -54,7 +54,7 @@ export const Hero: React.FC<{ data?: any }> = ({ data }) => {
             <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
               <button
                 id="hero-cta-button"
-                onClick={openModal}
+                onClick={() => openModal()}
                 className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-sm text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-lg hover:shadow-brand-primary/20"
               >
                 {ctaPrimary}

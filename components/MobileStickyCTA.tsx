@@ -109,7 +109,7 @@ export const MobileStickyCTA: React.FC = () => {
     return (
         <div className="fixed bottom-0 left-0 w-full z-[90] bg-white border-t border-stone-200 p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden animate-in slide-in-from-bottom duration-300">
             <button
-                onClick={openModal}
+                onClick={() => openModal()}
                 className="w-full bg-brand-primary text-white py-4 rounded-sm font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 shadow-sm hover:bg-brand-secondary transition-colors"
                 aria-label="Agendar Cita"
             >
