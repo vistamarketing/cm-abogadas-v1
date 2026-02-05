@@ -1,124 +1,124 @@
 {
-    "_template": "home",
-    "title": "Home",
-    "hero": {
-        "badge": "— MIGRAR CON PLAN, MIGRAR MEJOR —",
-        "title": "Abogadas especialistas en derecho migratorio",
-        "subtitle": "En CM Abogadas somos un despacho joven y comprometido. Combinamos la excelencia jurídica con un trato humano para que tu proceso migratorio sea seguro y sin estrés.",
-        "ctaPrimary": "Agendar Cita",
-        "ctaSecondary": "Ver Servicios",
-        "features": [
-            {
-                "text": "Honestidad y Transparencia"
-            },
-            {
-                "text": "Atención Flexible (Online/Presencial)"
-            }
-        ],
-        "images": [
-            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
-            "/images/hero-slide-2.jpg"
-        ],
-        "quote": "\"Defendemos tus derechos, construimos tu futuro.\""
-    },
-    "services": {
-        "badge": "— NUESTROS SERVICIOS —",
-        "title": "Soluciones legales integrales",
-        "subtitle": "Cubrimos todo el espectro de trámites de extranjería y gestiones administrativas para que no tengas que preocuparte por nada.",
-        "items": [
-            {
-                "id": "ue-family",
-                "title": "Ciudadanos UE y Familiares",
-                "description": "Tramitación de NIE/CUE, Tarjeta Familiar Comunitario (TFC) y procesos de Pareja de Hecho. Resolvemos tu situación si tienes vínculos europeos.",
-                "icon": "Users"
-            },
-            {
-                "id": "work-nomad",
-                "title": "Trabajo y Nómadas Digitales",
-                "description": "Desde Visas para Nómadas Digitales hasta permisos para Personal Altamente Cualificado (PAC). Facilitamos tu llegada laboral a España.",
-                "icon": "Globe2"
-            },
-            {
-                "id": "arraigo",
-                "title": "Arraigos",
-                "description": "Regularización por circunstancias excepcionales: Arraigo Social, Laboral, Socioformativo o Familiar. Encontramos la vía que se adapta a ti.",
-                "icon": "Home"
-            },
-            {
-                "id": "study",
-                "title": "Estudiantes",
-                "description": "Gestión integral de Visas de Estudios, renovación de estancia y modificación a permiso de trabajo o búsqueda de empleo.",
-                "icon": "GraduationCap"
-            },
-            {
-                "id": "nationality",
-                "title": "Nacionalidad y Renovaciones",
-                "description": "Presentación de Nacionalidad Española, renovación de permisos y autorizaciones de regreso. Mantenemos tu estatus legal al día.",
-                "icon": "HeartHandshake"
-            },
-            {
-                "id": "admin",
-                "title": "Gestoría Administrativa",
-                "description": "Te ayudamos con el DNI, Empadronamiento, Certificados Digitales, Apostillas y apertura de cuentas bancarias.",
-                "icon": "FileCheck"
-            }
-        ],
-        "ctaText": "Ver desglose completo de servicios"
-    },
-    "reviews": {
-        "badge": "4.9/5 en Google Reviews",
-        "title": "Confianza ganada caso a caso",
-        "subtitle": "Más de 500 expedientes resueltos favorablemente nos avalan.",
-        "items": [
-            {
-                "author": "Valentina Rossi",
-                "date": "Hace 2 meses",
-                "rating": 5,
-                "text": "¡Increíbles profesionales! Me ayudaron con mi Visa de Nómada Digital cuando pensaba que no cumplía los requisitos. Analizaron mi caso al detalle y en 3 semanas tenía la resolución favorable. La atención por WhatsApp fue súper rápida.",
-                "initial": "V"
-            },
-            {
-                "author": "Liam O'Connor",
-                "date": "Hace 1 mes",
-                "rating": 5,
-                "text": "The best immigration lawyers in Barcelona. They speak perfect English and explained every step of the 'Pareja de Hecho' process. No hidden fees and very transparent. Highly recommended for expats.",
-                "initial": "L"
-            },
-            {
-                "author": "María Fernanda López",
-                "date": "Hace 3 semanas",
-                "rating": 5,
-                "text": "Gracias a Clara y Marta conseguí mi nacionalidad después de años de espera con otros gestores. Son serias, modernas y van al grano. Se nota que conocen bien cómo funciona extranjería hoy en día.",
-                "initial": "M"
-            }
-        ],
-        "ctaText": "Leer más reseñas en Google Maps"
-    },
-    "faq": {
-        "title": "Preguntas Frecuentes",
-        "subtitle": "Transparencia y claridad desde el primer momento.",
-        "items": [
-            {
-                "question": "¿Cuál es el proceso para contratar vuestros servicios?",
-                "answer": "Es muy sencillo. Ponte en contacto con nosotros. Si con la información disponible es suficiente, te remitiremos un presupuesto directo. En caso de que sea necesario analizar el caso en profundidad, propondremos una primera consulta para estudiar la viabilidad jurídica."
-            },
-            {
-                "question": "¿Ofrecen atención online si aún no estoy en España?",
-                "answer": "Sí. Hemos optado por un modelo flexible que nos permite atender con plena disponibilidad a clientes dentro y fuera de España. Nos adaptamos a tus necesidades, ya sea por videollamada o presencialmente en Barcelona."
-            },
-            {
-                "question": "¿Cuál es vuestra política de precios?",
-                "answer": "Nuestra política es transparente y adaptada a las necesidades de cada cliente. Ofrecemos la posibilidad de establecer un plan de pagos ajustado a tu situación para que el coste no sea una barrera para tu regularización."
-            },
-            {
-                "question": "¿Es obligatorio contratar a un abogado para mis trámites?",
-                "answer": "No es legalmente obligatorio, pero la burocracia puede ser compleja. Un error pequeño puede significar una denegación. Contar con CM Abogadas asegura que tu expediente esté perfecto y riguroso desde el primer día."
-            },
-            {
-                "question": "¿Cuánto tiempo tarda en salir la Nacionalidad Española?",
-                "answer": "Los plazos varían, pero la presentación telemática profesional suele agilizar mucho el proceso. En CM Abogadas trabajamos con dedicación para que tu proceso sea lo más sencillo y exitoso posible."
-            }
-        ],
-        "ctaText": "¿Tienes una duda más específica?"
-    }
+  "title": "Home",
+  "hero": {
+    "badge": "— MIGRAR CON PLAN, MIGRAR MEJOR —",
+    "title": "Abogadas especialistas en derecho migratorio",
+    "subtitle": "En CM Abogadas somos un despacho joven y comprometido. Combinamos la excelencia jurídica con un trato humano para que tu proceso migratorio sea seguro y sin estrés.",
+    "ctaPrimary": "Agendar Cita",
+    "ctaSecondary": "Ver Servicios",
+    "quote": "\"Defendemos tus derechos, construimos tu futuro.\"",
+    "features": [
+      {
+        "text": "Honestidad y Transparencia"
+      },
+      {
+        "text": "Atención Flexible (Online/Presencial)"
+      }
+    ],
+    "images": [
+      "/uploads/pexels-mikhail-nilov-8730975.jpg",
+      "/uploads/images/hero-slide-2.jpg"
+    ]
+  },
+  "services": {
+    "badge": "— NUESTROS SERVICIOS —",
+    "title": "Soluciones legales integrales",
+    "subtitle": "Cubrimos todo el espectro de trámites de extranjería y gestiones administrativas para que no tengas que preocuparte por nada.",
+    "ctaText": "Ver desglose completo de servicios",
+    "items": [
+      {
+        "id": "ue-family",
+        "title": "Ciudadanos UE y Familiares",
+        "description": "Tramitación de NIE/CUE, Tarjeta Familiar Comunitario (TFC) y procesos de Pareja de Hecho. Resolvemos tu situación si tienes vínculos europeos.",
+        "icon": "Users"
+      },
+      {
+        "id": "work-nomad",
+        "title": "Trabajo y Nómadas Digitales",
+        "description": "Desde Visas para Nómadas Digitales hasta permisos para Personal Altamente Cualificado (PAC). Facilitamos tu llegada laboral a España.",
+        "icon": "Globe2"
+      },
+      {
+        "id": "arraigo",
+        "title": "Arraigos",
+        "description": "Regularización por circunstancias excepcionales: Arraigo Social, Laboral, Socioformativo o Familiar. Encontramos la vía que se adapta a ti.",
+        "icon": "Home"
+      },
+      {
+        "id": "study",
+        "title": "Estudiantes",
+        "description": "Gestión integral de Visas de Estudios, renovación de estancia y modificación a permiso de trabajo o búsqueda de empleo.",
+        "icon": "GraduationCap"
+      },
+      {
+        "id": "nationality",
+        "title": "Nacionalidad y Renovaciones",
+        "description": "Presentación de Nacionalidad Española, renovación de permisos y autorizaciones de regreso. Mantenemos tu estatus legal al día.",
+        "icon": "HeartHandshake"
+      },
+      {
+        "id": "admin",
+        "title": "Gestoría Administrativa",
+        "description": "Te ayudamos con el DNI, Empadronamiento, Certificados Digitales, Apostillas y apertura de cuentas bancarias.",
+        "icon": "FileCheck"
+      }
+    ]
+  },
+  "reviews": {
+    "badge": "4.9/5 en Google Reviews",
+    "title": "Confianza ganada caso a caso",
+    "subtitle": "Más de 500 expedientes resueltos favorablemente nos avalan.",
+    "ctaText": "Leer más reseñas en Google Maps",
+    "items": [
+      {
+        "author": "Valentina Rossi",
+        "date": "Hace 2 meses",
+        "rating": 5,
+        "text": "¡Increíbles profesionales! Me ayudaron con mi Visa de Nómada Digital cuando pensaba que no cumplía los requisitos. Analizaron mi caso al detalle y en 3 semanas tenía la resolución favorable. La atención por WhatsApp fue súper rápida.",
+        "initial": "V"
+      },
+      {
+        "author": "Liam O'Connor",
+        "date": "Hace 1 mes",
+        "rating": 5,
+        "text": "The best immigration lawyers in Barcelona. They speak perfect English and explained every step of the 'Pareja de Hecho' process. No hidden fees and very transparent. Highly recommended for expats.",
+        "initial": "L"
+      },
+      {
+        "author": "María Fernanda López",
+        "date": "Hace 3 semanas",
+        "rating": 5,
+        "text": "Gracias a Clara y Marta conseguí mi nacionalidad después de años de espera con otros gestores. Son serias, modernas y van al grano. Se nota que conocen bien cómo funciona extranjería hoy en día.",
+        "initial": "M"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Transparencia y claridad desde el primer momento.",
+    "ctaText": "¿Tienes una duda más específica?",
+    "items": [
+      {
+        "question": "¿Cuál es el proceso para contratar vuestros servicios?",
+        "answer": "Es muy sencillo. Ponte en contacto con nosotros. Si con la información disponible es suficiente, te remitiremos un presupuesto directo. En caso de que sea necesario analizar el caso en profundidad, propondremos una primera consulta para estudiar la viabilidad jurídica."
+      },
+      {
+        "question": "¿Ofrecen atención online si aún no estoy en España?",
+        "answer": "Sí. Hemos optado por un modelo flexible que nos permite atender con plena disponibilidad a clientes dentro y fuera de España. Nos adaptamos a tus necesidades, ya sea por videollamada o presencialmente en Barcelona."
+      },
+      {
+        "question": "¿Cuál es vuestra política de precios?",
+        "answer": "Nuestra política es transparente y adaptada a las necesidades de cada cliente. Ofrecemos la posibilidad de establecer un plan de pagos ajustado a tu situación para que el coste no sea una barrera para tu regularización."
+      },
+      {
+        "question": "¿Es obligatorio contratar a un abogado para mis trámites?",
+        "answer": "No es legalmente obligatorio, pero la burocracia puede ser compleja. Un error pequeño puede significar una denegación. Contar con CM Abogadas asegura que tu expediente esté perfecto y riguroso desde el primer día."
+      },
+      {
+        "question": "¿Cuánto tiempo tarda en salir la Nacionalidad Española?",
+        "answer": "Los plazos varían, pero la presentación telemática profesional suele agilizar mucho el proceso. En CM Abogadas trabajamos con dedicación para que tu proceso sea lo más sencillo y exitoso posible."
+      }
+    ]
+  },
+  "_template": "home"
 }
