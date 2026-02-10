@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTina } from "tinacms/dist/react";
 import { Hero } from './Hero';
+import { FeaturedServices } from './FeaturedServices';
 import { Services } from './Services';
 import { Reviews } from './Reviews';
 import { FAQ } from './FAQ';
@@ -80,6 +81,7 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <Hero data={data?.page} />
+      <FeaturedServices />
       <Services data={data?.page} />
       <HowWeWork />
       <Reviews data={data?.page} />
