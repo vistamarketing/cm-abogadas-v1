@@ -4,20 +4,17 @@ import { MessageCircle, FileSearch, CheckCircle2 } from 'lucide-react';
 export const HowWeWork: React.FC = () => {
     const steps = [
         {
-            number: '01',
-            icon: MessageCircle,
+            number: 'Paso 1',
             title: 'Contáctanos y Cuéntanos tu Historia',
             description: 'Sabemos que cada historia es única, y así la tratamos. Desde el primer contacto, te escuchamos con atención para entender tu situación y acompañarte en cada paso. No eres un simple cliente, eres una historia de vida que merece ser tratada con dedicación y cercanía.'
         },
         {
-            number: '02',
-            icon: FileSearch,
+            number: 'Paso 2',
             title: 'Evaluamos tu Caso y Preparamos tu Plan de Acción',
             description: 'Analizamos tu situación en detalle y diseñamos un plan legal personalizado. Te presentamos las opciones disponibles, los plazos y un presupuesto transparente, para que tengas claridad total sobre el proceso.'
         },
         {
-            number: '03',
-            icon: CheckCircle2,
+            number: 'Paso 3',
             title: 'Checklist Personalizado y Acompañamiento Continuo',
             description: 'Si aceptas el presupuesto, te enviamos un checklist detallado con todos los pasos y documentos necesarios. Te acompañamos en cada tarea, resolviendo dudas y asegurándonos de que avances con confianza hacia tu objetivo.'
         }
@@ -41,34 +38,25 @@ export const HowWeWork: React.FC = () => {
 
                 {/* Steps */}
                 <div className="grid md:grid-cols-3 gap-8">
-                    {steps.map((step, index) => {
-                        const Icon = step.icon;
-                        return (
-                            <div
-                                key={index}
-                                className="relative bg-white p-10 border border-stone-100 hover:shadow-2xl transition-all duration-500 group"
-                            >
-                                {/* Step Number */}
-                                <div className="text-4xl font-serif font-light text-brand-primary/20 group-hover:text-brand-primary/40 transition-colors mb-6">
-                                    {step.number}
-                                </div>
-
-                                {/* Icon */}
-                                <div className="mb-6">
-                                    <Icon size={32} className="text-brand-primary" />
-                                </div>
-
-                                {/* Content */}
-                                <h3 className="text-xl font-bold text-brand-darker mb-4 font-serif">
-                                    {step.title}
-                                </h3>
-                                <p className="text-brand-secondary leading-relaxed font-sans">
-                                    {step.description}
-                                </p>
-
+                    {steps.map((step, index) => (
+                        <div
+                            key={index}
+                            className="relative bg-white p-10 border border-stone-100 hover:shadow-2xl transition-all duration-500 group"
+                        >
+                            {/* Step Text */}
+                            <div className="text-xl font-bold text-brand-primary mb-4 font-sans tracking-wide uppercase">
+                                {step.number}
                             </div>
-                        );
-                    })}
+
+                            {/* Content */}
+                            <h3 className="text-xl font-bold text-brand-darker mb-4 font-serif">
+                                {step.title}
+                            </h3>
+                            <p className="text-brand-secondary leading-relaxed font-sans">
+                                {step.description}
+                            </p>
+                        </div>
+                    ))}
                 </div>
 
                 {/* Bottom CTA */}

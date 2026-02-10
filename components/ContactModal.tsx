@@ -32,7 +32,7 @@ export const ContactModal: React.FC = () => {
                             Comienza tu proceso hoy
                         </h2>
                         <p className="text-brand-secondary font-sans text-sm md:text-base">
-                            Déjanos tus datos y nos pondremos en contacto contigo.
+                            Rellena el formulario con detalle para que podamos analizar tu caso.
                         </p>
                     </div>
 
