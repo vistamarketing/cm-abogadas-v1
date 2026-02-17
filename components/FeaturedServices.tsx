@@ -34,10 +34,10 @@ export const FeaturedServices: React.FC = () => {
         <section className="py-16 bg-gradient-to-b from-white to-red-50/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-brand-darker mb-4 font-serif">
+                    <h2 className="text-3xl lg:text-5xl font-bold text-brand-darker mb-4 font-serif">
                         Servicios Destacados
                     </h2>
-                    <p className="text-xl text-brand-secondary max-w-2xl mx-auto">
+                    <p className="text-lg lg:text-xl text-brand-secondary max-w-2xl mx-auto">
                         Los servicios más solicitados con precios competitivos
                     </p>
                 </div>

@@ -34,20 +34,20 @@ export const Hero: React.FC<{ data?: any }> = ({ data }) => {
   }, [images.length]);
 
   return (
-    <section id="hero" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section id="hero" className="relative pt-24 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-10 text-center lg:text-left">
-            <div className="text-brand-primary font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-xs mb-8 block leading-relaxed">
+            <div className="text-brand-primary font-bold tracking-wider md:tracking-[0.3em] uppercase text-[10px] md:text-xs mb-8 block leading-relaxed px-2">
               {badge}
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-brand-darker leading-tight font-serif">
+            <h1 className="text-4xl lg:text-7xl font-extrabold text-brand-darker leading-[1.1] lg:leading-tight font-serif">
               {title}
             </h1>
 
-            <p className="text-xl text-brand-secondary max-w-xl leading-relaxed mx-auto lg:mx-0">
+            <p className="text-lg lg:text-xl text-brand-secondary max-w-xl leading-relaxed mx-auto lg:mx-0">
               {subtitle}
             </p>
 

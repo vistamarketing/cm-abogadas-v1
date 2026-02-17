@@ -28,10 +28,10 @@ export const HowWeWork: React.FC = () => {
                     <div className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
                         — NUESTRO PROCESO —
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-darker mb-6">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-brand-darker mb-6">
                         ¿Cómo Trabajamos?
                     </h2>
-                    <p className="text-xl text-brand-secondary max-w-3xl mx-auto font-sans">
+                    <p className="text-lg md:text-xl text-brand-secondary max-w-3xl mx-auto font-sans">
                         Un proceso simple y transparente, diseñado para que te sientas acompañado en cada momento.
                     </p>
                 </div>

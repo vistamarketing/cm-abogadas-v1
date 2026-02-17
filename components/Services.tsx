@@ -69,10 +69,10 @@ export const Services: React.FC<{ data?: any }> = ({ data }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">{badge}</span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold text-brand-darker font-serif">
+          <h2 className="mt-3 text-3xl md:text-5xl font-bold text-brand-darker font-serif">
             {title}
           </h2>
-          <p className="mt-6 max-w-3xl mx-auto text-2xl text-brand-secondary font-sans leading-relaxed">
+          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-2xl text-brand-secondary font-sans leading-relaxed">
             {subtitle}
           </p>
         </div>
