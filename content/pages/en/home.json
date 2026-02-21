@@ -1,0 +1,123 @@
+{
+    "title": "Home",
+    "hero": {
+        "badge": "— MIGRATE WITH A PLAN, MIGRATE BETTER —",
+        "title": "Lawyers specializing in immigration law",
+        "subtitle": "At CM Abogadas we are a young and committed firm focused on your needs. We combine legal excellence with a human touch so your immigration process is safe and stress-free.",
+        "ctaPrimary": "Book Appointment",
+        "ctaSecondary": "View Services",
+        "quote": "\"We defend your rights, we build your future.\"",
+        "features": [
+            {
+                "text": "Honesty and Transparency"
+            },
+            {
+                "text": "Flexible Service (Online/In-person)"
+            }
+        ],
+        "images": [
+            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
+            "/images/hero-slide-2.jpg"
+        ]
+    },
+    "services": {
+        "badge": "— OUR SERVICES —",
+        "title": "What We Do for You",
+        "subtitle": "Immigration procedures and administrative services tailored to your needs.",
+        "ctaText": "View All Services",
+        "items": [
+            {
+                "id": "regularizacion",
+                "title": "Mass Regularization 2026",
+                "description": "Take advantage of the opportunity to regularize your immigration status in Spain with professional support.",
+                "icon": "ShieldCheck"
+            },
+            {
+                "id": "nacionalidad",
+                "title": "Spanish Nationality",
+                "description": "We accompany you through the entire process to obtain Spanish nationality with a complete and efficient approach.",
+                "icon": "Landmark"
+            },
+            {
+                "id": "pareja",
+                "title": "Civil Union / Domestic Partner",
+                "description": "Registration as a domestic partnership for residence and family reunification rights.",
+                "icon": "Heart"
+            },
+            {
+                "id": "familiar-ue",
+                "title": "EU/Spanish Family Member",
+                "description": "CRUE processing, registration, and EU residence card for family members of EU citizens.",
+                "icon": "Users"
+            },
+            {
+                "id": "arraigo",
+                "title": "Arraigo (Social/Labor/Family)",
+                "description": "Initial residence permits for social roots, employment, family ties, and vocational training in Spain.",
+                "icon": "FileText"
+            },
+            {
+                "id": "renovaciones",
+                "title": "Renewals and Modifications",
+                "description": "Renewal of residence and work permits, modifications, and long-term residence applications.",
+                "icon": "RefreshCcw"
+            }
+        ]
+    },
+    "reviews": {
+        "badge": "4.9/5 on Google Reviews",
+        "title": "Trust earned case by case",
+        "subtitle": "Over 500 cases resolved favorably back us up.",
+        "ctaText": "Read more reviews on Google Maps",
+        "items": [
+            {
+                "author": "Valentina Rossi",
+                "date": "2 months ago",
+                "rating": 5,
+                "text": "Incredible professionals! They helped me with my Digital Nomad Visa when I thought I didn't meet the requirements. They analyzed my case in detail and in 3 weeks I had a favorable resolution. WhatsApp response was super fast.",
+                "initial": "V"
+            },
+            {
+                "author": "Liam O'Connor",
+                "date": "1 month ago",
+                "rating": 5,
+                "text": "The best immigration lawyers in Barcelona. They speak perfect English and explained every step of the 'Pareja de Hecho' process. No hidden fees and very transparent. Highly recommended for expats.",
+                "initial": "L"
+            },
+            {
+                "author": "María Fernanda López",
+                "date": "3 weeks ago",
+                "rating": 5,
+                "text": "Thanks to Clara and Marta I got my nationality after years of waiting with other agents. They are serious, modern and get straight to the point. You can tell they know how immigration works these days.",
+                "initial": "M"
+            }
+        ]
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Transparency and clarity from the very first moment.",
+        "ctaText": "Do you have a more specific question?",
+        "items": [
+            {
+                "question": "What is the process to hire your services?",
+                "answer": "It's very simple. Get in touch with us. If we have enough information, we'll send you a direct quote. If an in-depth case analysis is needed, we'll propose an initial consultation to study the legal feasibility."
+            },
+            {
+                "question": "Do you offer online service if I'm not yet in Spain?",
+                "answer": "Yes. We've chosen a flexible model that allows us to fully serve clients both in and outside of Spain. We adapt to your needs, whether by video call or in person in Barcelona."
+            },
+            {
+                "question": "What is your pricing policy?",
+                "answer": "Our policy is transparent and adapted to each client's needs. We offer the possibility of setting up a payment plan adjusted to your situation so that cost is not a barrier to your regularization."
+            },
+            {
+                "question": "Is it mandatory to hire a lawyer for my procedures?",
+                "answer": "It is not legally mandatory, but bureaucracy can be complex. A small mistake can mean a denial. Having CM Abogadas ensures your file is perfect and rigorous from day one."
+            },
+            {
+                "question": "How long does it take to get Spanish Nationality?",
+                "answer": "Timelines vary, but professional electronic filing usually speeds up the process significantly. At CM Abogadas we work with dedication to make your process as simple and successful as possible."
+            }
+        ]
+    }
+}

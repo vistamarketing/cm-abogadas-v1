@@ -1,10 +1,12 @@
 import React from 'react';
 import { X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useModal } from '../context/ModalContext';
 import { ContactForm } from './ContactForm';
 
 export const ContactModal: React.FC = () => {
     const { isModalOpen, modalType, closeModal } = useModal();
+    const { t } = useTranslation();
 
     if (!isModalOpen || modalType !== 'contact') return null;
 
@@ -21,7 +23,7 @@ export const ContactModal: React.FC = () => {
                 <button
                     onClick={closeModal}
                     className="absolute top-4 right-4 p-2 text-brand-secondary hover:text-brand-primary transition-colors z-20 bg-white/80 backdrop-blur-sm rounded-full"
-                    aria-label="Cerrar modal"
+                    aria-label="Close modal"
                 >
                     <X size={24} />
                 </button>
@@ -29,10 +31,10 @@ export const ContactModal: React.FC = () => {
                 <div className="p-8 sm:p-10">
                     <div className="text-center mb-8">
                         <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-darker mb-3">
-                            Comienza tu proceso hoy
+                            {t('contactModal.title')}
                         </h2>
                         <p className="text-brand-secondary font-sans text-sm md:text-base">
-                            Rellena el formulario con detalle para que podamos analizar tu caso.
+                            {t('contactModal.subtitle')}
                         </p>
                     </div>
 

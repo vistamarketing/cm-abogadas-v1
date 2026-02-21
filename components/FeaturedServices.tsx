@@ -1,31 +1,33 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useModal } from '../context/ModalContext';
 
 export const FeaturedServices: React.FC = () => {
     const { openModal } = useModal();
+    const { t } = useTranslation();
 
     const services = [
         {
             id: 'regularizacion',
-            title: 'Regularización Masiva 2026',
-            price: 'desde 350€',
-            description: 'Aprovecha la oportunidad de regularizar tu situación migratoria en España.',
+            title: t('featuredServices.service1Title'),
+            price: t('featuredServices.service1Price'),
+            description: t('featuredServices.service1Description'),
             highlights: [
-                'Asesoría personalizada',
-                'Gestión completa de documentación',
-                'Seguimiento del proceso'
+                t('featuredServices.service1Highlight1'),
+                t('featuredServices.service1Highlight2'),
+                t('featuredServices.service1Highlight3')
             ]
         },
         {
             id: 'nacionalidad',
-            title: 'Nacionalidad Española',
-            price: 'desde 150€',
-            description: 'Te acompañamos en todo el proceso para obtener la nacionalidad española.',
+            title: t('featuredServices.service2Title'),
+            price: t('featuredServices.service2Price'),
+            description: t('featuredServices.service2Description'),
             highlights: [
-                'Evaluación de elegibilidad',
-                'Preparación de expediente',
-                'Acompañamiento legal completo'
+                t('featuredServices.service2Highlight1'),
+                t('featuredServices.service2Highlight2'),
+                t('featuredServices.service2Highlight3')
             ]
         }
     ];
@@ -35,10 +37,10 @@ export const FeaturedServices: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl lg:text-5xl font-bold text-brand-darker mb-4 font-serif">
-                        Servicios Destacados
+                        {t('featuredServices.title')}
                     </h2>
                     <p className="text-lg lg:text-xl text-brand-secondary max-w-2xl mx-auto">
-                        Los servicios más solicitados con precios competitivos
+                        {t('featuredServices.subtitle')}
                     </p>
                 </div>
 
@@ -74,7 +76,7 @@ export const FeaturedServices: React.FC = () => {
                                         onClick={() => openModal()}
                                         className="w-full inline-flex justify-center items-center px-6 py-4 text-lg font-bold rounded-sm text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-md hover:shadow-lg group-hover:translate-x-1 transform duration-300"
                                     >
-                                        Solicitar Información
+                                        {t('featuredServices.requestInfo')}
                                         <ArrowRight className="ml-2 w-5 h-5" />
                                     </button>
                                 </div>

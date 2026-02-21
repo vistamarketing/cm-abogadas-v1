@@ -1,9 +1,14 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Clock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useModal } from '../context/ModalContext';
+import { useLocalizedPath, ROUTES } from '../hooks/useLanguage';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
     const { openModal } = useModal();
+    const { t } = useTranslation();
+    const localizedPath = useLocalizedPath();
     return (
         <footer className="bg-[#1B0A09] text-white">
             {/* Main Footer Content */}
@@ -14,7 +19,7 @@ export const Footer: React.FC = () => {
                     <div>
                         <h3 className="text-2xl font-bold mb-4 font-serif text-white">CM Abogadas</h3>
                         <p className="text-stone-300 mb-6 font-sans leading-relaxed">
-                            Especialistas en extranjería comprometidas con tu futuro en Barcelona.
+                            {t('footer.description')}
                         </p>
                         <div className="flex items-center gap-3">
                             <a
@@ -42,7 +47,7 @@ export const Footer: React.FC = () => {
 
                     {/* Columna 2: Contacto */}
                     <div>
-                        <h4 className="text-lg font-bold mb-4 font-serif text-white">Contacto</h4>
+                        <h4 className="text-lg font-bold mb-4 font-serif text-white">{t('footer.contactTitle')}</h4>
                         <div className="space-y-4">
                             <div className="flex items-start gap-3">
                                 <Phone className="text-stone-300 flex-shrink-0 mt-1" size={20} />
@@ -85,22 +90,22 @@ export const Footer: React.FC = () => {
 
                     {/* Columna 3: Ubicación y Horario */}
                     <div>
-                        <h4 className="text-lg font-bold mb-4 font-serif text-white">Ubicación</h4>
+                        <h4 className="text-lg font-bold mb-4 font-serif text-white">{t('footer.locationTitle')}</h4>
                         <div className="space-y-4">
                             <div className="flex items-start gap-3">
                                 <MapPin className="text-stone-300 flex-shrink-0 mt-1" size={20} />
                                 <div>
-                                    <p className="font-sans text-stone-300">Barcelona, España</p>
-                                    <p className="font-sans text-stone-400 text-sm">Servicio presencial y online</p>
-                                    <p className="font-sans text-stone-400 text-sm">Cobertura en toda España</p>
+                                    <p className="font-sans text-stone-300">{t('footer.location')}</p>
+                                    <p className="font-sans text-stone-400 text-sm">{t('footer.locationService')}</p>
+                                    <p className="font-sans text-stone-400 text-sm">{t('footer.locationCoverage')}</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-3">
                                 <Clock className="text-stone-300 flex-shrink-0 mt-1" size={20} />
                                 <div>
-                                    <p className="font-sans text-stone-300 font-medium">Horario de Atención</p>
-                                    <p className="font-sans text-stone-400 text-sm">Lunes - Viernes</p>
+                                    <p className="font-sans text-stone-300 font-medium">{t('footer.schedule')}</p>
+                                    <p className="font-sans text-stone-400 text-sm">{t('footer.weekdays')}</p>
                                     <p className="font-sans text-stone-400 text-sm">09:00 - 18:00</p>
                                 </div>
                             </div>
@@ -109,27 +114,27 @@ export const Footer: React.FC = () => {
 
                     {/* Columna 4: Enlaces Rápidos */}
                     <div>
-                        <h4 className="text-lg font-bold mb-4 font-serif text-white">Enlaces Rápidos</h4>
+                        <h4 className="text-lg font-bold mb-4 font-serif text-white">{t('footer.quickLinksTitle')}</h4>
                         <ul className="space-y-3 font-sans">
                             <li>
-                                <a href="/" className="text-stone-300 hover:text-white transition-colors">
-                                    Inicio
-                                </a>
+                                <Link to={localizedPath('/')} className="text-stone-300 hover:text-white transition-colors">
+                                    {t('nav.home')}
+                                </Link>
                             </li>
                             <li>
-                                <a href="/services" className="text-stone-300 hover:text-white transition-colors">
-                                    Servicios
-                                </a>
+                                <Link to={localizedPath(ROUTES.services)} className="text-stone-300 hover:text-white transition-colors">
+                                    {t('nav.services')}
+                                </Link>
                             </li>
                             <li>
-                                <a href="/about" className="text-stone-300 hover:text-white transition-colors">
-                                    Sobre Nosotras
-                                </a>
+                                <Link to={localizedPath(ROUTES.about)} className="text-stone-300 hover:text-white transition-colors">
+                                    {t('footer.aboutLink')}
+                                </Link>
                             </li>
                             <li>
-                                <a href="/contact" className="text-stone-300 hover:text-white transition-colors">
-                                    Contacto
-                                </a>
+                                <Link to={localizedPath(ROUTES.contact)} className="text-stone-300 hover:text-white transition-colors">
+                                    {t('nav.contact')}
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -141,18 +146,18 @@ export const Footer: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-stone-400 text-sm font-sans">
-                            © {new Date().getFullYear()} CM Abogadas. Todos los derechos reservados.
+                            {t('footer.copyright', { year: new Date().getFullYear() })}
                         </p>
                         <div className="flex gap-6 text-sm font-sans">
-                            <a href="/legal-notice" className="text-stone-400 hover:text-white transition-colors">
-                                Aviso Legal
-                            </a>
-                            <a href="/privacy-policy" className="text-stone-400 hover:text-white transition-colors">
-                                Privacidad
-                            </a>
-                            <a href="/cookies-policy" className="text-stone-400 hover:text-white transition-colors">
-                                Cookies
-                            </a>
+                            <Link to={localizedPath(ROUTES.legalNotice)} className="text-stone-400 hover:text-white transition-colors">
+                                {t('footer.legalNotice')}
+                            </Link>
+                            <Link to={localizedPath(ROUTES.privacyPolicy)} className="text-stone-400 hover:text-white transition-colors">
+                                {t('footer.privacy')}
+                            </Link>
+                            <Link to={localizedPath(ROUTES.cookiesPolicy)} className="text-stone-400 hover:text-white transition-colors">
+                                {t('footer.cookies')}
+                            </Link>
                         </div>
                     </div>
                 </div>

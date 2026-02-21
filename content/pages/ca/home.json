@@ -1,0 +1,123 @@
+{
+    "title": "Home",
+    "hero": {
+        "badge": "— MIGRAR AMB PLA PER MIGRAR MILLOR —",
+        "title": "Advocades especialistes en dret migratori",
+        "subtitle": "A CM Abogadas som un despatx jove i compromès amb les teves necessitats. Combinem l'excel·lència jurídica amb un tracte humà perquè el teu procés migratori sigui segur i sense estrès.",
+        "ctaPrimary": "Reservar Cita",
+        "ctaSecondary": "Veure Serveis",
+        "quote": "\"Defensem els teus drets, construïm el teu futur.\"",
+        "features": [
+            {
+                "text": "Honestedat i Transparència"
+            },
+            {
+                "text": "Atenció Flexible (Online/Presencial)"
+            }
+        ],
+        "images": [
+            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
+            "/images/hero-slide-2.jpg"
+        ]
+    },
+    "services": {
+        "badge": "— ELS NOSTRES SERVEIS —",
+        "title": "Què fem per tu",
+        "subtitle": "Tràmits d'estrangeria i serveis administratius adaptats a les teves necessitats.",
+        "ctaText": "Veure Tots els Serveis",
+        "items": [
+            {
+                "id": "regularizacion",
+                "title": "Regularització Massiva 2026",
+                "description": "Aprofita l'oportunitat de regularitzar la teva situació migratòria a Espanya amb suport professional.",
+                "icon": "ShieldCheck"
+            },
+            {
+                "id": "nacionalidad",
+                "title": "Nacionalitat Espanyola",
+                "description": "T'acompanyem en tot el procés per obtenir la nacionalitat espanyola amb un enfocament complet i eficient.",
+                "icon": "Landmark"
+            },
+            {
+                "id": "pareja",
+                "title": "Parella de Fet / Parella Estable",
+                "description": "Inscripció com a parella de fet per a drets de residència i reagrupament familiar.",
+                "icon": "Heart"
+            },
+            {
+                "id": "familiar-ue",
+                "title": "Familiar de Ciutadà UE/Espanyol",
+                "description": "Tramitació CRUE, inscripció i targeta de residència UE per a familiars de ciutadans de la UE.",
+                "icon": "Users"
+            },
+            {
+                "id": "arraigo",
+                "title": "Arrelament (Social/Laboral/Familiar)",
+                "description": "Autoritzacions de residència inicial per arrelament social, laboral, familiar i per a la formació a Espanya.",
+                "icon": "FileText"
+            },
+            {
+                "id": "renovaciones",
+                "title": "Renovacions i Modificacions",
+                "description": "Renovació de permisos de residència i treball, modificacions i sol·licituds de residència de llarga durada.",
+                "icon": "RefreshCcw"
+            }
+        ]
+    },
+    "reviews": {
+        "badge": "4.9/5 a Google Reviews",
+        "title": "Confiança guanyada cas a cas",
+        "subtitle": "Més de 500 expedients resolts favorablement ens avalen.",
+        "ctaText": "Llegir més ressenyes a Google Maps",
+        "items": [
+            {
+                "author": "Valentina Rossi",
+                "date": "Fa 2 mesos",
+                "rating": 5,
+                "text": "Professionals increïbles! Em van ajudar amb la meva Visa de Nòmada Digital quan pensava que no complia els requisits. Van analitzar el meu cas al detall i en 3 setmanes tenia la resolució favorable. L'atenció per WhatsApp va ser super ràpida.",
+                "initial": "V"
+            },
+            {
+                "author": "Liam O'Connor",
+                "date": "Fa 1 mes",
+                "rating": 5,
+                "text": "The best immigration lawyers in Barcelona. They speak perfect English and explained every step of the 'Pareja de Hecho' process. No hidden fees and very transparent. Highly recommended for expats.",
+                "initial": "L"
+            },
+            {
+                "author": "María Fernanda López",
+                "date": "Fa 3 setmanes",
+                "rating": 5,
+                "text": "Gràcies a Clara i Marta vaig aconseguir la meva nacionalitat després d'anys d'espera amb altres gestors. Són serioses, modernes i van al gra. Es nota que coneixen bé com funciona estrangeria avui en dia.",
+                "initial": "M"
+            }
+        ]
+    },
+    "faq": {
+        "title": "Preguntes Freqüents",
+        "subtitle": "Transparència i claredat des del primer moment.",
+        "ctaText": "Tens un dubte més específic?",
+        "items": [
+            {
+                "question": "Quin és el procés per contractar els vostres serveis?",
+                "answer": "És molt senzill. Posa't en contacte amb nosaltres. Si amb la informació disponible n'hi ha prou, et remetrem un pressupost directe. En cas que sigui necessari analitzar el cas en profunditat, proposarem una primera consulta per estudiar la viabilitat jurídica."
+            },
+            {
+                "question": "Oferiu atenció online si encara no estic a Espanya?",
+                "answer": "Sí. Hem optat per un model flexible que ens permet atendre amb plena disponibilitat a clients dins i fora d'Espanya. Ens adaptem a les teves necessitats, ja sigui per videotrucada o presencialment a Barcelona."
+            },
+            {
+                "question": "Quina és la vostra política de preus?",
+                "answer": "La nostra política és transparent i adaptada a les necessitats de cada client. Oferim la possibilitat d'establir un pla de pagaments ajustat a la teva situació perquè el cost no sigui una barrera per a la teva regularització."
+            },
+            {
+                "question": "És obligatori contractar un advocat per als meus tràmits?",
+                "answer": "No és legalment obligatori, però la burocràcia pot ser complexa. Un error petit pot significar una denegació. Comptar amb CM Abogadas assegura que el teu expedient estigui perfecte i rigorós des del primer dia."
+            },
+            {
+                "question": "Quant temps tarda a sortir la Nacionalitat Espanyola?",
+                "answer": "Els terminis varien, però la presentació telemàtica professional sol agilitzar molt el procés. A CM Abogadas treballem amb dedicació perquè el teu procés sigui el més senzill i exitós possible."
+            }
+        ]
+    }
+}

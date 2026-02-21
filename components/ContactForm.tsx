@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { submitContactForm, validateFormData, FormData } from '../services/formService';
 
 // Lista de códigos de país más comunes para el público objetivo
@@ -51,40 +52,41 @@ const initialFormData: FormData = {
     otroServicio: ''
 };
 
-const permitOptions = [
-    "Familiar de ciudadano UE/Español",
-    "Estudiante",
-    "Trabajo por cuenta ajena",
-    "Trabajo por cuenta propia (autónomo)",
-    "Arraigo (social/laboral/familiar/para la formación)",
-    "Residencia no lucrativa",
-    "Asilo / protección internacional",
-    "Otro"
-];
-
-const planOptions = [
-    "Tengo oferta de trabajo",
-    "Vendré a estudiar",
-    "Reagrupación / pareja / familia",
-    "Emprender / autónomo",
-    "No estoy seguro/a todavía"
-];
-
-const serviceOptions = [
-    "Residencia por familiar de ciudadano español/UE",
-    "Pareja de hecho / pareja estable",
-    "Arraigo (social/laboral/familiar/para la formación)",
-    "Estancia por estudios / visado estudiante",
-    "Modificación a trabajo",
-    "Renovación de residencia",
-    "Nacionalidad española",
-    "Reagrupación familiar",
-    "Asesoría laboral / contrato / alta Seguridad Social",
-    "Otro (especificar)"
-];
-
 export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = 'default' }) => {
+    const { t } = useTranslation();
     const effectiveVariant = variant !== 'default' ? variant : (isCompact ? 'compact' : 'default');
+
+    const permitOptions = [
+        { key: 'euFamily', value: t('contactForm.permitOptions.euFamily') },
+        { key: 'student', value: t('contactForm.permitOptions.student') },
+        { key: 'employedWork', value: t('contactForm.permitOptions.employedWork') },
+        { key: 'selfEmployed', value: t('contactForm.permitOptions.selfEmployed') },
+        { key: 'arraigo', value: t('contactForm.permitOptions.arraigo') },
+        { key: 'nonLucrative', value: t('contactForm.permitOptions.nonLucrative') },
+        { key: 'asylum', value: t('contactForm.permitOptions.asylum') },
+        { key: 'other', value: t('contactForm.permitOptions.other') },
+    ];
+
+    const planOptions = [
+        { key: 'jobOffer', value: t('contactForm.planOptions.jobOffer') },
+        { key: 'study', value: t('contactForm.planOptions.study') },
+        { key: 'family', value: t('contactForm.planOptions.family') },
+        { key: 'entrepreneur', value: t('contactForm.planOptions.entrepreneur') },
+        { key: 'unsure', value: t('contactForm.planOptions.unsure') },
+    ];
+
+    const serviceOptions = [
+        { key: 'euFamilyRes', value: t('contactForm.serviceOptions.euFamilyRes') },
+        { key: 'domesticPartner', value: t('contactForm.serviceOptions.domesticPartner') },
+        { key: 'arraigo', value: t('contactForm.serviceOptions.arraigo') },
+        { key: 'studentVisa', value: t('contactForm.serviceOptions.studentVisa') },
+        { key: 'workModification', value: t('contactForm.serviceOptions.workModification') },
+        { key: 'renewal', value: t('contactForm.serviceOptions.renewal') },
+        { key: 'nationality', value: t('contactForm.serviceOptions.nationality') },
+        { key: 'familyReunification', value: t('contactForm.serviceOptions.familyReunification') },
+        { key: 'laborAdvice', value: t('contactForm.serviceOptions.laborAdvice') },
+        { key: 'other', value: t('contactForm.serviceOptions.other') },
+    ];
 
     // Styles
     const containerClasses = {
@@ -95,7 +97,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
 
     const inputClasses = "w-full px-4 py-3 rounded-sm border border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-red-100 outline-none transition-all font-sans text-base disabled:bg-gray-100 disabled:cursor-not-allowed";
     const labelClasses = "block text-sm font-bold text-brand-darker mb-1.5 font-sans";
-    const sectionTitleClasses = "text-lg font-bold text-brand-primary border-b border-gray-100 pb-2 mb-4 mt-6 uppercase tracking-wide";
     const radioGroupClasses = "flex flex-col sm:flex-row gap-4 mt-2";
     const radioOptionClasses = "flex items-center space-x-2 cursor-pointer";
 
@@ -135,12 +136,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
             telefono: fullPhoneNumber,
         };
 
-        const validationError = validateFormData(submissionData);
-        if (validationError) {
+        const validationErrorKey = validateFormData(submissionData);
+        if (validationErrorKey) {
             setSubmitStatus('error');
-            setStatusMessage(validationError);
+            setStatusMessage(t(validationErrorKey));
 
-            // Scroll to top of form or error message in modal
             const errorElement = document.getElementById('form-status-message');
             if (errorElement) errorElement.scrollIntoView({ behavior: 'smooth' });
             return;
@@ -153,7 +153,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
 
         setIsSubmitting(false);
         setSubmitStatus(response.success ? 'success' : 'error');
-        setStatusMessage(response.message);
+        setStatusMessage(t(response.messageKey));
 
         if (response.success) {
             setFormData(initialFormData);
@@ -188,11 +188,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                 <div>
                     <h3 className="text-brand-darker font-bold text-lg mb-4 flex items-center gap-2">
                         <span className="bg-brand-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">1</span>
-                        Datos de Contacto
+                        {t('contactForm.section1Title')}
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className={labelClasses}>Nombre *</label>
+                            <label className={labelClasses}>{t('contactForm.firstName')}</label>
                             <input
                                 type="text"
                                 name="nombre"
@@ -200,11 +200,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                 onChange={handleInputChange}
                                 disabled={isSubmitting}
                                 className={inputClasses}
-                                placeholder="Tu nombre"
+                                placeholder={t('contactForm.firstNamePlaceholder')}
                             />
                         </div>
                         <div>
-                            <label className={labelClasses}>Apellido *</label>
+                            <label className={labelClasses}>{t('contactForm.lastName')}</label>
                             <input
                                 type="text"
                                 name="apellido"
@@ -212,14 +212,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                 onChange={handleInputChange}
                                 disabled={isSubmitting}
                                 className={inputClasses}
-                                placeholder="Tu apellido"
+                                placeholder={t('contactForm.lastNamePlaceholder')}
                             />
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                         <div>
-                            <label className={labelClasses}>Email *</label>
+                            <label className={labelClasses}>{t('contactForm.email')}</label>
                             <input
                                 type="email"
                                 name="email"
@@ -227,11 +227,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                 onChange={handleInputChange}
                                 disabled={isSubmitting}
                                 className={inputClasses}
-                                placeholder="ejemplo@correo.com"
+                                placeholder={t('contactForm.emailPlaceholder')}
                             />
                         </div>
                         <div>
-                            <label className={labelClasses}>Teléfono *</label>
+                            <label className={labelClasses}>{t('contactForm.phone')}</label>
                             <div className="flex gap-2">
                                 <select
                                     value={countryCode}
@@ -253,7 +253,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                     onChange={handleInputChange}
                                     disabled={isSubmitting}
                                     className={`flex-1 ${inputClasses}`}
-                                    placeholder="600 000 000"
+                                    placeholder={t('contactForm.phonePlaceholder')}
                                 />
                             </div>
                         </div>
@@ -264,11 +264,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                 <div className="pt-2">
                     <h3 className="text-brand-darker font-bold text-lg mb-4 flex items-center gap-2">
                         <span className="bg-brand-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">2</span>
-                        Situación en España
+                        {t('contactForm.section2Title')}
                     </h3>
 
                     <div className="mb-4">
-                        <label className={labelClasses}>¿Actualmente vives en España? *</label>
+                        <label className={labelClasses}>{t('contactForm.livesInSpain')}</label>
                         <div className={radioGroupClasses}>
                             <label className={`${radioOptionClasses} p-3 border rounded-sm ${formData.viveEnEspana === 'si' ? 'border-brand-primary bg-red-50/30' : 'border-gray-200'}`}>
                                 <input
@@ -279,7 +279,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                     onChange={handleInputChange}
                                     className="text-brand-primary focus:ring-brand-primary"
                                 />
-                                <span>Sí, vivo en España</span>
+                                <span>{t('contactForm.livesInSpainYes')}</span>
                             </label>
                             <label className={`${radioOptionClasses} p-3 border rounded-sm ${formData.viveEnEspana === 'no' ? 'border-brand-primary bg-red-50/30' : 'border-gray-200'}`}>
                                 <input
@@ -290,7 +290,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                     onChange={handleInputChange}
                                     className="text-brand-primary focus:ring-brand-primary"
                                 />
-                                <span>No, aún no vivo en España</span>
+                                <span>{t('contactForm.livesInSpainNo')}</span>
                             </label>
                         </div>
                     </div>
@@ -299,19 +299,19 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                     {formData.viveEnEspana === 'si' && (
                         <div className="pl-4 border-l-2 border-brand-primary/20 space-y-4 animate-in slide-in-from-left-2 duration-300">
                             <div>
-                                <label className={labelClasses}>¿Desde hace cuánto tiempo vives en España? *</label>
+                                <label className={labelClasses}>{t('contactForm.timeInSpain')}</label>
                                 <input
                                     type="text"
                                     name="tiempoEnEspana"
                                     value={formData.tiempoEnEspana}
                                     onChange={handleInputChange}
                                     className={inputClasses}
-                                    placeholder="Ej.: 6 meses / desde marzo de 2023"
+                                    placeholder={t('contactForm.timeInSpainPlaceholder')}
                                 />
                             </div>
 
                             <div>
-                                <label className={labelClasses}>¿Tienes permiso de residencia vigente? *</label>
+                                <label className={labelClasses}>{t('contactForm.hasPermit')}</label>
                                 <div className={radioGroupClasses}>
                                     {['si', 'no', 'tramite'].map(opt => (
                                         <label key={opt} className={radioOptionClasses}>
@@ -323,7 +323,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                                 onChange={handleInputChange}
                                                 className="text-brand-primary focus:ring-brand-primary"
                                             />
-                                            <span className="capitalize">{opt === 'tramite' ? 'En trámite / pendiente' : opt === 'si' ? 'Sí' : 'No'}</span>
+                                            <span className="capitalize">{opt === 'tramite' ? t('contactForm.permitInProgress') : opt === 'si' ? t('contactForm.permitYes') : t('contactForm.permitNo')}</span>
                                         </label>
                                     ))}
                                 </div>
@@ -331,16 +331,16 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
 
                             {formData.tienePermiso === 'si' && (
                                 <div className="animate-in fade-in">
-                                    <label className={labelClasses}>¿Qué tipo de permiso tienes? *</label>
+                                    <label className={labelClasses}>{t('contactForm.permitType')}</label>
                                     <select
                                         name="tipoPermiso"
                                         value={formData.tipoPermiso}
                                         onChange={handleInputChange}
                                         className={inputClasses}
                                     >
-                                        <option value="">Selecciona una opción</option>
+                                        <option value="">{t('contactForm.selectOption')}</option>
                                         {permitOptions.map((opt) => (
-                                            <option key={opt} value={opt === 'Otro' ? 'otro' : opt}>{opt}</option>
+                                            <option key={opt.key} value={opt.key === 'other' ? 'otro' : opt.value}>{opt.value}</option>
                                         ))}
                                     </select>
 
@@ -352,7 +352,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                                 value={formData.otroPermiso}
                                                 onChange={handleInputChange}
                                                 className={inputClasses}
-                                                placeholder="Escribe el nombre del permiso"
+                                                placeholder={t('contactForm.otherPermitPlaceholder')}
                                             />
                                         </div>
                                     )}
@@ -365,22 +365,22 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                     {formData.viveEnEspana === 'no' && (
                         <div className="pl-4 border-l-2 border-brand-primary/20 space-y-4 animate-in slide-in-from-left-2 duration-300">
                             <div>
-                                <label className={labelClasses}>¿Cuál es tu plan principal para venir a España? *</label>
+                                <label className={labelClasses}>{t('contactForm.planForSpain')}</label>
                                 <select
                                     name="planVenirEspana"
                                     value={formData.planVenirEspana}
                                     onChange={handleInputChange}
                                     className={inputClasses}
                                 >
-                                    <option value="">Selecciona una opción</option>
+                                    <option value="">{t('contactForm.selectOption')}</option>
                                     {planOptions.map((opt) => (
-                                        <option key={opt} value={opt}>{opt}</option>
+                                        <option key={opt.key} value={opt.value}>{opt.value}</option>
                                     ))}
                                 </select>
                             </div>
 
                             <div>
-                                <label className={labelClasses}>¿Tienes una oferta de trabajo? *</label>
+                                <label className={labelClasses}>{t('contactForm.hasJobOffer')}</label>
                                 <div className={radioGroupClasses}>
                                     <label className={radioOptionClasses}>
                                         <input
@@ -391,7 +391,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                             onChange={handleInputChange}
                                             className="text-brand-primary focus:ring-brand-primary"
                                         />
-                                        <span>Sí</span>
+                                        <span>{t('contactForm.yes')}</span>
                                     </label>
                                     <label className={radioOptionClasses}>
                                         <input
@@ -402,27 +402,27 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                             onChange={handleInputChange}
                                             className="text-brand-primary focus:ring-brand-primary"
                                         />
-                                        <span>No</span>
+                                        <span>{t('contactForm.no')}</span>
                                     </label>
                                 </div>
                             </div>
 
                             {formData.tieneOfertaTrabajo === 'si' && (
                                 <div className="animate-in fade-in">
-                                    <label className={labelClasses}>Profesión / puesto de trabajo *</label>
+                                    <label className={labelClasses}>{t('contactForm.jobTitle')}</label>
                                     <input
                                         type="text"
                                         name="profesionPuesto"
                                         value={formData.profesionPuesto}
                                         onChange={handleInputChange}
                                         className={inputClasses}
-                                        placeholder="Ej.: Ingeniero de Software"
+                                        placeholder={t('contactForm.jobTitlePlaceholder')}
                                     />
                                 </div>
                             )}
 
                             <div>
-                                <label className={labelClasses}>¿Tienes admisión o matrícula en un centro de estudios? *</label>
+                                <label className={labelClasses}>{t('contactForm.hasStudyAdmission')}</label>
                                 <div className={radioGroupClasses}>
                                     {['si', 'no', 'proceso'].map(opt => (
                                         <label key={opt} className={radioOptionClasses}>
@@ -434,7 +434,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                                 onChange={handleInputChange}
                                                 className="text-brand-primary focus:ring-brand-primary"
                                             />
-                                            <span className="capitalize">{opt === 'proceso' ? 'En proceso' : opt === 'si' ? 'Sí' : 'No'}</span>
+                                            <span className="capitalize">{opt === 'proceso' ? t('contactForm.inProcess') : opt === 'si' ? t('contactForm.yes') : t('contactForm.no')}</span>
                                         </label>
                                     ))}
                                 </div>
@@ -447,33 +447,33 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                 <div className="pt-2">
                     <h3 className="text-brand-darker font-bold text-lg mb-4 flex items-center gap-2">
                         <span className="bg-brand-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">3</span>
-                        Otros Datos
+                        {t('contactForm.section3Title')}
                     </h3>
 
                     <div className="space-y-4">
                         <div>
-                            <label className={labelClasses}>Nacionalidad *</label>
+                            <label className={labelClasses}>{t('contactForm.nationality')}</label>
                             <input
                                 type="text"
                                 name="nacionalidad"
                                 value={formData.nacionalidad}
                                 onChange={handleInputChange}
                                 className={inputClasses}
-                                placeholder="Tu nacionalidad"
+                                placeholder={t('contactForm.nationalityPlaceholder')}
                             />
                         </div>
 
                         <div>
-                            <label className={labelClasses}>¿Qué servicio necesitas? *</label>
+                            <label className={labelClasses}>{t('contactForm.serviceNeeded')}</label>
                             <select
                                 name="servicioNecesita"
                                 value={formData.servicioNecesita}
                                 onChange={handleInputChange}
                                 className={inputClasses}
                             >
-                                <option value="">Selecciona el servicio</option>
+                                <option value="">{t('contactForm.selectService')}</option>
                                 {serviceOptions.map((opt) => (
-                                    <option key={opt} value={opt === 'Otro (especificar)' ? 'otro' : opt}>{opt}</option>
+                                    <option key={opt.key} value={opt.key === 'other' ? 'otro' : opt.value}>{opt.value}</option>
                                 ))}
                             </select>
 
@@ -485,7 +485,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                         value={formData.otroServicio}
                                         onChange={handleInputChange}
                                         className={inputClasses}
-                                        placeholder="Especifica qué servicio necesitas"
+                                        placeholder={t('contactForm.otherServicePlaceholder')}
                                     />
                                 </div>
                             )}
@@ -493,7 +493,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
 
                         <div>
                             <label className={labelClasses}>
-                                Cuéntanos brevemente tu caso *
+                                {t('contactForm.caseDescription')}
                             </label>
                             <textarea
                                 rows={4}
@@ -501,11 +501,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                                 value={formData.mensaje}
                                 onChange={handleInputChange}
                                 className={`${inputClasses} resize-none`}
-                                placeholder="Describe tu situación actual, fechas y qué necesitas gestionar."
+                                placeholder={t('contactForm.caseDescriptionPlaceholder')}
                             ></textarea>
                             <div className="flex justify-between items-start mt-1 gap-4">
                                 <p className="text-xs text-gray-500">
-                                    Mínimo 80 caracteres. Describe tu situación actual, fechas y qué necesitas gestionar.
+                                    {t('contactForm.minCharsNote')}
                                 </p>
                                 <span className={`text-xs font-medium whitespace-nowrap ${formData.mensaje.length < 80 ? 'text-brand-primary' : 'text-green-600'}`}>
                                     {formData.mensaje.length}/80 min
@@ -524,15 +524,15 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                         {isSubmitting ? (
                             <>
                                 <Loader2 className="animate-spin" size={20} />
-                                Enviando...
+                                {t('contactForm.submitting')}
                             </>
                         ) : (
-                            'Enviar Datos y Solicitar Cita'
+                            t('contactForm.submitButton')
                         )}
                     </button>
 
                     <p className="text-xs text-center text-brand-secondary/50 mt-4 font-sans">
-                        Tus datos serán tratados con total confidencialidad y rapidez.
+                        {t('contactForm.privacyNote')}
                     </p>
                 </div>
             </form>
@@ -549,10 +549,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ isCompact, variant = '
                 {/* Título */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold text-brand-darker mb-4 font-serif">
-                        Comienza tu proceso migratorio hoy
+                        {t('contactForm.formTitle')}
                     </h2>
                     <p className="text-xl text-brand-secondary font-sans">
-                        Rellena este formulario para que podamos analizar tu caso en detalle
+                        {t('contactForm.formSubtitle')}
                     </p>
                 </div>
 

@@ -1,0 +1,56 @@
+{
+    "_template": "about",
+    "title": "About",
+    "hero": {
+        "badge": "— ABOUT US —",
+        "title": "Who are we?",
+        "description": "At CM Abogadas we are a young, close-knit, and committed firm, founded in April 2024. We have experienced constant growth thanks to the trust of those who choose us.",
+        "image": "/images/about-hero.jpg"
+    },
+    "team": {
+        "badge": "— PROFESSIONAL TEAM —",
+        "title": "Experts in defending your rights",
+        "description1": "Our team is made up of lawyers registered with the Barcelona Bar Association (ICAB), experts in immigration and administrative law. We bring legal rigor and deep knowledge of current regulations.",
+        "description2": "We work with our own style: combining legal commitment with a close, empathetic human touch. We know that behind every file is a person with a story that deserves to be heard.",
+        "image": ""
+    },
+    "model": {
+        "badge": "— FLEXIBLE MODEL —",
+        "title": "A modern firm, without physical barriers.",
+        "description1": "CM ABOGADAS is based in Barcelona but operates without the limitation of a permanent physical office. This model allows us to fully serve anyone, anywhere in Spain, through digital tools, video calls, and constant communication via WhatsApp.",
+        "description2": "By not depending on a permanent physical office, we adapt to your schedule and needs in an agile way. We offer direct personalized attention without location limitations.",
+        "boxTitle": "How do we meet?",
+        "features": [
+            {
+                "title": "100% Online and Available",
+                "description": "Video calls and digital management so you can move forward from home, wherever you are.",
+                "icon": "MonitorSmartphone"
+            },
+            {
+                "title": "In-person when you need it",
+                "description": "If necessary, we organize in-person meetings in suitable spaces in Barcelona, combining proximity and comfort.",
+                "icon": "Users"
+            }
+        ]
+    },
+    "values": {
+        "title": "Our Values",
+        "items": [
+            {
+                "title": "Transparency",
+                "description": "Clear communication from the first moment. No surprises, with honesty about the viability of your case.",
+                "icon": "ShieldCheck"
+            },
+            {
+                "title": "Commitment",
+                "description": "We get personally involved in every case, treating it as if it were our own. Your success is our success.",
+                "icon": "Heart"
+            },
+            {
+                "title": "Agility",
+                "description": "Flexible schedules, quick responses, and constant progress. We don't make you wait for what you need now.",
+                "icon": "Clock"
+            }
+        ]
+    }
+}

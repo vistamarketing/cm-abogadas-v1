@@ -1,0 +1,56 @@
+{
+    "_template": "about",
+    "title": "About",
+    "hero": {
+        "badge": "— SOBRE NOSALTRES —",
+        "title": "Qui som?",
+        "description": "A CM Abogadas som un despatx jove, proper i compromès, fundat l'abril de 2024. Hem experimentat un creixement constant gràcies a la confiança de qui ens tria.",
+        "image": "/images/about-hero.jpg"
+    },
+    "team": {
+        "badge": "— EQUIP PROFESSIONAL —",
+        "title": "Expertes en defensar els teus drets",
+        "description1": "El nostre equip està integrat per advocades col·legiades a l'ICAB, expertes en dret d'estrangeria i administratiu. Aportem rigor jurídic i un coneixement profund de la normativa vigent.",
+        "description2": "Treballem amb un estil propi: combinant el compromís legal amb un tracte humà proper i empàtic. Sabem que darrere de cada expedient hi ha una persona amb una història que mereix ser escoltada.",
+        "image": ""
+    },
+    "model": {
+        "badge": "— MODEL FLEXIBLE —",
+        "title": "Un despatx modern, sense barreres físiques.",
+        "description1": "CM ABOGADAS té la seva seu a Barcelona però opera sense la limitació d'un despatx físic permanent. Aquest model ens permet atendre plenament qualsevol persona, estigui on estigui a Espanya, mitjançant eines digitals, videotrucades i comunicació constant per WhatsApp.",
+        "description2": "En no dependre d'un despatx físic permanent, ens adaptem als teus horaris i necessitats de manera àgil. Oferim atenció personalitzada directa sense limitacions d'ubicació.",
+        "boxTitle": "Com ens reunim?",
+        "features": [
+            {
+                "title": "100% Online i Disponible",
+                "description": "Videotrucades i gestió digital perquè avancis des de casa teva, estiguis on estiguis.",
+                "icon": "MonitorSmartphone"
+            },
+            {
+                "title": "Presencial quan ho necessites",
+                "description": "Si cal, organitzem entrevistes presencials en espais adequats a Barcelona, combinant proximitat i comoditat.",
+                "icon": "Users"
+            }
+        ]
+    },
+    "values": {
+        "title": "Els Nostres Valors",
+        "items": [
+            {
+                "title": "Transparència",
+                "description": "Comunicació clara des del primer moment. Sense sorpreses, amb honestedat sobre la viabilitat del teu cas.",
+                "icon": "ShieldCheck"
+            },
+            {
+                "title": "Compromís",
+                "description": "Ens impliquem personalment en cada cas, tractant-lo com si fos propi. El teu èxit és el nostre èxit.",
+                "icon": "Heart"
+            },
+            {
+                "title": "Agilitat",
+                "description": "Horaris flexibles, respostes ràpides i avenç constant. No et fem esperar pel que necessites ara.",
+                "icon": "Clock"
+            }
+        ]
+    }
+}

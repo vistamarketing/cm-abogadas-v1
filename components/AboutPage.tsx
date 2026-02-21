@@ -2,9 +2,13 @@ import React from 'react';
 import { Users, MonitorSmartphone, Heart, Scale, MapPin, Clock, ShieldCheck } from 'lucide-react';
 import { CTA } from './CTA';
 import { useTina } from "tinacms/dist/react";
-import aboutData from "../content/pages/about.json";
+import { getPageContent } from '../utils/contentLoader';
+import { useCurrentLang } from '../hooks/useLanguage';
 
 export const AboutPage: React.FC = () => {
+  const currentLang = useCurrentLang();
+  const aboutData = getPageContent('about', currentLang);
+
   // Only use Tina in edit mode (when in /admin or when Tina is active)
   const isEditMode = typeof window !== 'undefined' && window.location.pathname.includes('/admin');
 
@@ -105,7 +109,7 @@ export const AboutPage: React.FC = () => {
         <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
           <img
             src={hero.image || "/images/about-hero.jpg"}
-            alt="Abogadas trabajando"
+            alt="CM Abogadas"
             className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-brand-darker/5"></div>
@@ -122,7 +126,7 @@ export const AboutPage: React.FC = () => {
               <div className="relative rounded-sm overflow-hidden shadow-2xl border-4 border-white transform md:rotate-2 hover:rotate-0 transition-all duration-500">
                 <img
                   src={team.image || "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"}
-                  alt="Abogadas trabajando"
+                  alt="CM Abogadas"
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-brand-darker/70 p-6 text-white text-center">
@@ -170,11 +174,7 @@ export const AboutPage: React.FC = () => {
                   {model.description1 || "CM ABOGADAS tiene su sede en Barcelona..."}
                 </p>
                 <p className="text-white/90 text-lg leading-relaxed font-sans">
-                  {model.description2 && (
-                    <>
-                      Al no depender de un despacho físico permanente, nos adaptamos a tus horarios y necesidades de manera ágil. Ofrecemos <strong>atención personalizada directa</strong> sin limitaciones de ubicación.
-                    </>
-                  ) ? model.description2 : "Al no depender de un despacho físico permanente..."}
+                  {model.description2 || "Al no depender de un despacho físico permanente..."}
                 </p>
               </div>
 
@@ -202,16 +202,7 @@ export const AboutPage: React.FC = () => {
                           </div>
                           <div>
                             <h4 className="font-bold text-lg text-white font-serif">100% Online y Disponible</h4>
-                            <p className="text-gray-400 text-sm mt-1 font-sans">Videollamadas y gestión digital para que avances desde tu casa, estés donde estés.</p>
-                          </div>
-                        </li>
-                        <li className="flex gap-4">
-                          <div className="bg-white/10 p-3 rounded-sm h-fit text-white border border-white/20">
-                            <Users size={24} />
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-lg text-white font-serif">Presencial cuando lo necesitas</h4>
-                            <p className="text-gray-400 text-sm mt-1 font-sans">Si es necesario, organizamos entrevistas presenciales en espacios adecuados en Barcelona, combinando cercanía y comodidad.</p>
+                            <p className="text-gray-400 text-sm mt-1 font-sans">Videollamadas y gestión digital.</p>
                           </div>
                         </li>
                       </>
@@ -234,16 +225,12 @@ export const AboutPage: React.FC = () => {
                   <p className="text-brand-secondary font-sans">{item.description}</p>
                 </div>
               )) || (
-                  <>
-                    <div className="bg-stone-50 p-8 rounded-sm border border-stone-100 hover:shadow-lg transition-all">
-                      <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
-                        <ShieldCheck size={24} />
-                      </div>
-                      <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Transparencia</h3>
-                      <p className="text-brand-secondary font-sans">Comunicación clara desde el primer momento. Sin sorpresas, con honestidad sobre la viabilidad de tu caso.</p>
+                  <div className="bg-stone-50 p-8 rounded-sm border border-stone-100">
+                    <div className="w-12 h-12 bg-transparent rounded-sm flex items-center justify-center text-brand-primary mx-auto mb-4 border border-stone-100">
+                      <ShieldCheck size={24} />
                     </div>
-                    {/* ... other default values ... */}
-                  </>
+                    <h3 className="font-bold text-lg text-brand-darker mb-2 font-serif">Transparencia</h3>
+                  </div>
                 )}
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTina } from "tinacms/dist/react";
+import { useTranslation } from 'react-i18next';
 import { Hero } from './Hero';
 import { FeaturedServices } from './FeaturedServices';
 import { Services } from './Services';
@@ -7,9 +8,13 @@ import { Reviews } from './Reviews';
 import { FAQ } from './FAQ';
 import { HowWeWork } from './HowWeWork';
 import { CTA } from './CTA';
-import homeData from "../content/pages/home.json";
+import { getPageContent } from '../utils/contentLoader';
+import { useCurrentLang } from '../hooks/useLanguage';
 
 export const HomePage: React.FC = () => {
+  const currentLang = useCurrentLang();
+  const homeData = getPageContent('home', currentLang);
+
   // Only use Tina in edit mode (when in /admin or when Tina is active)
   const isEditMode = typeof window !== 'undefined' && window.location.pathname.includes('/admin');
 

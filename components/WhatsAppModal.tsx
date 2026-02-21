@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { X, MessageCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useModal } from '../context/ModalContext';
 
 export const WhatsAppModal: React.FC = () => {
     const { isModalOpen, modalType, closeModal } = useModal();
+    const { t } = useTranslation();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -14,19 +16,14 @@ export const WhatsAppModal: React.FC = () => {
         e.preventDefault();
         setIsLoading(true);
 
-        // Here you would typically send this data to your backend/CRM
-        // For now we'll just simulate a delay and then redirect
-
         console.log('WhatsApp Lead Captured:', { name, email });
 
-        // Simulate API call
         await new Promise(resolve => setTimeout(resolve, 500));
 
         setIsLoading(false);
         closeModal();
 
-        // Redirect to WhatsApp
-        const message = `Hola, soy ${name}. Me gustaría más información.`;
+        const message = t('whatsappModal.whatsappMessage', { name });
         const whatsappUrl = `https://wa.me/34686401557?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
@@ -44,7 +41,7 @@ export const WhatsAppModal: React.FC = () => {
                 <button
                     onClick={closeModal}
                     className="absolute top-4 right-4 p-2 text-brand-secondary hover:text-brand-primary transition-colors z-20 bg-white/80 backdrop-blur-sm rounded-full"
-                    aria-label="Cerrar modal"
+                    aria-label="Close modal"
                 >
                     <X size={24} />
                 </button>
@@ -55,17 +52,17 @@ export const WhatsAppModal: React.FC = () => {
                             <MessageCircle size={32} className="text-[#25D366]" />
                         </div>
                         <h2 className="text-2xl font-serif font-bold text-brand-darker mb-2">
-                            Contactar por WhatsApp
+                            {t('whatsappModal.title')}
                         </h2>
                         <p className="text-brand-secondary font-sans text-sm">
-                            Introduce tus datos para iniciar el chat con una abogada.
+                            {t('whatsappModal.subtitle')}
                         </p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
                             <label htmlFor="wa-name" className="block text-sm font-medium text-brand-darker mb-1 font-sans">
-                                Nombre completo
+                                {t('whatsappModal.fullName')}
                             </label>
                             <input
                                 type="text"
@@ -74,13 +71,13 @@ export const WhatsAppModal: React.FC = () => {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 className="w-full px-4 py-2 border border-stone-200 rounded-sm focus:ring-1 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all font-sans"
-                                placeholder="Tu nombre"
+                                placeholder={t('whatsappModal.fullNamePlaceholder')}
                             />
                         </div>
 
                         <div>
                             <label htmlFor="wa-email" className="block text-sm font-medium text-brand-darker mb-1 font-sans">
-                                Correo electrónico
+                                {t('whatsappModal.emailLabel')}
                             </label>
                             <input
                                 type="email"
@@ -89,7 +86,7 @@ export const WhatsAppModal: React.FC = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="w-full px-4 py-2 border border-stone-200 rounded-sm focus:ring-1 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all font-sans"
-                                placeholder="tu@email.com"
+                                placeholder={t('whatsappModal.emailPlaceholder')}
                             />
                         </div>
 
@@ -102,14 +99,14 @@ export const WhatsAppModal: React.FC = () => {
                                 <span className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
                             ) : (
                                 <>
-                                    <span>Continuar al Chat</span>
+                                    <span>{t('whatsappModal.submit')}</span>
                                     <MessageCircle size={18} />
                                 </>
                             )}
                         </button>
 
                         <p className="text-xs text-stone-400 text-center mt-4">
-                            Al continuar, aceptas nuestra política de privacidad.
+                            {t('whatsappModal.privacy')}
                         </p>
                     </form>
                 </div>

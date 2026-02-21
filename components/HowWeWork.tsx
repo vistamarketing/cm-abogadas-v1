@@ -1,22 +1,24 @@
 import React from 'react';
-import { MessageCircle, FileSearch, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const HowWeWork: React.FC = () => {
+    const { t } = useTranslation();
+
     const steps = [
         {
-            number: 'Paso 1',
-            title: 'Contáctanos y Cuéntanos tu Historia',
-            description: 'Sabemos que cada historia es única, y así la tratamos. Desde el primer contacto, te escuchamos con atención para entender tu situación y acompañarte en cada paso. No eres un simple cliente, eres una historia de vida que merece ser tratada con dedicación y cercanía.'
+            number: t('howWeWork.step1Number'),
+            title: t('howWeWork.step1Title'),
+            description: t('howWeWork.step1Description')
         },
         {
-            number: 'Paso 2',
-            title: 'Evaluamos tu Caso y Preparamos tu Plan de Acción',
-            description: 'Analizamos tu situación en detalle y diseñamos un plan legal personalizado. Te presentamos las opciones disponibles, los plazos y un presupuesto transparente, para que tengas claridad total sobre el proceso.'
+            number: t('howWeWork.step2Number'),
+            title: t('howWeWork.step2Title'),
+            description: t('howWeWork.step2Description')
         },
         {
-            number: 'Paso 3',
-            title: 'Checklist Personalizado y Acompañamiento Continuo',
-            description: 'Si aceptas el presupuesto, te enviamos un checklist detallado con todos los pasos y documentos necesarios. Te acompañamos en cada tarea, resolviendo dudas y asegurándonos de que avances con confianza hacia tu objetivo.'
+            number: t('howWeWork.step3Number'),
+            title: t('howWeWork.step3Title'),
+            description: t('howWeWork.step3Description')
         }
     ];
 
@@ -26,13 +28,13 @@ export const HowWeWork: React.FC = () => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <div className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
-                        — NUESTRO PROCESO —
+                        {t('howWeWork.badge')}
                     </div>
                     <h2 className="text-3xl md:text-5xl font-serif font-bold text-brand-darker mb-6">
-                        ¿Cómo Trabajamos?
+                        {t('howWeWork.title')}
                     </h2>
                     <p className="text-lg md:text-xl text-brand-secondary max-w-3xl mx-auto font-sans">
-                        Un proceso simple y transparente, diseñado para que te sientas acompañado en cada momento.
+                        {t('howWeWork.subtitle')}
                     </p>
                 </div>
 
@@ -62,7 +64,7 @@ export const HowWeWork: React.FC = () => {
                 {/* Bottom CTA */}
                 <div className="mt-16 text-center">
                     <p className="text-lg text-brand-secondary mb-6 font-sans">
-                        <strong className="text-brand-darker">Tu historia importa.</strong> Estamos aquí para acompañarte en cada paso del camino.
+                        <strong className="text-brand-darker">{t('howWeWork.bottomCta1')}</strong>{t('howWeWork.bottomCta2')}
                     </p>
                 </div>
             </div>

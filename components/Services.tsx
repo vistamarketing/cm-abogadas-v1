@@ -2,6 +2,7 @@ import React from 'react';
 import { Users, Globe2, Home, GraduationCap, HeartHandshake, FileCheck, ArrowRight } from 'lucide-react';
 import { ServiceItem } from '../types';
 import { Link } from 'react-router-dom';
+import { useLocalizedPath, ROUTES } from '../hooks/useLanguage';
 
 const iconMap: Record<string, React.ReactNode> = {
   Users: <Users className="w-10 h-10" />,
@@ -13,6 +14,7 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export const Services: React.FC<{ data?: any }> = ({ data }) => {
+  const localizedPath = useLocalizedPath();
   const servicesData = data?.services || {};
 
   const badge = servicesData.badge || "— NUESTROS SERVICIOS —";
@@ -93,7 +95,7 @@ export const Services: React.FC<{ data?: any }> = ({ data }) => {
 
         <div className="text-center">
           <Link
-            to="/services"
+            to={localizedPath(ROUTES.services)}
             className="inline-flex items-center gap-3 bg-transparent border-2 border-brand-primary text-brand-primary px-10 py-4 rounded-sm font-bold hover:bg-brand-primary hover:text-white transition-colors uppercase text-base tracking-wide font-sans"
           >
             {ctaText}

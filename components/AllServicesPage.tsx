@@ -2,9 +2,15 @@ import React from 'react';
 import { ShieldCheck, FileText, CheckCircle2, Stamp, Landmark } from 'lucide-react';
 import { CTA } from './CTA';
 import { useTina } from "tinacms/dist/react";
-import servicesData from "../content/pages/services.json";
+import { getPageContent } from '../utils/contentLoader';
+import { useCurrentLang } from '../hooks/useLanguage';
+import { useTranslation } from 'react-i18next';
 
 export const AllServicesPage: React.FC = () => {
+  const currentLang = useCurrentLang();
+  const { t } = useTranslation();
+  const servicesData = getPageContent('services', currentLang);
+
   // Only use Tina in edit mode (when in /admin or when Tina is active)
   const isEditMode = typeof window !== 'undefined' && window.location.pathname.includes('/admin');
 
@@ -75,7 +81,7 @@ export const AllServicesPage: React.FC = () => {
         <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
           <img
             src={hero.image || "/images/services-hero.jpg"}
-            alt="Abogada trabajando en despacho"
+            alt="CM Abogadas"
             className="absolute inset-0 w-full h-full object-cover transform scale-105"
           />
           <div className="absolute inset-0 bg-brand-darker/5"></div>
@@ -109,7 +115,7 @@ export const AllServicesPage: React.FC = () => {
               </div>
             )) || (
                 // Fallback just in case
-                <div className="p-6">Cargando servicios...</div>
+                <div className="p-6">{t('loading')}</div>
               )}
           </div>
         </div>
@@ -138,7 +144,7 @@ export const AllServicesPage: React.FC = () => {
                 </p>
               </div>
             )) || (
-                <div className="p-6">Cargando servicios administrativos...</div>
+                <div className="p-6">{t('loadingAdmin')}</div>
               )}
           </div>
         </div>

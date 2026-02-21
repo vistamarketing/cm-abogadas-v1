@@ -1,0 +1,69 @@
+{
+    "title": "Services",
+    "hero": {
+        "badge": "— Practice Areas —",
+        "title": "Our Services",
+        "description": "We accompany you in your immigration procedures and administrative formalities with agile and effective solutions.",
+        "image": "/uploads/unrecognisable-woman-thinking-office.jpg"
+    },
+    "immigration": {
+        "title": "Immigration Procedures",
+        "subtitle": "Comprehensive case management before the Immigration Office",
+        "items": [
+            {
+                "title": "CRUE Processing (EU NIE)",
+                "description": "Registration in the Central Registry of Foreigners and obtaining the NIE for EU citizens and their family members."
+            },
+            {
+                "title": "EU Residence Card",
+                "description": "Application and renewal of residence cards for family members of EU citizens residing in Spain."
+            },
+            {
+                "title": "Non-EU Family Members",
+                "description": "Comprehensive processing of the residence card for family members of Spanish/EU citizens including marriages and civil partnerships."
+            },
+            {
+                "title": "Initial Residence Authorizations",
+                "description": "Arraigo (social, labor, family, and vocational training), non-lucrative residence, student permits, and other initial authorizations."
+            },
+            {
+                "title": "Residence Renewals",
+                "description": "We manage the renewal of your residence permit, whether it's the first renewal or subsequent ones."
+            },
+            {
+                "title": "Long-Term Residence",
+                "description": "Application for long-term residence after 5 years of continuous legal residence in Spain."
+            },
+            {
+                "title": "Work Permit Modifications",
+                "description": "Changes from student permit to work permit, between employer types, or changes in work activity."
+            },
+            {
+                "title": "Spanish Nationality",
+                "description": "Comprehensive processing of applications for Spanish nationality by residence, including preparation of the file and interview."
+            }
+        ]
+    },
+    "admin": {
+        "title": "Other Services and Procedures",
+        "subtitle": "Complementary administrative support",
+        "items": [
+            {
+                "title": "Social Security Registration",
+                "description": "Registration and changes in Social Security for employees and self-employed workers."
+            },
+            {
+                "title": "Apostille and Legalization",
+                "description": "Legalization and apostille of documents for use in Spain or abroad."
+            },
+            {
+                "title": "Criminal Record",
+                "description": "Obtaining criminal record certificates, both Spanish and from the country of origin."
+            },
+            {
+                "title": "Sworn Translations",
+                "description": "Official sworn translations of legal documents for immigration and administrative procedures."
+            }
+        ]
+    }
+}

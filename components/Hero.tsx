@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
+import { useLocalizedPath, ROUTES } from '../hooks/useLanguage';
 
 export const Hero: React.FC<{ data?: any }> = ({ data }) => {
   const { openModal } = useModal();
+  const localizedPath = useLocalizedPath();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const heroData = data?.hero || {};
@@ -61,7 +63,7 @@ export const Hero: React.FC<{ data?: any }> = ({ data }) => {
                 <ArrowRight className="ml-2 w-6 h-6" />
               </button>
               <Link
-                to="/services"
+                to={localizedPath(ROUTES.services)}
                 className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-sm text-brand-primary bg-white border border-red-100 hover:bg-brand-light transition-all"
               >
                 {ctaSecondary}
@@ -85,7 +87,7 @@ export const Hero: React.FC<{ data?: any }> = ({ data }) => {
               <img
                 key={src}
                 src={src}
-                alt={`CM Abogadas - Imagen ${index + 1}`}
+                alt={`CM Abogadas - ${index + 1}`}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out transform group-hover:scale-105 transition-transform duration-[2000ms] ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                   }`}
               />

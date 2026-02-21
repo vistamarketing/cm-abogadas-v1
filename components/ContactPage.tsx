@@ -2,9 +2,13 @@ import React from 'react';
 import { MapPin, Phone, Instagram, Clock } from 'lucide-react';
 import { ContactForm } from './ContactForm';
 import { useTina } from "tinacms/dist/react";
-import contactData from "../content/pages/contact.json";
+import { getPageContent } from '../utils/contentLoader';
+import { useCurrentLang } from '../hooks/useLanguage';
 
 export const ContactPage: React.FC = () => {
+  const currentLang = useCurrentLang();
+  const contactData = getPageContent('contact', currentLang);
+
   // Only use Tina in edit mode (when in /admin or when Tina is active)
   const isEditMode = typeof window !== 'undefined' && window.location.pathname.includes('/admin');
 
@@ -78,7 +82,7 @@ export const ContactPage: React.FC = () => {
         <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
           <img
             src={hero.image || "/images/contact-hero.jpg"}
-            alt="Oficina de contacto"
+            alt="CM Abogadas Contact"
             className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-brand-darker/5"></div>

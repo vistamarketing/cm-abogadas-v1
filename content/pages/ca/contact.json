@@ -1,0 +1,30 @@
+{
+    "_template": "contact",
+    "title": "Contact",
+    "hero": {
+        "badge": "— SOM AQUÍ PER A TU —",
+        "title": "Contacte",
+        "description": "Tens dubtes sobre el teu procés migratori? Escriu-nos i gestionarem el teu cas estiguis on estiguis.",
+        "image": "/images/contact-hero.jpg"
+    },
+    "info": {
+        "location": {
+            "title": "Ubicació",
+            "line1": "Servei a Barcelona i Online",
+            "line2": "Atenem a tota Espanya",
+            "note": "Reunions presencials amb cita prèvia"
+        },
+        "phone": {
+            "title": "Truca'ns",
+            "number": "+34 686 401 557",
+            "email": "infocmabogadas@gmail.com",
+            "hours": "Dl - Dv: 09:00 - 18:00"
+        },
+        "social": {
+            "title": "Segueix-nos",
+            "description": "Consells diaris sobre immigració i dret d'estrangeria a les nostres xarxes socials.",
+            "handle": "@cmabogadas.esp",
+            "link": "https://www.instagram.com/cmabogadas.esp/"
+        }
+    }
+}

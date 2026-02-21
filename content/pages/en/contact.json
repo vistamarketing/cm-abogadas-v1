@@ -1,0 +1,30 @@
+{
+    "_template": "contact",
+    "title": "Contact",
+    "hero": {
+        "badge": "— WE'RE HERE FOR YOU —",
+        "title": "Contact",
+        "description": "Do you have questions about your immigration process? Write to us and we'll manage your case wherever you are.",
+        "image": "/images/contact-hero.jpg"
+    },
+    "info": {
+        "location": {
+            "title": "Location",
+            "line1": "Service in Barcelona and Online",
+            "line2": "We serve all of Spain",
+            "note": "In-person meetings by appointment"
+        },
+        "phone": {
+            "title": "Call Us",
+            "number": "+34 686 401 557",
+            "email": "infocmabogadas@gmail.com",
+            "hours": "Mon - Fri: 09:00 - 18:00"
+        },
+        "social": {
+            "title": "Follow Us",
+            "description": "Daily tips on immigration and immigration law in our social media.",
+            "handle": "@cmabogadas.esp",
+            "link": "https://www.instagram.com/cmabogadas.esp/"
+        }
+    }
+}

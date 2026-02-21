@@ -1,0 +1,69 @@
+{
+    "title": "Services",
+    "hero": {
+        "badge": "— Àrees de Pràctica —",
+        "title": "Els Nostres Serveis",
+        "description": "T'acompanyem en els teus tràmits d'estrangeria i gestions administratives amb solucions àgils i eficaces.",
+        "image": "/uploads/unrecognisable-woman-thinking-office.jpg"
+    },
+    "immigration": {
+        "title": "Tràmits d'Estrangeria",
+        "subtitle": "Gestió integral d'expedients davant l'Oficina d'Estrangeria",
+        "items": [
+            {
+                "title": "Tramitació CRUE (NIE Unió Europea)",
+                "description": "Inscripció al Registre Central d'Estrangers i obtenció del NIE per a ciutadans de la UE i els seus familiars."
+            },
+            {
+                "title": "Targeta de Residència UE",
+                "description": "Sol·licitud i renovació de targetes de residència per a familiars de ciutadans de la UE residents a Espanya."
+            },
+            {
+                "title": "Familiars No Comunitaris",
+                "description": "Tramitació integral de la targeta de residència per a familiars de ciutadans espanyols/UE incloent matrimonis i parelles de fet."
+            },
+            {
+                "title": "Autoritzacions Inicials de Residència",
+                "description": "Arrelament (social, laboral, familiar i per a la formació), residència no lucrativa, permisos d'estudiant i altres autoritzacions inicials."
+            },
+            {
+                "title": "Renovacions de Residència",
+                "description": "Gestionem la renovació del teu permís de residència, ja sigui la primera renovació o les successives."
+            },
+            {
+                "title": "Residència de Llarga Durada",
+                "description": "Sol·licitud de residència de llarga durada després de 5 anys de residència legal continuada a Espanya."
+            },
+            {
+                "title": "Modificacions de Permís de Treball",
+                "description": "Canvis de permís d'estudiant a treball, entre tipus d'ocupador, o canvis en l'activitat laboral."
+            },
+            {
+                "title": "Nacionalitat Espanyola",
+                "description": "Tramitació integral de sol·licituds de nacionalitat espanyola per residència, incloent preparació de l'expedient i entrevista."
+            }
+        ]
+    },
+    "admin": {
+        "title": "Altres Serveis i Gestions",
+        "subtitle": "Suport administratiu complementari",
+        "items": [
+            {
+                "title": "Alta a la Seguretat Social",
+                "description": "Inscripció i canvis a la Seguretat Social per a treballadors per compte aliè i autònoms."
+            },
+            {
+                "title": "Apostil·la i Legalització",
+                "description": "Legalització i apostil·la de documents per al seu ús a Espanya o a l'estranger."
+            },
+            {
+                "title": "Antecedents Penals",
+                "description": "Obtenció de certificats d'antecedents penals, tant espanyols com del país d'origen."
+            },
+            {
+                "title": "Traduccions Jurades",
+                "description": "Traduccions jurades oficials de documents legals per a tràmits d'immigració i administratius."
+            }
+        ]
+    }
+}
