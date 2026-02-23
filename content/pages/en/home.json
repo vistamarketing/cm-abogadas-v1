@@ -71,25 +71,39 @@
         "ctaText": "Read more reviews on Google Maps",
         "items": [
             {
-                "author": "Valentina Rossi",
-                "date": "2 months ago",
+                "author": "Alfonso Melero",
+                "date": "7 hours ago",
                 "rating": 5,
-                "text": "Incredible professionals! They helped me with my Digital Nomad Visa when I thought I didn't meet the requirements. They analyzed my case in detail and in 3 weeks I had a favorable resolution. WhatsApp response was super fast.",
+                "text": "Excellent service. Everything was fast and transparent. María helped me and resolved everything effectively. Highly recommended.",
+                "initial": "A"
+            },
+            {
+                "author": "Vanessa Menoscal",
+                "date": "2 days ago",
+                "rating": 5,
+                "text": "Very professional service. They helped me a lot with processing my mother's nationality, obtained successfully. I really value the support and follow-up throughout the entire process. Thank you for your excellent management.",
                 "initial": "V"
             },
             {
-                "author": "Liam O'Connor",
-                "date": "1 month ago",
+                "author": "Estefany Guzmán",
+                "date": "4 days ago",
                 "rating": 5,
-                "text": "The best immigration lawyers in Barcelona. They speak perfect English and explained every step of the 'Pareja de Hecho' process. No hidden fees and very transparent. Highly recommended for expats.",
-                "initial": "L"
+                "text": "I highly recommend Cele, it was an excellent service during my documentation process.",
+                "initial": "E"
             },
             {
-                "author": "María Fernanda López",
-                "date": "3 weeks ago",
+                "author": "Gregorio Londoño",
+                "date": "6 days ago",
                 "rating": 5,
-                "text": "Thanks to Clara and Marta I got my nationality after years of waiting with other agents. They are serious, modern and get straight to the point. You can tell they know how immigration works these days.",
-                "initial": "M"
+                "text": "Great support and guidance, always attentive and clear during my residence process until the approval of my resolution. Highly recommended!",
+                "initial": "G"
+            },
+            {
+                "author": "Josefina Estivill",
+                "date": "6 days ago",
+                "rating": 5,
+                "text": "Excellent experience. From the very first moment they showed great professionalism, clarity in the information and constant support throughout the entire process.",
+                "initial": "J"
             }
         ]
     },

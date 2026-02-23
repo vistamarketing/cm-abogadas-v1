@@ -12,27 +12,43 @@ export const Reviews: React.FC<{ data?: any }> = ({ data }) => {
   const reviews = reviewsData.items || [
     {
       id: 1,
-      author: "Valentina Rossi",
-      date: "Hace 2 meses",
+      author: "Alfonso Melero",
+      date: "Hace 7 horas",
       rating: 5,
-      text: "¡Increíbles profesionales! Me ayudaron con mi Visa de Nómada Digital cuando pensaba que no cumplía los requisitos. Analizaron mi caso al detalle y en 3 semanas tenía la resolución favorable. La atención por WhatsApp fue súper rápida.",
-      initial: "V"
+      text: "Excelente el servicio. Todo muy rápido y transparente. María me ayudó y resolvió de forma efectiva. Lo recomiendo.",
+      initial: "A"
     },
     {
       id: 2,
-      author: "Liam O'Connor",
-      date: "Hace 1 mes",
+      author: "Vanessa Menoscal",
+      date: "Hace 2 días",
       rating: 5,
-      text: "The best immigration lawyers in Barcelona. They speak perfect English and explained every step of the 'Pareja de Hecho' process. No hidden fees and very transparent. Highly recommended for expats.",
-      initial: "L"
+      text: "Servicio muy profesional, me han ayudado mucho a tramitar la nacionalidad de mi madre obtenida con éxito. Valoro muy positivamente el acompañamiento y seguimiento del trámite durante todo el proceso. Gracias por vuestra excelente gestión.",
+      initial: "V"
     },
     {
       id: 3,
-      author: "María Fernanda López",
-      date: "Hace 3 semanas",
+      author: "Estefany Guzmán",
+      date: "Hace 4 días",
       rating: 5,
-      text: "Gracias a Clara y Marta conseguí mi nacionalidad después de años de espera con otros gestores. Son serias, modernas y van al grano. Se nota que conocen bien cómo funciona extranjería hoy en día.",
-      initial: "M"
+      text: "Me permito recomendar a Cele, fue un excelente servicio durante mi proceso de documentación.",
+      initial: "E"
+    },
+    {
+      id: 4,
+      author: "Gregorio Londoño",
+      date: "Hace 6 días",
+      rating: 5,
+      text: "Muy buen acompañamiento y asesoramiento, siempre pendientes y claros durante mi proceso de residencia hasta la aprobación de mi resolución. ¡Recomiendo!",
+      initial: "G"
+    },
+    {
+      id: 5,
+      author: "Josefina Estivill",
+      date: "Hace 6 días",
+      rating: 5,
+      text: "Excelente experiencia. Desde el primer momento demostraron gran profesionalismo, claridad en la información y un acompañamiento constante durante todo el proceso.",
+      initial: "J"
     }
   ];
 
@@ -94,7 +110,9 @@ export const Reviews: React.FC<{ data?: any }> = ({ data }) => {
         {/* CTA */}
         <div className="text-center">
           <a
-            href="#"
+            href="https://www.google.com/search?sa=X&sca_esv=0066cc4b3f6e172b&rlz=1C5CHFA_enES1153ES1153&hl=es&sxsrf=ANbL-n7c7ml6fdKdEwuJ2tVdx1EVr89j6w:1771872042607&q=CM+Abogadas+Rese%C3%B1as&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDc1MzU1sbAwMDQ3MrEwM7Q0NNvAyPiKUcTZV8ExKT89MSWxWCEotTj18MbE4kWsWIUBoug68UkAAAA&rldimm=17565548801724861916&tbm=lcl&ved=2ahUKEwiznr_dofCSAxWN_7sIHTvFDtsQ9fQKegQISRAG&biw=1470&bih=738&dpr=2#lkt=LocalPoiReviews"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-accent transition-colors border-b-2 border-transparent hover:border-brand-primary pb-1"
           >
             {ctaText}

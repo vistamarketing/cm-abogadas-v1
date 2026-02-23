@@ -71,25 +71,39 @@
         "ctaText": "Llegir més ressenyes a Google Maps",
         "items": [
             {
-                "author": "Valentina Rossi",
-                "date": "Fa 2 mesos",
+                "author": "Alfonso Melero",
+                "date": "Fa 7 hores",
                 "rating": 5,
-                "text": "Professionals increïbles! Em van ajudar amb la meva Visa de Nòmada Digital quan pensava que no complia els requisits. Van analitzar el meu cas al detall i en 3 setmanes tenia la resolució favorable. L'atenció per WhatsApp va ser super ràpida.",
+                "text": "Excel·lent el servei. Tot molt ràpid i transparent. María em va ajudar i va resoldre de forma efectiva. El recomano.",
+                "initial": "A"
+            },
+            {
+                "author": "Vanessa Menoscal",
+                "date": "Fa 2 dies",
+                "rating": 5,
+                "text": "Servei molt professional, m'han ajudat molt a tramitar la nacionalitat de la meva mare obtinguda amb èxit. Valoro molt positivament l'acompanyament i seguiment del tràmit durant tot el procés. Gràcies per la vostra excel·lent gestió.",
                 "initial": "V"
             },
             {
-                "author": "Liam O'Connor",
-                "date": "Fa 1 mes",
+                "author": "Estefany Guzmán",
+                "date": "Fa 4 dies",
                 "rating": 5,
-                "text": "The best immigration lawyers in Barcelona. They speak perfect English and explained every step of the 'Pareja de Hecho' process. No hidden fees and very transparent. Highly recommended for expats.",
-                "initial": "L"
+                "text": "Em permeto recomanar a Cele, va ser un excel·lent servei durant el meu procés de documentació.",
+                "initial": "E"
             },
             {
-                "author": "María Fernanda López",
-                "date": "Fa 3 setmanes",
+                "author": "Gregorio Londoño",
+                "date": "Fa 6 dies",
                 "rating": 5,
-                "text": "Gràcies a Clara i Marta vaig aconseguir la meva nacionalitat després d'anys d'espera amb altres gestors. Són serioses, modernes i van al gra. Es nota que coneixen bé com funciona estrangeria avui en dia.",
-                "initial": "M"
+                "text": "Molt bon acompanyament i assessorament, sempre pendents i clars durant el meu procés de residència fins a l'aprovació de la meva resolució. Recomano!",
+                "initial": "G"
+            },
+            {
+                "author": "Josefina Estivill",
+                "date": "Fa 6 dies",
+                "rating": 5,
+                "text": "Excel·lent experiència. Des del primer moment van demostrar gran professionalisme, claredat en la informació i un acompanyament constant durant tot el procés.",
+                "initial": "J"
             }
         ]
     },

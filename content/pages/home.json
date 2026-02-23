@@ -71,25 +71,39 @@
     "ctaText": "Leer más reseñas en Google Maps",
     "items": [
       {
-        "author": "Valentina Rossi",
-        "date": "Hace 2 meses",
+        "author": "Alfonso Melero",
+        "date": "Hace 7 horas",
         "rating": 5,
-        "text": "¡Increíbles profesionales! Me ayudaron con mi Visa de Nómada Digital cuando pensaba que no cumplía los requisitos. Analizaron mi caso al detalle y en 3 semanas tenía la resolución favorable. La atención por WhatsApp fue súper rápida.",
+        "text": "Excelente el servicio. Todo muy rápido y transparente. María me ayudó y resolvió de forma efectiva. Lo recomiendo.",
+        "initial": "A"
+      },
+      {
+        "author": "Vanessa Menoscal",
+        "date": "Hace 2 días",
+        "rating": 5,
+        "text": "Servicio muy profesional, me han ayudado mucho a tramitar la nacionalidad de mi madre obtenida con éxito. Valoro muy positivamente el acompañamiento y seguimiento del trámite durante todo el proceso. Gracias por vuestra excelente gestión.",
         "initial": "V"
       },
       {
-        "author": "Liam O'Connor",
-        "date": "Hace 1 mes",
+        "author": "Estefany Guzmán",
+        "date": "Hace 4 días",
         "rating": 5,
-        "text": "The best immigration lawyers in Barcelona. They speak perfect English and explained every step of the 'Pareja de Hecho' process. No hidden fees and very transparent. Highly recommended for expats.",
-        "initial": "L"
+        "text": "Me permito recomendar a Cele, fue un excelente servicio durante mi proceso de documentación.",
+        "initial": "E"
       },
       {
-        "author": "María Fernanda López",
-        "date": "Hace 3 semanas",
+        "author": "Gregorio Londoño",
+        "date": "Hace 6 días",
         "rating": 5,
-        "text": "Gracias a Clara y Marta conseguí mi nacionalidad después de años de espera con otros gestores. Son serias, modernas y van al grano. Se nota que conocen bien cómo funciona extranjería hoy en día.",
-        "initial": "M"
+        "text": "Muy buen acompañamiento y asesoramiento, siempre pendientes y claros durante mi proceso de residencia hasta la aprobación de mi resolución. ¡Recomiendo!",
+        "initial": "G"
+      },
+      {
+        "author": "Josefina Estivill",
+        "date": "Hace 6 días",
+        "rating": 5,
+        "text": "Excelente experiencia. Desde el primer momento demostraron gran profesionalismo, claridad en la información y un acompañamiento constante durante todo el proceso.",
+        "initial": "J"
       }
     ]
   },
