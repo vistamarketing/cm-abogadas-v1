@@ -92,12 +92,12 @@ export const AboutPage: React.FC = () => {
     <div className="pt-24 min-h-screen bg-white animate-fade-in">
       {/* Hero Section */}
       <section className="relative flex flex-col lg:flex-row bg-white border-b border-stone-100">
-        <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center items-center lg:items-start text-center lg:text-left bg-[#f9f7f2]">
+        <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-24 flex flex-col justify-center items-center lg:items-start text-center lg:text-left bg-[#f9f7f2]">
           <div className="max-w-xl">
-            <span className="text-brand-primary font-bold tracking-[0.3em] uppercase text-xs mb-8 block leading-none">
+            <span className="text-brand-primary font-bold tracking-wider sm:tracking-[0.3em] uppercase text-[10px] sm:text-xs mb-6 sm:mb-8 block leading-none">
               {hero.badge || "— SOBRE NOSOTROS —"}
             </span>
-            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-brand-darker mb-8 leading-[1.1]">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-serif font-bold text-brand-darker mb-6 sm:mb-8 leading-[1.1]">
               {hero.title || "¿Quienes somos?"}
             </h1>
             <p className="text-xl text-stone-600 mb-10 font-sans leading-relaxed">
@@ -161,7 +161,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           {/* The "Model" - Highlighting Flexibility */}
-          <div className="bg-[#1B0A09] rounded-sm p-8 md:p-16 text-white relative overflow-hidden mb-24">
+          <div className="bg-[#1B0A09] rounded-sm p-6 sm:p-8 md:p-16 text-white relative overflow-hidden mb-24">
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 text-center lg:text-left">
                 <div className="text-white font-bold tracking-[0.3em] uppercase text-xs mb-6 block leading-none">

@@ -36,20 +36,20 @@ export const Hero: React.FC<{ data?: any }> = ({ data }) => {
   }, [images.length]);
 
   return (
-    <section id="hero" className="relative pt-24 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section id="hero" className="relative pt-20 pb-16 lg:pt-48 lg:pb-32 overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-10 text-center lg:text-left">
+          <div className="space-y-10 text-center lg:text-left w-full overflow-hidden">
             <div className="text-brand-primary font-bold tracking-wider md:tracking-[0.3em] uppercase text-[10px] md:text-xs mb-8 block leading-relaxed px-2">
               {badge}
             </div>
 
-            <h1 className="text-4xl lg:text-7xl font-extrabold text-brand-darker leading-[1.1] lg:leading-tight font-serif">
+            <h1 className="text-3xl sm:text-4xl lg:text-7xl font-extrabold text-brand-darker leading-[1.1] lg:leading-tight font-serif break-words">
               {title}
             </h1>
 
-            <p className="text-lg lg:text-xl text-brand-secondary max-w-xl leading-relaxed mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg lg:text-xl text-brand-secondary max-w-full lg:max-w-xl leading-relaxed mx-auto lg:mx-0">
               {subtitle}
             </p>
 
@@ -70,7 +70,7 @@ export const Hero: React.FC<{ data?: any }> = ({ data }) => {
               </Link>
             </div>
 
-            <div className="pt-8 border-t border-gray-100 flex gap-8 text-base text-brand-secondary/80 font-medium justify-center lg:justify-start">
+            <div className="pt-6 sm:pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm sm:text-base text-brand-secondary/80 font-medium justify-center lg:justify-start">
               {features.map((feature: any, index: number) => (
                 <div key={index} className="flex items-center gap-2">
                   <CheckCircle2 className="text-brand-primary w-6 h-6" />

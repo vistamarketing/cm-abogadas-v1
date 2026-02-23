@@ -43,7 +43,7 @@ export const HowWeWork: React.FC = () => {
                     {steps.map((step, index) => (
                         <div
                             key={index}
-                            className="relative bg-white p-10 border border-stone-100 hover:shadow-2xl transition-all duration-500 group"
+                            className="relative bg-white p-6 sm:p-10 border border-stone-100 hover:shadow-2xl transition-all duration-500 group"
                         >
                             {/* Step Text */}
                             <div className="text-xl font-bold text-brand-primary mb-4 font-sans tracking-wide uppercase">

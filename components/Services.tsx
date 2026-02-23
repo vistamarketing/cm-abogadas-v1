@@ -81,7 +81,7 @@ export const Services: React.FC<{ data?: any }> = ({ data }) => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service) => (
-            <div key={service.id} className="bg-white p-10 border border-stone-100 hover:border-brand-primary/30 hover:shadow-xl transition-all duration-500 group relative">
+            <div key={service.id} className="bg-white p-6 sm:p-10 border border-stone-100 hover:border-brand-primary/30 hover:shadow-xl transition-all duration-500 group relative">
               <div className="w-12 h-12 flex items-center justify-center text-brand-primary mb-8 border-b-2 border-brand-primary/20 pb-2">
                 {service.icon}
               </div>

@@ -52,13 +52,13 @@ export const FeaturedServices: React.FC = () => {
                                 className="group relative bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
                             >
                                 {/* Header */}
-                                <div className="bg-brand-primary p-8 text-white">
+                                <div className="bg-brand-primary p-5 sm:p-8 text-white">
                                     <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
                                     <div className="text-3xl font-extrabold">{service.price}</div>
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-8">
+                                <div className="p-5 sm:p-8">
                                     <p className="text-brand-secondary mb-6 text-lg">
                                         {service.description}
                                     </p>
