@@ -1,56 +1,56 @@
 {
-    "_template": "about",
-    "title": "About",
-    "hero": {
-        "badge": "— SOBRE NOSOTROS —",
-        "title": "¿Quienes somos?",
-        "description": "En CM Abogadas somos un despacho joven, cercano y comprometido, fundado en abril de 2024. Hemos experimentado un crecimiento constante gracias a la confianza de quienes nos eligen.",
-        "image": "/images/about-hero.jpg"
-    },
-    "team": {
-        "badge": "— EQUIPO PROFESIONAL —",
-        "title": "Expertas en defender tus derechos",
-        "description1": "Nuestro equipo está integrado por abogadas colegiadas en el Ilustre Colegio de la Abogacía de Barcelona, con amplia experiencia en derecho de extranjería y un firme compromiso con la defensa de los derechos de nuestros clientes.",
-        "description2": "Trabajamos con un estilo propio que combina rigor jurídico, flexibilidad y disponibilidad. Nuestro objetivo es que encuentres no solo respuestas legales, sino la tranquilidad de sentirte respaldado.",
-        "image": "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"
-    },
-    "model": {
-        "badge": "— MODELO FLEXIBLE —",
-        "title": "Un despacho moderno, sin barreras físicas.",
-        "description1": "CM ABOGADAS tiene su sede en Barcelona, pero hemos elegido un modelo de trabajo flexible que nos permite ofrecer servicios en toda España y el extranjero.",
-        "description2": "Al no depender de un despacho físico permanente, nos adaptamos a tus horarios y necesidades de manera ágil. Ofrecemos **atención personalizada directa** sin limitaciones de ubicación.",
-        "boxTitle": "¿Cómo nos reunimos?",
-        "features": [
-            {
-                "title": "100% Online y Disponible",
-                "description": "Videollamadas y gestión digital para que avances desde tu casa, estés donde estés.",
-                "icon": "MonitorSmartphone"
-            },
-            {
-                "title": "Presencial cuando lo necesitas",
-                "description": "Si es necesario, organizamos entrevistas presenciales en espacios adecuados en Barcelona, combinando cercanía y comodidad.",
-                "icon": "Users"
-            }
-        ]
-    },
-    "values": {
-        "title": "Nuestros Valores",
-        "items": [
-            {
-                "title": "Transparencia",
-                "description": "Comunicación clara desde el primer momento. Sin sorpresas, con honestidad sobre la viabilidad de tu caso.",
-                "icon": "ShieldCheck"
-            },
-            {
-                "title": "Dedicación",
-                "description": "Cada cliente es único. Trabajamos para que te sientas valorado, comprendido y acompañado en cada paso.",
-                "icon": "Clock"
-            },
-            {
-                "title": "Cercanía",
-                "description": "Rigor jurídico con humanidad. Queremos que encuentres en nosotras no solo abogadas, sino aliadas.",
-                "icon": "Heart"
-            }
-        ]
-    }
+  "title": "About",
+  "hero": {
+    "badge": "— SOBRE NOSOTROS —",
+    "title": "¿Quienes somos?",
+    "description": "En CM Abogadas somos un despacho joven, cercano y comprometido. Hemos crecido de forma constante gracias a la confianza de nuestros clientes y a un trabajo riguroso y personalizado en cada caso. \n\nCreemos en una abogacía accesible, transparente y orientada a resultados, donde cada cliente recibe la atención y acompañamiento que merece.",
+    "image": "/uploads/images/about-hero.jpg"
+  },
+  "team": {
+    "badge": "— EQUIPO PROFESIONAL —",
+    "title": "Expertas en defender tus derechos",
+    "description1": "Nuestro equipo está integrado por abogadas colegiadas en el Ilustre Colegio de la Abogacía de Barcelona, con amplia experiencia en derecho de extranjería y un firme compromiso con la defensa de los derechos de nuestros clientes.",
+    "description2": "Trabajamos con un estilo propio que combina rigor jurídico, flexibilidad y disponibilidad. Nuestro objetivo es que encuentres no solo respuestas legales, sino la tranquilidad de sentirte respaldado.",
+    "image": "/uploadshttps://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"
+  },
+  "model": {
+    "badge": "— MODELO FLEXIBLE —",
+    "title": "Un despacho moderno, sin barreras físicas.",
+    "description1": "CM ABOGADAS tiene su sede en Barcelona, pero hemos elegido un modelo de trabajo flexible que nos permite ofrecer servicios en toda España y el extranjero.",
+    "description2": "Al no depender de un despacho físico permanente, nos adaptamos a tus horarios y necesidades de manera ágil. Ofrecemos **atención personalizada directa** sin limitaciones de ubicación.",
+    "boxTitle": "¿Cómo nos reunimos?",
+    "features": [
+      {
+        "title": "100% Online y Disponible",
+        "description": "Videollamadas y gestión digital para que avances desde tu casa, estés donde estés.",
+        "icon": "MonitorSmartphone"
+      },
+      {
+        "title": "Presencial cuando lo necesitas",
+        "description": "Si es necesario, organizamos entrevistas presenciales en espacios adecuados en Barcelona, combinando cercanía y comodidad.",
+        "icon": "Users"
+      }
+    ]
+  },
+  "values": {
+    "title": "Nuestros Valores",
+    "items": [
+      {
+        "title": "Transparencia",
+        "description": "Comunicación clara desde el primer momento. Sin sorpresas, con honestidad sobre la viabilidad de tu caso.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Dedicación",
+        "description": "Cada cliente es único. Trabajamos para que te sientas valorado, comprendido y acompañado en cada paso.",
+        "icon": "Clock"
+      },
+      {
+        "title": "Cercanía",
+        "description": "Rigor jurídico con humanidad. Queremos que encuentres en nosotras no solo abogadas, sino aliadas.",
+        "icon": "Heart"
+      }
+    ]
+  },
+  "_template": "about"
 }
